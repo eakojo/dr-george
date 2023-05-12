@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC } from 'react'
 import React from 'react'
 import { ColorProps, Flex, Icon } from '@chakra-ui/react'
