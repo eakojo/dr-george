@@ -1,8 +1,10 @@
 import type { NextPage } from 'next'
 import Layout from '@/components/Layout/Index'
-import Hero from '@/components/Blocks/Hero/homeHero'
-import Philosophy from '@/components/Home/Philosophy'
-import ProfessionalService from '@/components/Home/ProService'
+import Hero from '@/components/Blocks/Hero/aboutHero'
+import AboutUs from '@/components/Blocks/About/AboutUs'
+import WhoWeAre from '@/components/Blocks/About/WhoWeAre'
+import CFO from '@/components/Blocks/About/CFO'
+import Team from '@/components/Blocks/About/Team'
 
 const Home: NextPage = () => {
   return (
@@ -19,8 +21,10 @@ const Home: NextPage = () => {
           ]
         ]}
       />
-      <Philosophy />
-      <ProfessionalService />
+      <AboutUs />
+      <WhoWeAre />
+      <CFO />
+      <Team />
     </Layout>
   )
 }

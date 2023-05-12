@@ -23,14 +23,14 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
 
   const links = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about-us' },
+    { name: 'About Us', path: '/about' },
     { name: 'Service', path: '/service' },
     { name: 'Contact', path: '/contact' }
   ]
 
   return (
     <ChakraProvider theme={theme} resetCSS>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode='wait'>
         <motion.div
           key={router.pathname}
           initial="pageInitial"

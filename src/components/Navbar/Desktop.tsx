@@ -25,7 +25,7 @@ const NavbarLink: React.FC<{ item: ILink }> = ({ item }: { item: ILink }) => {
       _active={{ outline: 'none' }}
     >
       <NextLink href={item.path} passHref>
-        <Text as={"a"}
+        <Link
           fontSize={{ base: 'sm', xl: 16 }}
           _hover={{ fontWeight: 600 }}
           _focus={{ outline: 'none' }}
@@ -38,7 +38,7 @@ const NavbarLink: React.FC<{ item: ILink }> = ({ item }: { item: ILink }) => {
           }}
         >
           {item.name}
-        </Text>
+        </Link>
       </NextLink>
     </Box>
   )
@@ -60,9 +60,9 @@ const DesktopNavbar: React.FC<{ links: ILink[]}> = ({ links }: { links: ILink[]}
             justifyContent="space-between"
         >
             <NextLink href="/" passHref>
-                <Text as="a" _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
+                <Link _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
                     <Image src="/images/logo-2.png" h={16} alt="wibexly logo" mt={4}/>
-                </Text>
+                </Link>
             </NextLink>
 
             <Box ml={24}>
