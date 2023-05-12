@@ -1,0 +1,16 @@
+
+@font-face {
+  font-family: "Baguede";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Baguede/Baguede-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Baguede";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("../fonts/Baguede/Baguede-Italic.ttf") format("opentype");
+}
