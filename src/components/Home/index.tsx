@@ -3,7 +3,6 @@ import Layout from '@/components/Layout/Index'
 import Hero from '@/components/Blocks/Hero/Index'
 import Philosophy from '@/components/Home/Philosophy'
 import ProfessionalService from '@/components/Home/ProService'
-import Strategy from '@/components/Home/Strategy'
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +21,6 @@ const Home: NextPage = () => {
       />
       <Philosophy />
       <ProfessionalService />
-      <Strategy />
     </Layout>
   )
 }

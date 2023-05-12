@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC } from 'react'
-import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
+import { BiArrowBack } from 'react-icons/bi'
 
 interface IProp {
   cover?: string
@@ -15,54 +15,50 @@ interface IProp {
 const HeroDesktop: FC<IProp> = ({
   cover,
   bgColor,
-  title,
-  subtext,
-  align,
-  overlay,
   bgStyle,
-  children
 }) => {
   return (
-    <Flex
+    <Box
       w="full"
       bgSize="cover"
-      bg="base.cream"
-      px={{ base: 6, sm: 6, md: 16, lg: 20, '2xl': 28, '4xl': 48 }}
+      alignItems={"center"}
+      minH={bgStyle?.h || '100vh'}
+      position={"relative"}
     >
-      <Box
-        h={bgStyle?.h || '100vh'}
-        w="100%"
-        {...(cover ? { bgImage: cover } : {})}
-        {...(bgColor ? { bgColor: bgColor } : {})}
-        bgSize="cover"
-        bgPos={'center'}
-      >
-        <Grid templateColumns={'repeat(5, 1fr)'} gap={12} mt={12}>
-          <Box as={GridItem} colSpan={2}>
-            <Flex w="100%" h="100%" align={'center'} justify={'center'}>
-              <Box>
-                <Box
-                  color="base.green"
-                  fontSize={72}
-                  fontWeight={800}
-                  lineHeight={1.4}
-                >
-                  <Text>Enjuice&reg;</Text>
-                  <Text>Mango</Text>
+      <Image pos={"relative"} zIndex={2} src="/images/hero.png" alt="hero image"  w="100%"/>
+      <Flex alignItems={"center"} height={"100%"} pos={"absolute"} top={0} left={0} zIndex={3}>
+        <Box
+          w="100%"
+          bgSize="cover"
+          bgPos={'center'}
+          px={{ base: 4, '2xl': 28 }} 
+        >
+          <Grid templateColumns={'repeat(5, 1fr)'} gap={12} mt={"-30vh"}>
+            <Box as={GridItem} colSpan={2}>
+              <Flex w="100%" h="100%" align={'center'} justify={'center'}>
+                <Box>
+                  <Box
+                    color="white"
+                    fontSize={80}
+                    lineHeight={1}
+                  >
+                    <Text>Make it</Text>
+                    <Text>stand out</Text>
+                  </Box>
+                  <Text color="white" fontSize={24} fontWeight={"thin"}>
+                    Whatever it is, the way you tell your story online makes a difference
+                  </Text>
+                  <Button mt={12} py={12} px={6} rounded={0} bg="base.yellow" color="base.black" fontSize={24}>
+                      Discover the company
+                      <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
+                    </Button>
                 </Box>
-                <Text color="base.green" fontSize={20} fontWeight={500}>
-                  consectetur adipiscing elit, sed do eiusmod tempor incidi dunt
-                  ut labore et dolore magna aliqua.
-                </Text>
-              </Box>
-            </Flex>
-          </Box>
-          <Box as={GridItem} colSpan={3}>
-            <Image src="images/JIC.png" alt="cover-image" />
-          </Box>
-        </Grid>
-      </Box>
-    </Flex>
+              </Flex>
+            </Box>
+          </Grid>
+        </Box>
+      </Flex>
+    </Box>
   )
 }
 
