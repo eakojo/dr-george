@@ -41,13 +41,13 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
       zIndex={100}
       align="center"
       justify="space-between"
-      d={{ base: 'flex', xl: 'none' }}
+      display={{ base: 'flex', xl: 'none' }}
       color={'white'}
     >
       <Box>
         <NextLink href="/" passHref>
           <Link _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-            <Image src="/images/logo.png" h={16} />
+            <Image src="/images/logo.png" h={16} alt="company logo" />
           </Link>
         </NextLink>
       </Box>

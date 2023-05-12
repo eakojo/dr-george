@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import { As, Box, Icon, Image, Link, Text } from "@chakra-ui/react"
+import { As, Box, Flex, Icon, Image, Link, Text } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { useRouter } from 'next/router'
@@ -50,14 +50,11 @@ const DesktopNavbar: React.FC<{ links: ILink[]}> = ({ links }: { links: ILink[]}
         top={0}
         w="full"
         zIndex={10}
-        pos="relative"
-        align="center"
-        p={0}
+        pos="relative"        p={0}
         bg="base.yellow"
         display={{ base: 'none', xl: 'flex' }}
     >
-        <Box
-            display={"flex"}
+        <Flex
             minW={'100%'}
             px={{ base: 4, '2xl': 28 }}
             justifyContent="space-between"
@@ -69,16 +66,16 @@ const DesktopNavbar: React.FC<{ links: ILink[]}> = ({ links }: { links: ILink[]}
             </NextLink>
 
             <Box ml={24}>
-                <Box display={"flex"} align="center" h={'100%'}>
+                <Flex align="center" h={'100%'}>
                     {links.map((item, idx) => (
                     <Fragment key={item.name}>
                         <NavbarLink item={item} />
                         {links.length !== idx + 1 && <Box mx={4} />}
                     </Fragment>
                     ))}
-                </Box>
+                </Flex>
             </Box>
-        </Box>
+        </Flex>
     </Box>
 }
 export default DesktopNavbar
