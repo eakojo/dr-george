@@ -8,7 +8,7 @@ import * as _ from 'lodash'
 
 const MotionBox = motion(Box)
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
-
+// added lodash
 interface ILayout {
   link?: string
   description?: string
@@ -32,11 +32,12 @@ const Layout: FC<ILayout> = ({
     .replace('-', ' ')
     .split(' ')
     .map(e => _.upperFirst(e))
-    .join(' ')
+    .join(' ') 
 
   if (router.pathname === '/') {
     name = 'Home'
   }
+
 
   return (
     <Box>
