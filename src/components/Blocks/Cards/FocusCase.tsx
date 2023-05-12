@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable  */
 import { FC } from 'react'
 import { Box, Flex, Icon, Image, Text } from '@chakra-ui/react'
 import { BsArrowDown, BsArrowRight } from 'react-icons/bs'

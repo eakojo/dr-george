@@ -2,6 +2,7 @@ import { FC } from 'react'
 import React from 'react'
 import {
   BackgroundProps,
+  Box,
   Button,
   ColorProps,
   Flex,
@@ -28,7 +29,8 @@ const CustomButton: FC<IProp> = ({
   ...rest
 }) => {
   return (
-    <Flex
+    <Box
+      display={"flex"}
       as={Button}
       bg={bgColor}
       _hover={{ bg: bgColor }}
@@ -53,7 +55,7 @@ const CustomButton: FC<IProp> = ({
         />
       )}
       <Text color={textColor}>{title}</Text>
-    </Flex>
+    </Box>
   )
 }
 

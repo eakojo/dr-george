@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable  */
 import { FC } from 'react'
 import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 

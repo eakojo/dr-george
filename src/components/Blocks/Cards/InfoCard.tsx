@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable  */
 import { FC } from 'react'
 import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import { FaArrowDown } from 'react-icons/fa'
