@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Box, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import {BiArrowBack} from 'react-icons/bi'
 const Footer: FC = () => {
   return (
@@ -24,6 +24,21 @@ const Footer: FC = () => {
               <Text fontSize={24} mr={4}>Contact Us</Text>
               <Icon fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
             </Box>
+            <Flex mt={12} w={"60%"} justifyContent={"space-between"}>
+                <Box>
+                  <Text fontSize={24} color={"base.yellow"}>Call Us At:</Text>
+                  <Text fontSize={24} color={"white"}>+233540125117</Text>
+                </Box>
+
+                <Box>
+                  <Text fontSize={24} color={"base.yellow"}>E-mail Us @</Text>
+                  <Text fontSize={24} color={"white"}>admin@wibexly.com</Text>
+                </Box>  
+            </Flex>
+            <Box mt={4}>
+              <Text fontSize={24} color={"base.yellow"}>Location</Text>
+              <Text fontSize={24} color={"white"}>4 Nyadji Cr Asylum Down Accra, Ghana </Text>
+            </Box>  
           </Box>
       </Grid>
     </Box>

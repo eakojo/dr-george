@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
   const links = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Service', path: '/service' },
+    { name: 'Service', path: '/services' },
     { name: 'Contact', path: '/contact' }
   ]
 
