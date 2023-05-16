@@ -26,9 +26,9 @@ const ExpectAdvice: FC = () => {
                     <Text>Advise ?</Text>
                   </Box>
                   <Button mt={12} py={12} px={12} rounded={0} fontWeight={500} bg="black" _hover={{bg: "black"}} color="base.yellow" fontSize={24}>
-                      Contact Us
-                      <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                    </Button>
+                    Contact Us
+                    <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
+                  </Button>
                 </Box>
               </Flex>
             </Box>
