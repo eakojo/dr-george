@@ -1,26 +1,18 @@
 import { FC } from 'react'
 import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import { BiArrowBack } from 'react-icons/bi'
+import Reveal from '../Animations/Reveal'
+import { useRouter } from 'next/router'
 
-interface IProp {
-  cover?: string
-  bgColor?: string
-  title: { text: string; color: string }[][]
-  subtext?: string
-  align?: string
-  overlay?: boolean
-  bgStyle?: any
-}
 
-const HeroDesktop: FC<IProp> = ({
-  bgStyle,
-}) => {
+const HeroDesktop: FC = () => {
+  const router = useRouter()
   return (
     <Box
       w="full"
       bgSize="cover"
       alignItems={"center"}
-      minH={bgStyle?.h || '100vh'}
+      minH={'100vh'}
       position={"relative"}
     >
       <Image pos={"relative"} zIndex={2} src="/images/services-hero.png" alt="hero image"  w="100%"/>
@@ -33,24 +25,26 @@ const HeroDesktop: FC<IProp> = ({
         >
           <Grid templateColumns={'repeat(5, 1fr)'} gap={12} mt={"-30vh"}>
             <Box as={GridItem} colSpan={3}>
-              <Flex w="100%" h="100%" align={'center'} justify={'center'}>
-                <Box>
-                  <Box
-                    color="black"
-                    fontSize={64}
-                    lineHeight={1.3}
-                  >
-                    <Text>Guiding Businesses</Text>
-                    <Text>To Profitability</Text>
-                    <Text>Through Financial</Text>
-                    <Text>Visibility</Text>
-                  </Box>
-                  <Button mt={12} py={12} px={12} rounded={0} bg="base.black" _hover={{bg: "base.black"}} color="base.yellow" fontSize={24}>
-                      Contact Us
+              <Reveal>
+                  <Flex w="100%" h="100%" align={'center'} justify={'center'}>
+                    <Box>
+                      <Box
+                        color="black"
+                        fontSize={64}
+                        lineHeight={1.3}
+                      >
+                        <Text>Guiding Businesses</Text>
+                        <Text>To Profitability</Text>
+                        <Text>Through Financial</Text>
+                        <Text>Visibility</Text>
+                      </Box>
+                      <Button mt={12} py={12} px={6} rounded={0} bg="base.black" _hover={{bg: "base.black"}} color="base.yellow" fontSize={24} fontWeight={500} onClick={() => router.push('/contact')}>
+                        Contact Us
                       <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                    </Button>
-                </Box>
-              </Flex>
+                      </Button>
+                    </Box>
+                  </Flex>
+              </Reveal>
             </Box>
           </Grid>
         </Box>

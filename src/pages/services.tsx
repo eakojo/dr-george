@@ -10,16 +10,7 @@ import ExpectAdvice from '@/components/Blocks/Service/ExpectAdvice'
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Hero
-        title={[
-          [
-            { text: 'Make it', color: 'white' }
-          ],
-          [
-            { text: 'stand out', color: 'white' },
-          ]
-        ]}
-      />
+      <Hero />
       <RenownedService />
       <BlankCover />
       <PremiumService />
