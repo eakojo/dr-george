@@ -8,18 +8,7 @@ import Strategy from '@/components/Home/Strategy'
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Hero
-        align="left"
-        cover="/images/hero.png"
-        title={[
-          [
-            { text: 'Make it', color: 'white' }
-          ],
-          [
-            { text: 'stand out', color: 'white' },
-          ]
-        ]}
-      />
+      <Hero />
       <Philosophy />
       <ProfessionalService />
       <Strategy />

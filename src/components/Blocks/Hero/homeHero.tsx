@@ -1,22 +1,18 @@
 import { FC } from 'react'
 import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import { BiArrowBack } from 'react-icons/bi'
+import Reveal from '../Animations/Reveal'
+import { useRouter } from 'next/router'
 
 interface IProp {
-  cover?: string
-  bgColor?: string
-  title: { text: string; color: string }[][]
-  subtext?: string
-  align?: string
-  overlay?: boolean
   bgStyle?: any
 }
 
 const HeroDesktop: FC<IProp> = ({
-  cover,
-  bgColor,
   bgStyle,
 }) => {
+  const router = useRouter()
+
   return (
     <Box
       w="full"
@@ -36,7 +32,7 @@ const HeroDesktop: FC<IProp> = ({
           <Grid templateColumns={'repeat(5, 1fr)'} gap={12} mt={"-30vh"}>
             <Box as={GridItem} colSpan={2}>
               <Flex w="100%" h="100%" align={'center'} justify={'center'}>
-                <Box>
+                <Reveal>
                   <Box
                     color="white"
                     fontSize={80}
@@ -48,11 +44,11 @@ const HeroDesktop: FC<IProp> = ({
                   <Text color="white" fontSize={24} fontWeight={"thin"}>
                     Whatever it is, the way you tell your story online makes a difference
                   </Text>
-                  <Button mt={12} py={12} px={6} rounded={0} bg="base.yellow" color="base.black" fontSize={24}>
+                  <Button mt={12} py={12} px={6} rounded={0} bg="base.yellow" color="base.black" fontSize={24} onClick={() => router.push('/about')}>
                       Discover the company
                       <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                    </Button>
-                </Box>
+                  </Button>
+                </Reveal>
               </Flex>
             </Box>
           </Grid>

@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import {BiArrowBack} from 'react-icons/bi'
+import { useRouter } from 'next/router'
 const Footer: FC = () => {
+  const router = useRouter()
   return (
     <>
     <Box pos={"relative"}>
@@ -20,7 +22,15 @@ const Footer: FC = () => {
 
           <Box as={GridItem} colSpan={14} bg="blackAlpha.500"  px={{ base: 4, '2xl': 36 }} py={24}>
             <Text color="white" fontSize={44}>Sign up with your email address to receive  news and updates</Text>
-            <Box cursor={"pointer"} color="base.yellow" display={"flex"} alignItems={"center"} mt={24} p={4} w={52} h={20} borderWidth={2} borderColor={"base.yellow"}>
+            <Box cursor={"pointer"} 
+              color="base.yellow" 
+              display={"flex"} 
+              alignItems={"center"} 
+              mt={24} p={4} w={52} h={20} 
+              borderWidth={2} 
+              borderColor={"base.yellow"}
+              onClick={() => router.push('/contact')}
+            >
               <Text fontSize={24} mr={4}>Contact Us</Text>
               <Icon fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
             </Box>

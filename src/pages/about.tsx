@@ -9,18 +9,7 @@ import Team from '@/components/Blocks/About/Team'
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Hero
-        align="left"
-        cover="/images/hero.png"
-        title={[
-          [
-            { text: 'Make it', color: 'white' }
-          ],
-          [
-            { text: 'stand out', color: 'white' },
-          ]
-        ]}
-      />
+      <Hero />
       <AboutUs />
       <WhoWeAre />
       <CFO />

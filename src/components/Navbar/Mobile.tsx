@@ -45,11 +45,9 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
       color={'white'}
     >
       <Box>
-        <NextLink href="/" passHref>
-          <Link _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-            <Image src="/images/logo.png" h={16} alt="company logo" />
-          </Link>
-        </NextLink>
+        <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
+          <Image src="/images/logo.png" h={16} alt="company logo" />
+        </Link>
       </Box>
 
       <Box>
@@ -79,48 +77,24 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
                       {m.children ? (
                         <Box>
                           <NextLink href={m.path} passHref>
-                            <Link>
-                              <Flex justify="start" pl={5} py={3}>
-                                <Text fontWeight={700}>{m.name}</Text>
-                              </Flex>
-                            </Link>
+                            <Flex justify="start" pl={5} py={3}>
+                              <Text fontWeight={700}>{m.name}</Text>
+                            </Flex>
                           </NextLink>
                           <Divider />
                         </Box>
                       ) : (
                         <>
                           <NextLink key={idx} href={m.path} passHref>
-                            <Link>
-                              <Flex justify="start" pl={5} py={3}>
-                                <Text fontWeight={700}>{m.name}</Text>
-                              </Flex>
-                            </Link>
+                            <Flex justify="start" pl={5} py={3}>
+                              <Text fontWeight={700}>{m.name}</Text>
+                            </Flex>
                           </NextLink>
                           <Divider />
                         </>
                       )}
                     </Box>
                   ))}
-                  <a href="https://paystack.com/pay/gayo" target="_">
-                    <Box
-                      bg="white"
-                      px={6}
-                      py={2}
-                      ml={12}
-                      rounded={'md'}
-                      color="gray.700"
-                      cursor="pointer"
-                      fontWeight={500}
-                      borderWidth={1}
-                      borderColor={'white'}
-                      _hover={{
-                        bg: 'base.600',
-                        color: 'white'
-                      }}
-                    >
-                      Donate
-                    </Box>
-                  </a>
                 </Box>
               </Box>
             )}
