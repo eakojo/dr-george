@@ -1,4 +1,4 @@
-import { FC, useRef, useEffect } from 'react'
+import { FC, useState } from 'react'
 import { Box, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import AnimatedGrid from '../../Animations/AnimatedGrid';
 
@@ -20,7 +20,7 @@ const CFO: FC = () => {
                     </Box>
                     <Box as={GridItem} colSpan={4}>
                         {/* <Icon as={CgQuote} fontSize={96} /> */}
-                        <Text fontSize={48} color="gray.800" lineHeight={1.2}>
+                        <Text fontSize={48} color="gray.800" lineHeight={1.2} mt={6}>
                             Small business owners don&lsquo;t 
                             always have access to the 
                             same financial experts and 

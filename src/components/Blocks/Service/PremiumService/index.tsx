@@ -12,20 +12,19 @@ const GridBox:FC<{image: ReactNode; description: string, title: string, border?:
 
     return <Grid ref={ref} 
             templateColumns={"repeat(7, 1fr)"} gap={16} py={20}
-            _hover={{bg: 'black'}}
             borderBottomWidth={border || 1}
             borderColor={'gray.600'} 
             color="gray.500"
             px={{ base: 4, '2xl': 28 }} cursor={"pointer"}
             >
             <Box as={GridItem} colSpan={3}>
-                <Flex direction={"column"} alignItems={"center"} {...isHovered ? { filter: "invert(1)"}: {}}>
+                <Flex direction={"column"} alignItems={"center"} {...isHovered ? { filter: "invert(0)"}:{ filter: "invert(0.3)"}}>
                     {image}
                     <Text fontWeight={600} fontSize={32} color={"blackAlpha.700"}>{ title }</Text>
                 </Flex>
             </Box>
             <Box as={GridItem} colSpan={4}>
-                <Text fontSize={24} color={isHovered ? 'white' : "gray.600"} lineHeight={1.5} mt={6}>
+                <Text fontSize={24} color={isHovered ? 'black' : "gray.500"} lineHeight={1.5} mt={6}>
                     {description}
                 </Text>
             </Box>
