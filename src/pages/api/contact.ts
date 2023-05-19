@@ -36,6 +36,7 @@ export default function handler(
     transporter.sendMail(message, (err, info) => {
 
       if (err) {
+        console.log(err)
         res.status(404).json({
           error: `Connection refused at ${err.address}`
         });
