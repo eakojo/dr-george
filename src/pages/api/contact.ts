@@ -9,6 +9,7 @@ export default function handler(
   const formData = JSON.parse(req.body)
 
 
+  console.log('Address is ', process.env.GMAIL_EMAIL_ADDRESS)
   const message = {
     from: formData.email,
     to: process.env.GMAIL_EMAIL_ADDRESS,

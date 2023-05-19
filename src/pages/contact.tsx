@@ -13,9 +13,11 @@ const Contact: NextPage = () => {
         phone: '',
         message: ''
     })
+    const [loading, setLoading] = useState(false)
 
     async function handleSubmit() {
         try {
+            setLoading(true)
             const response = await fetch('/api/contact', {
                 method: 'post',
                 body: JSON.stringify(contact)
@@ -27,6 +29,8 @@ const Contact: NextPage = () => {
         } catch (err) {
             console.error(err);
             alert("We can't submit the form, try again later?");
+        } finally{
+            setLoading(false)
         }
     }
 
@@ -123,6 +127,7 @@ const Contact: NextPage = () => {
                 </Box>
                 <Flex justifyContent={"space-between"} align={"center"}>
                     <Button 
+                            isLoading={loading}
                             mt={12} py={12} px={12} 
                             rounded={0} fontWeight={500} 
                             bg="black" _hover={{bg: "black"}} 
