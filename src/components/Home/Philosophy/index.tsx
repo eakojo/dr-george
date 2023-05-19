@@ -56,11 +56,11 @@ const Philosophy: FC = () => {
       borderBottomWidth={16}
       borderColor={"base.yellow"}
     >
-        <Grid templateColumns={"repeat(7, 1fr)"} gap={16}>
-            <Box as={GridItem} colSpan={4}>
+        <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={{base: 8, lg: 16}}>
+            <Box as={GridItem} colSpan={{base: 1, sm:3, lg: 4}}>
               <Image src="/images/philosophy.png" alt="philosophy image"/>
             </Box>
-            <Box as={GridItem} colSpan={3}>
+            <Box as={GridItem} colSpan={{base: 1, sm:4, lg: 3}}>
                 <Reveal from="right">
                   <Text fontSize={32} color="gray.800" fontWeight={600}>Our Philosophy</Text>
                   <AnimatePresence>

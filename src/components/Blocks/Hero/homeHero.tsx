@@ -18,10 +18,11 @@ const HeroDesktop: FC<IProp> = ({
       w="full"
       bgSize="cover"
       alignItems={"center"}
-      minH={bgStyle?.h || '100vh'}
+      minH={'100vh'}
+      h={'100vh'}
       position={"relative"}
+      bgImage={'/images/hero.png'}
     >
-      <Image pos={"relative"} zIndex={2} src="/images/hero.png" alt="hero image"  w="100%"/>
       <Flex alignItems={"center"} height={"100%"} pos={"absolute"} top={0} left={0} zIndex={3}>
         <Box
           w="100%"
@@ -29,13 +30,13 @@ const HeroDesktop: FC<IProp> = ({
           bgPos={'center'}
           px={{ base: 4, '2xl': 28 }} 
         >
-          <Grid templateColumns={'repeat(5, 1fr)'} gap={12} mt={"-30vh"}>
+          <Grid templateColumns={{base:  'repeat(1, 1fr)', sm: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}} gap={12} mt={"-30vh"}>
             <Box as={GridItem} colSpan={2}>
               <Flex w="100%" h="100%" align={'center'} justify={'center'}>
-                <Reveal>
+                <Reveal from="bottom">
                   <Box
                     color="white"
-                    fontSize={80}
+                    fontSize={{base: 48,sm: 52, lg: 80}}
                     lineHeight={1}
                   >
                     <Text>Make it</Text>
@@ -44,7 +45,7 @@ const HeroDesktop: FC<IProp> = ({
                   <Text color="white" fontSize={24} fontWeight={"thin"}>
                     Whatever it is, the way you tell your story online makes a difference
                   </Text>
-                  <Button mt={12} py={12} px={6} rounded={0} bg="base.yellow" color="base.black" fontSize={24} onClick={() => router.push('/about')}>
+                  <Button mt={{base: 8, md: 12}} py={{base: 8, md: 12}} px={{base: 4, md: 6}} rounded={0} bg="base.yellow" color="base.black" fontSize={{base: 16, md: 24}} onClick={() => router.push('/about')}>
                       Discover the company
                       <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
                   </Button>

@@ -14,13 +14,13 @@ const CFO: FC = () => {
             px={{ base: 4, '2xl': 28 }} 
             py={20}
             >
-                <Grid templateColumns={"repeat(7, 1fr)"} gap={16}>
+                <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16}>
                     <Box as={GridItem} colSpan={3}>
                     <Image src="/images/cfo-avatar.png" alt="philosophy image" w="100%"/>
                     </Box>
                     <Box as={GridItem} colSpan={4}>
                         {/* <Icon as={CgQuote} fontSize={96} /> */}
-                        <Text fontSize={48} color="gray.800" lineHeight={1.2} mt={6}>
+                        <Text fontSize={{base: 32, sm: 40, md: 48}} color="gray.800" lineHeight={1.2} mt={6}>
                             Small business owners don&lsquo;t 
                             always have access to the 
                             same financial experts and 
@@ -31,7 +31,7 @@ const CFO: FC = () => {
                     </Box>
                 </Grid>
             </Box>
-        <Box mt={12} fontWeight={600} color="base.black" fontSize={52} lineHeight={1.2} px={{ base: 4, '2xl': 28 }}>
+        <Box mt={{base: 6, md: 12}} fontWeight={600} color="base.black" fontSize={{base: 32, md: 52}} lineHeight={1.2} px={{ base: 4, '2xl': 28 }}>
             <Text>Business</Text>
             <Text>Professional</Text>
         </Box>

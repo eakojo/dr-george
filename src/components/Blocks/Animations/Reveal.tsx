@@ -1,8 +1,7 @@
 import { FC, ReactNode, useRef, useEffect } from 'react'
-import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
-import { BiArrowBack } from 'react-icons/bi'
+import { Box} from '@chakra-ui/react'
 import { motion, useAnimation, useInView } from 'framer-motion'
-import { initial } from 'lodash'
+import { useMediaQuery } from 'react-responsive';
 
 interface IProp {
     from?: string,
@@ -11,19 +10,19 @@ interface IProp {
 
 const MotionBox = motion(Box)
 
-const setHidden = (from) => {
+const setHidden = (from, len) => {
     if(!from) from = 'bottom'
     let opacity = 0
     let x = 0, y= 0
     switch (from) {
         case 'top':
-            y = -100
+            y = -len
         case 'bottom':
-            y = 100
+            y = len
         case 'left':
-            x = -100
+            x = -len
         case 'right':
-            x = 100
+            x = len
         default:
             break;
     }
@@ -41,9 +40,11 @@ const Reveal: FC<IProp> = ({
     from,
     children
 }) => {
+    
     const ref = useRef(null)
     const isInView = useInView(ref, {once: true}) 
     const mainControls = useAnimation();
+    const isMobile = useMediaQuery({ maxWidth: 750 });
 
 
     useEffect(() => {
@@ -53,12 +54,12 @@ const Reveal: FC<IProp> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isInView])
     
-
+    console.log(from+' ',setHidden(from, isMobile? 40: 100))
     return (
         <Box ref={ref} width={"fit-content"} position={"relative"}>
             <MotionBox 
             variants={{
-                hidden: setHidden(from),
+                hidden: setHidden(from, isMobile? 40: 100),
                 visible: setVisible(from)
             }}
             initial={"hidden"}

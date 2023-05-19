@@ -33,11 +33,10 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
     <Flex
       h={24}
       px={{ base: 8, xl: 2 }}
-      bgColor={'base.600'}
+      bg={'base.yellow'}
       as="nav"
       w="full"
       shadow="sm"
-      pos="fixed"
       zIndex={100}
       align="center"
       justify="space-between"
@@ -46,7 +45,7 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
     >
       <Box>
         <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-          <Image src="/images/logo.png" h={16} alt="company logo" />
+          <Image src="/images/logo-2.png" h={16} alt="company logo" />
         </Link>
       </Box>
 
@@ -68,8 +67,8 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
                 zIndex={10}
                 rounded="md"
                 pos="absolute"
-                bgColor="white"
-                color="base.600"
+                bgColor="black"
+                color="base.yellow"
               >
                 <Box py={2}>
                   {links.map((m, idx) => (
@@ -81,7 +80,6 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
                               <Text fontWeight={700}>{m.name}</Text>
                             </Flex>
                           </NextLink>
-                          <Divider />
                         </Box>
                       ) : (
                         <>
@@ -90,7 +88,6 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
                               <Text fontWeight={700}>{m.name}</Text>
                             </Flex>
                           </NextLink>
-                          <Divider />
                         </>
                       )}
                     </Box>

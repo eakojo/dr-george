@@ -46,8 +46,8 @@ const Strategy: FC = () => {
       borderBottomWidth={16}
       borderColor={"base.yellow"}
     >
-        <Grid templateColumns={"repeat(7, 1fr)"} gap={16}>
-             <Box as={GridItem} colSpan={3}>
+        <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={{base: 8, lg: 16}}>
+             <Box as={GridItem} colSpan={{base: 1, sm:4, lg: 3}}>
                 <Reveal from="left">
                   <Text fontSize={32} color="gray.800" fontWeight={600}>Our Strategy</Text>
                   <MotionText 
@@ -63,13 +63,13 @@ const Strategy: FC = () => {
                       {philosophies[0]}
                   </MotionText>
                   <Text mt={8} color="gray.700" fontSize={24} lineHeight={1.2}>{philosophies[1]}</Text>
-                  <Button mt={12} py={12} px={6} rounded={0} bg="base.yellow" color="base.black" fontSize={24}>
+                  <Button mt={{base: 8, md: 12}} py={{base: 8, md: 12}} px={{base: 4, md: 6}} rounded={0} bg="base.yellow" color="base.black" fontSize={{base: 16, md: 24}}>
                     Discover the company
                     <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
                   </Button>
                 </Reveal>
             </Box>
-            <Box as={GridItem} colSpan={4}>
+            <Box as={GridItem} colSpan={{base: 1, sm:3, lg: 4}}>
               <Image src="/images/crop.png" alt="strategy image"/>
             </Box>
         </Grid>

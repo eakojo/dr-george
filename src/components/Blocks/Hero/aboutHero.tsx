@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
-import { BiArrowBack } from 'react-icons/bi'
+import { Box } from '@chakra-ui/react'
 
 const HeroDesktop: FC= ({}) => {
   return (
@@ -10,8 +9,8 @@ const HeroDesktop: FC= ({}) => {
       alignItems={"center"}
       minH={'100vh'}
       position={"relative"}
+      bgImage={"/images/about-us.png"}
     >
-      <Image pos={"relative"} zIndex={2} src="/images/about-us.png" alt="hero image"  w="100%"/>
     </Box>
   )
 }
