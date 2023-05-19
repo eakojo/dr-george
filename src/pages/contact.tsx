@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import type { NextPage } from 'next'
 import Layout from '@/components/Layout/Index'
 import { Box, Button, Flex, Grid, GridItem, Icon, Image, Input, Text, Textarea } from '@chakra-ui/react'
@@ -5,7 +6,31 @@ import { BiArrowBack } from 'react-icons/bi'
 
 
 const Contact: NextPage = () => {
-  return (
+    const [contact, setContact] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+    })
+
+    async function handleSubmit() {
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'post',
+                body: JSON.stringify(contact)
+            });
+            if (!response.ok) {
+                throw new Error(`Invalid response: ${response.status}`);
+            }
+            alert('Thanks for contacting us, we will get back to you soon!');
+        } catch (err) {
+            console.error(err);
+            alert("We can't submit the form, try again later?");
+        }
+    }
+
+    return (
     <Layout>
         <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(9, 1fr)"}}>
             <Box as={GridItem} colSpan={3} display={{base: 'none', md: 'block'}}>
@@ -28,6 +53,11 @@ const Contact: NextPage = () => {
                             borderLeftWidth={0} 
                             borderBottomWidth={1} 
                             borderColor={"black"} 
+                            value={contact.firstName}
+                            fontSize={20}
+                            onChange={(e) => {
+                                setContact(prev => ({...prev, firstName: (e.target as unknown as {value: string}).value}))
+                            }}
                         />
                     </Box>
                     <Box as={GridItem} mt={8}>
@@ -40,6 +70,11 @@ const Contact: NextPage = () => {
                             borderLeftWidth={0} 
                             borderBottomWidth={1} 
                             borderColor={"black"} 
+                            value={contact.lastName}
+                            fontSize={20}
+                            onChange={(e) => {
+                                setContact(prev => ({...prev, lastName: (e.target as unknown as {value: string}).value}))
+                            }}
                         />
                     </Box>
                 </Grid>
@@ -53,6 +88,11 @@ const Contact: NextPage = () => {
                         borderLeftWidth={0} 
                         borderBottomWidth={1} 
                         borderColor={"black"} 
+                        value={contact.email}
+                        fontSize={20}
+                        onChange={(e) => {
+                            setContact(prev => ({...prev, email: (e.target as unknown as {value: string}).value}))
+                        }}
                     />
                 </Box>
                 <Box mt={8}>
@@ -65,18 +105,33 @@ const Contact: NextPage = () => {
                         borderLeftWidth={0} 
                         borderBottomWidth={1} 
                         borderColor={"black"} 
+                        value={contact.phone}
+                        fontSize={20}
+                        onChange={(e) => {
+                            setContact(prev => ({...prev, phone: (e.target as unknown as {value: string}).value}))
+                        }}
                     />
                 </Box>
                 <Box mt={8}>
                     <Text fontSize={24}>Your Message*</Text>
                     <Textarea w={"full"} h={32} borderBottomWidth={1} 
-                        borderColor={"black"} rounded={0}></Textarea>
+                        onChange={(e) => {
+                            setContact(prev => ({...prev, message: (e.target as unknown as {value: string}).value}))
+                        }}
+                        fontSize={20}
+                        borderColor={"black"} rounded={0}>{contact.message}</Textarea>
                 </Box>
                 <Flex justifyContent={"space-between"} align={"center"}>
-                    <Button mt={12} py={12} px={12} rounded={0} fontWeight={500} bg="black" _hover={{bg: "black"}} color="base.yellow" fontSize={24}>
-                    Send
-                    <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                  </Button>
+                    <Button 
+                            mt={12} py={12} px={12} 
+                            rounded={0} fontWeight={500} 
+                            bg="black" _hover={{bg: "black"}} 
+                            color="base.yellow" fontSize={24}
+                            onClick={() => handleSubmit()}
+                        >
+                        Send
+                        <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
+                    </Button>
 
                   <Text fontSize={20}>*Required fields</Text>
                 </Flex>
