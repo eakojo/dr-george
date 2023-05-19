@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import { BiArrowBack } from 'react-icons/bi'
-
 const ExpectAdvice: FC = () => {
   return (
     <Box
@@ -14,7 +13,7 @@ const ExpectAdvice: FC = () => {
     >
         <Grid templateColumns={"repeat(7, 1fr)"} gap={16} pt={24} >
              <Box as={GridItem} colSpan={4}>
-               <Flex w="100%" h="100%" align={'center'} justify={'center'}>
+               <Flex w="100%" h="100%" align={'center'} justify={'center'} pb={8}>
                 <Box>
                   <Box
                     color="black"
@@ -25,10 +24,12 @@ const ExpectAdvice: FC = () => {
                     <Text>Want Expect</Text>
                     <Text>Advise ?</Text>
                   </Box>
-                  <Button mt={12} py={12} px={12} rounded={0} fontWeight={500} bg="black" _hover={{bg: "black"}} color="base.yellow" fontSize={24}>
-                    Contact Us
-                    <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                  </Button>
+                  <Flex mt={12} justify={"center"} alignItems={"center"} w={72} h={32} >
+                    <Button h={20} py={12} px={12} rounded={0} fontWeight={500} bg="black" _hover={{bg: "black"}} color="base.yellow" fontSize={24} className='heartbeat'>
+                      Contact Us
+                      <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
+                    </Button>
+                  </Flex>
                 </Box>
               </Flex>
             </Box>

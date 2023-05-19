@@ -11,6 +11,8 @@ import MobileNavbar from '@/components/Navbar/Mobile'
 
 import { theme } from '@/theme/theme'
 import { FC } from 'react'
+import "public/effects.css"
+
 
 function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: object}) {
   const router = useRouter()

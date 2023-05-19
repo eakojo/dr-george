@@ -17,13 +17,13 @@ const RenownedService: FC = () => {
               <Box as={GridItem} colSpan={4}>
                 <Reveal from='left'>
                   <Box pt={12}>
-                    <Text fontSize={60} color="base.black" lineHeight={1.1}>Our Renowned Services</Text>
+                    <Text fontSize={52} color="base.black" lineHeight={1.1}>Our Renowned Services</Text>
                     <Text color="base.black" fontSize={24} lineHeight={1.4} mt={6}>
                       we believe that small business owners make the world go round. We fundamentally believe that having visibility into your entire financial picture helps keep the lights on. That’s why one-time tax returns don’t cut it for us.
                     </Text>
                   </Box>
                   <Box pt={24}>
-                    <Text fontSize={60} color="base.black" lineHeight={1.1}>Services To Help You Grow</Text>
+                    <Text fontSize={52} color="base.black" lineHeight={1.1}>Services To Help You Grow</Text>
                     <Text color="base.black" fontSize={24} lineHeight={1.4} mt={6}>
                       we believe that small business owners make the world go round. We fundamentally believe that having visibility into your entire financial picture helps keep the lights on. That’s why one-time tax returns don’t cut it for us.
                     </Text>
