@@ -11,9 +11,9 @@ const GridBox:FC<{image: ReactNode; description: string, title: string, border?:
     const isHovered = useHover(ref);
 
     return <Grid ref={ref} 
-            templateColumns={"repeat(7, 1fr)"} gap={16} py={20}
+            templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16} py={20}
             borderBottomWidth={border || 1}
-            borderColor={'gray.600'} 
+            borderColor={{base: 'gray.300', md: "gray.600"}} 
             color="gray.500"
             px={{ base: 4, '2xl': 28 }} cursor={"pointer"}
             >
@@ -40,7 +40,7 @@ const RenownedService: FC = () => {
       alignItems={"center"}
       position={"relative"}
     >
-        <Box mt={12} fontWeight={500} color="base.black" fontSize={60} lineHeight={1.2}  px={{ base: 4, '2xl': 28 }} >
+        <Box mt={12} fontWeight={500} color="base.black" fontSize={{base: 40, md:60}} lineHeight={1.2}  px={{ base: 4, '2xl': 28 }} >
             <Text>Premium</Text>
             <Text>Services</Text>
         </Box>

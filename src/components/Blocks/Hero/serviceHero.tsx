@@ -14,8 +14,8 @@ const HeroDesktop: FC = () => {
       alignItems={"center"}
       minH={'100vh'}
       position={"relative"}
+      bgImage="/images/services-hero.png"
     >
-      <Image pos={"relative"} zIndex={2} src="/images/services-hero.png" alt="hero image"  w="100%"/>
       <Flex alignItems={"center"} height={"100%"} pos={"absolute"} top={0} left={0} zIndex={3}>
         <Box
           w="100%"
@@ -23,14 +23,14 @@ const HeroDesktop: FC = () => {
           bgPos={'center'}
           px={{ base: 4, '2xl': 28 }} 
         >
-          <Grid templateColumns={'repeat(5, 1fr)'} gap={12} mt={"-30vh"}>
+          <Grid templateColumns={{base:  'repeat(1, 1fr)', sm: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}} gap={12} mt={"-30vh"}>
             <Box as={GridItem} colSpan={3}>
               <Reveal>
                   <Flex w="100%" h="100%" align={'center'} justify={'center'}>
                     <Box>
                       <Box
                         color="black"
-                        fontSize={64}
+                        fontSize={{base: 32,sm: 52, lg: 64}}
                         lineHeight={1.3}
                       >
                         <Text>Guiding Businesses</Text>

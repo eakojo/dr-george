@@ -11,13 +11,13 @@ const ExpectAdvice: FC = () => {
       position={"relative"}
       px={{ base: 4, '2xl': 28 }} 
     >
-        <Grid templateColumns={"repeat(7, 1fr)"} gap={16} pt={24} >
+        <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16} pt={24} >
              <Box as={GridItem} colSpan={4}>
                <Flex w="100%" h="100%" align={'center'} justify={'center'} pb={8}>
                 <Box>
                   <Box
                     color="black"
-                    fontSize={72}
+                    fontSize={{base: 48, md: 72}}
                     fontWeight={600}
                     lineHeight={1.3}
                   >
@@ -33,7 +33,7 @@ const ExpectAdvice: FC = () => {
                 </Box>
               </Flex>
             </Box>
-            <Box as={GridItem} colSpan={3}>
+            <Box as={GridItem} colSpan={3} display={{base: 'none', md: 'block'}}>
               <Image src="/images/Services C.png" alt="strategy image" w={"100%"}/>
             </Box>
         </Grid>

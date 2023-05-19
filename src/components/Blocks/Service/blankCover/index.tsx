@@ -5,15 +5,14 @@ const BlankCover: FC = () => {
   return (
     <Box
         w="full"
+        h={110}
         bgSize="cover"
         alignItems={"center"}
         position={"relative"}
         borderBottomWidth={16}
         borderColor={"base.yellow"}
+        bgImage="/images/service-banner.png"
     >
-        <Box>
-            <Image src="/images/service-banner.png" alt="service banner" width={"100%"}/>
-        </Box>
     </Box>
   )
 }
