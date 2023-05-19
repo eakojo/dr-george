@@ -70,7 +70,7 @@ const Strategy: FC = () => {
                 </Reveal>
             </Box>
             <Box as={GridItem} colSpan={{base: 1, sm:3, lg: 4}}>
-              <Image src="/images/crop.png" alt="strategy image"/>
+              <Image src="/images/crop.png" alt="strategy image" w="100%"/>
             </Box>
         </Grid>
     </Box>
