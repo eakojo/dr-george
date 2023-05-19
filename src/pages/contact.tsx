@@ -7,18 +7,18 @@ import { BiArrowBack } from 'react-icons/bi'
 const Contact: NextPage = () => {
   return (
     <Layout>
-        <Grid templateColumns={"repeat(9, 1fr)"}>
-            <Box as={GridItem} colSpan={3}>
+        <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(9, 1fr)"}}>
+            <Box as={GridItem} colSpan={3} display={{base: 'none', md: 'block'}}>
                 <Image src="/images/contact a.png" alt="strategy image" minW="90%"/>
             </Box>
             <Box as={GridItem} colSpan={6} py={16} px={12}  color="black">
-                <Box fontSize={60} color="black" lineHeight={1.2}>
+                <Box fontSize={{base: 48, md:60}} color="black" lineHeight={1.2}>
                     <Text>You have a project ?</Text>
                     <Text>Contact us</Text>
                 </Box>
 
-                <Grid mt={8} templateColumns={"repeat(2, 1fr)"} gap={24}>
-                    <Box as={GridItem}>
+                <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(2, 1fr)"}} columnGap={24}>
+                    <Box as={GridItem} mt={8}>
                         <Text fontSize={24}>First Name*</Text>
                         <Input 
                             rounded={0}
@@ -30,7 +30,7 @@ const Contact: NextPage = () => {
                             borderColor={"black"} 
                         />
                     </Box>
-                    <Box as={GridItem}>
+                    <Box as={GridItem} mt={8}>
                         <Text fontSize={24}>Last Name*</Text>
                         <Input 
                             rounded={0}
