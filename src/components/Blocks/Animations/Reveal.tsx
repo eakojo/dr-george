@@ -54,7 +54,6 @@ const Reveal: FC<IProp> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isInView])
     
-    console.log(from+' ',setHidden(from, isMobile? 40: 100))
     return (
         <Box ref={ref} width={"fit-content"} position={"relative"}>
             <MotionBox 

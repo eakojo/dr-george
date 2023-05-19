@@ -13,7 +13,7 @@ const RenownedService: FC = () => {
       borderBottomWidth={16}
       borderColor={"base.yellow"}
     >
-        <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16} py={{base: 12, md: 24}}>
+        <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16}>
               <Box as={GridItem} colSpan={4}>
                 <Reveal from='left'>
                   <Box pt={12}>

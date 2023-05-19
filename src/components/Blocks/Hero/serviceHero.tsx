@@ -25,7 +25,7 @@ const HeroDesktop: FC = () => {
         >
           <Grid templateColumns={{base:  'repeat(1, 1fr)', sm: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}} gap={12} mt={"-30vh"}>
             <Box as={GridItem} colSpan={3}>
-              <Reveal>
+              <Box>
                   <Flex w="100%" h="100%" align={'center'} justify={'center'}>
                     <Box>
                       <Box
@@ -44,7 +44,7 @@ const HeroDesktop: FC = () => {
                       </Button>
                     </Box>
                   </Flex>
-              </Reveal>
+              </Box>
             </Box>
           </Grid>
         </Box>

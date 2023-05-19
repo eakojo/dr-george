@@ -33,7 +33,7 @@ const HeroDesktop: FC<IProp> = ({
           <Grid templateColumns={{base:  'repeat(1, 1fr)', sm: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}} gap={12} mt={"-30vh"}>
             <Box as={GridItem} colSpan={2}>
               <Flex w="100%" h="100%" align={'center'} justify={'center'}>
-                <Reveal from="bottom">
+                <Box mt={12}>
                   <Box
                     color="white"
                     fontSize={{base: 48,sm: 52, lg: 80}}
@@ -49,7 +49,7 @@ const HeroDesktop: FC<IProp> = ({
                       Discover the company
                       <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
                   </Button>
-                </Reveal>
+                </Box>
               </Flex>
             </Box>
           </Grid>
