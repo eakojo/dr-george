@@ -20,14 +20,12 @@ const AboutUs: FC = () => {
     >
         <Grid templateColumns={{base: "repeat(1, 1fr)", md: "repeat(6, 1fr)"}} gap={16}>
              <Box as={GridItem} colSpan={3}>
-                <Reveal>
-                    <Text fontSize={{base: 32, md: 60}} color="base.black" lineHeight={1.1}>At WIBEXLY, we care about making a real impact on business owner’s lives</Text>
-                    <Text color="base.black" fontSize={24} lineHeight={1.4} mt={6}>we believe that small business owners make the world go round. We fundamentally believe that having visibility into your entire financial picture helps keep the lights on. That’s why one-time tax returns don’t cut it for us.</Text>
-                    <Button mt={12} py={12} px={6} rounded={0} bg="base.black" _hover={{bg: "base.black"}} color="base.yellow" fontSize={24} fontWeight={500} onClick={() => router.push('/contact')}>
-                      Contact Us
-                      <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                    </Button>
-                </Reveal>
+                <Text fontSize={{base: 32, md: 60}} color="base.black" lineHeight={1.1}>At WIBEXLY, we care about making a real impact on business owner’s lives</Text>
+                <Text color="base.black" fontSize={24} lineHeight={1.4} mt={6}>we believe that small business owners make the world go round. We fundamentally believe that having visibility into your entire financial picture helps keep the lights on. That’s why one-time tax returns don’t cut it for us.</Text>
+                <Button mt={12} py={12} px={6} rounded={0} bg="base.black" _hover={{bg: "base.black"}} color="base.yellow" fontSize={24} fontWeight={500} onClick={() => router.push('/contact')}>
+                  Contact Us
+                  <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
+                </Button>
             </Box>
             <Box as={GridItem}  colSpan={3}>
               <Image src="/images/about-phone.png" alt="strategy image" minW="90%"/>
