@@ -6,7 +6,7 @@ const Footer: FC = () => {
   const router = useRouter()
   return (
     <>
-    <Box pos={"relative"} overflow={'hidden'} bgImage={'/images/footer-bg.png'}>
+    <Box pos={"relative"} overflow={'hidden'} bgImage={'/images/footer-bg.png'} bgSize={'cover'}>
        <Grid 
           w="100%"
           minH={122}
