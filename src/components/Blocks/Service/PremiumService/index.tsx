@@ -1,7 +1,8 @@
 import { FC, useRef, ReactNode, useState } from 'react'
-import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, GridItem, Image, Text, Icon } from '@chakra-ui/react'
 import useHover from '@/hooks/useHover';
-import { FiChevronDown } from 'react-icons/fi';
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import { FiArrowUpCircle } from 'react-icons/fi';
 
 interface  IChildProp {
   image: ReactNode;
@@ -39,32 +40,62 @@ const GridBox:FC<IChildProp> = (
                       <Text fontSize={20} color={isHovered ? 'black' : "gray.500"} lineHeight={1.5}>
                           {description}
                       </Text>
+                      <Button 
+                        h={20} 
+                        py={5} 
+                        px={12} 
+                        mt={4}
+                        rounded={0} 
+                        fontWeight={500} 
+                        bg="black" 
+                        _hover={{bg: "black"}} 
+                        color="base.yellow" 
+                        fontSize={28}
+                        onClick={() => setOpen(!isOpen)}
+                      >
+                        Explore
+                        <Icon ml={2} fontSize={24} as={FaArrowLeftLong} {...{ transform: 'rotate(180deg)' }}/>
+                      </Button>
                   </Box>
               </Grid>
-              <Flex 
-                justify={"center"} 
-                fontSize={48} 
-                color={isHovered ?'blackAlpha.800' : 'blackAlpha.300'}
-                onClick={() => setOpen(!isOpen)}
-                {...{ transform: isOpen ? 'rotate(180deg)' :  'rotate(0deg)'}}
-              >
-                <Icon as={FiChevronDown} />
-              </Flex>
-              {isOpen && details.map(item => (
-                <Grid key={item.title}
-                  templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16} pt={4} pb={8}
-                  color="gray.500"
-                  >
-                  <GridItem as={Flex} colSpan={3} align={"flex-start"} justify={'center'}>
-                      <Text fontWeight={600} fontSize={24} color={"blackAlpha.700"}>{ item.title }</Text>
-                  </GridItem>
-                  <Box as={GridItem} colSpan={4}>
-                      <Text fontSize={20} color={isHovered ? 'black' : "gray.500"} lineHeight={1.5}>
-                          {description}
-                      </Text>
-                  </Box>
-              </Grid>
-              ))}
+              <Box>
+                {isOpen && details.map(item => (
+                  <Grid key={item.title}
+                      templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16} pt={4} pb={8}
+                      color="gray.500"
+                      >
+                      <GridItem as={Flex} colSpan={3} align={"flex-start"} justify={'center'}>
+                      </GridItem>
+                      <Box as={GridItem} colSpan={4}>
+                          <Text fontWeight={600} fontSize={28} color={"blackAlpha.700"}>{ item.title }</Text>
+                          <Text fontSize={20} color={isHovered ? 'black' : "gray.500"} lineHeight={1.5} fontWeight={400}>
+                              {item.description}
+                          </Text>
+                      </Box>
+                  </Grid>
+                ))}
+                {isOpen && <Grid
+                      templateColumns={{base: "repeat(1, 1fr)", md: "repeat(7, 1fr)"}} gap={16} pt={4} pb={8}
+                      color="gray.500"
+                      >
+                      <GridItem as={Flex} colSpan={3} align={"flex-start"} justify={'center'}>
+                      </GridItem>
+                      <Box as={GridItem} colSpan={4}>
+                          <Button 
+                            pb={3}
+                            fontSize={24}
+                            color="gray.400"
+                            borderBottomWidth={2} 
+                            borderColor={'gray.500'} 
+                            rounded={0} bg="white"
+                            onClick={() => setOpen(false)}
+                            >
+                              See less
+                              <Icon as={FiArrowUpCircle}  ml={3} fontSize={36}/>
+                            </Button>
+                      </Box>
+                </Grid>}
+              </Box>
           </Box>
 }
 
@@ -208,12 +239,12 @@ const RenownedService: FC = () => {
         <Box>
             {data.map(item => (
               <GridBox 
-              key={item.image.url}
-              image={ <Image src={item.image.url} alt="" {...item.image.style}/>} 
-              title={item.title}
-              description={item.description}
-              details={item.children}
-            />
+                key={item.image.url}
+                image={ <Image src={item.image.url} alt="" {...item.image.style}/>} 
+                title={item.title}
+                description={item.description}
+                details={item.children}
+              />
             ))}
         </Box>
     </Box>
