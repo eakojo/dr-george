@@ -8,6 +8,7 @@ import '../../public/fonts/fonts.css'
 import Footer from '@/components/Footer'
 import DesktopNavbar from '@/components/Navbar/Desktop'
 import MobileNavbar from '@/components/Navbar/Mobile'
+import { TbPhone, TbMail } from "react-icons/tb";
 
 import { theme } from '@/theme/theme'
 import { FC } from 'react'
@@ -25,9 +26,14 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
 
   const links = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Service', path: '/services' },
+    { name: 'About', path: '/about' },
+    { name: 'Ask Dr George', path: '/services' },
     { name: 'Contact', path: '/contact' }
+  ]
+
+  const topLeft = [
+    { title: 'info@wgarthur.org', icon: TbMail },
+    { title: '+233 245 268 415', icon: TbPhone }
   ]
 
   return (
@@ -50,7 +56,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
           <Box bgColor="white" pos="relative" overflow="hidden">
             {showNav && (
               <>
-                <DesktopNavbar links={links} />
+                <DesktopNavbar links={links} topL={topLeft} />
                 <MobileNavbar links={links} />
               </>
             )}

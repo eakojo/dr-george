@@ -16,45 +16,16 @@ const HeroDesktop: FC<IProp> = ({
   return (
     <Box
       w="full"
-      bgSize="cover"
+      bgSize="contain"
       alignItems={"center"}
-      minH={'100vh'}
-      h={'100vh'}
+      minH={'calc(100vh - 150px)'}
+      h={'calc(100vh - 150px)'}
+      bg="base.blue-dark"
       position={"relative"}
-      bgImage={'/images/hero.png'}
+      overflow={'hidden'}
     >
-      <Flex alignItems={"center"} height={"100%"} pos={"absolute"} top={0} left={0} zIndex={3}>
-        <Box
-          w="100%"
-          bgSize="cover"
-          bgPos={'center'}
-          px={{ base: 4, '2xl': 28 }} 
-        >
-          <Grid templateColumns={{base:  'repeat(1, 1fr)', sm: 'repeat(3, 1fr)', lg: 'repeat(5, 1fr)'}} gap={12} mt={"-30vh"}>
-            <Box as={GridItem} colSpan={2}>
-              <Flex w="100%" h="100%" align={'center'} justify={'center'}>
-                <Box mt={12}>
-                  <Box
-                    color="white"
-                    fontSize={{base: 48,sm: 52, lg: 80}}
-                    lineHeight={1}
-                  >
-                    <Text>Make it</Text>
-                    <Text>stand out</Text>
-                  </Box>
-                  <Text color="white" fontSize={24} fontWeight={"thin"}>
-                    Whatever it is, the way you tell your story online makes a difference
-                  </Text>
-                  <Button mt={{base: 8, md: 12}} py={{base: 8, md: 12}} px={{base: 4, md: 6}} rounded={0} bg="base.yellow" color="base.black" fontSize={{base: 16, md: 24}} onClick={() => router.push('/about')}>
-                      Discover the company
-                      <Icon ml={2} fontSize={24} as={BiArrowBack} {...{ transform: 'rotate(180deg)' }}/>
-                  </Button>
-                </Box>
-              </Flex>
-            </Box>
-          </Grid>
-        </Box>
-      </Flex>
+      <Box pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%"></Box>
+      <Image src="/images/hero-section.jpg" />
     </Box>
   )
 }

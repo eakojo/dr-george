@@ -40,8 +40,10 @@ export const theme = extendTheme({
   },
   colors: {
     base: {
-      yellow: '#FDD900',
-      black: '#231F20'
+      blue: '#00374d',
+      'blue-dark': '#021821',
+      gold: '#ffd700',
+      gray: '#f5f5f5'
     }
   },
   space: {

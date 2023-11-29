@@ -24,8 +24,8 @@ const Layout: FC<ILayout> = ({
 }) => {
   const router = useRouter()
 
-  const main_site_url = 'https://www.wibexly.io/'
-  const main_site_title = 'Wibexly'
+  const main_site_url = 'https://www.gwarthur.io/'
+  const main_site_title = 'G. W. Arthur Ministries  '
 
   let name: string | undefined = router.pathname
     .replace(/\//g, '')

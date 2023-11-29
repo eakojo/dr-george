@@ -83,6 +83,7 @@ const GridBox:FC<IChildProp> = (
                       <Box as={GridItem} colSpan={4}>
                           <Button 
                             pb={3}
+                            pt={3}
                             fontSize={24}
                             color="gray.400"
                             borderBottomWidth={2} 

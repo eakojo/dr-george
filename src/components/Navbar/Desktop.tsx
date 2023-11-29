@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react'
-import { As, Box, Flex, Icon, Image, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Icon, Image, Link, Text } from "@chakra-ui/react"
 import NextLink from 'next/link'
-import { HiArrowNarrowRight } from 'react-icons/hi'
 import { useRouter } from 'next/router'
 
 
@@ -33,7 +32,7 @@ const NavbarLink: React.FC<{ item: ILink }> = ({ item }: { item: ILink }) => {
           _active={{ outline: 'none' }}
           rel="noreferrer"
           pos="relative"
-          color={"base.black"}
+          color={"base.gold"}
           {...{
             fontWeight: router.pathname === item.path ? 600 : 500
           }}
@@ -44,36 +43,65 @@ const NavbarLink: React.FC<{ item: ILink }> = ({ item }: { item: ILink }) => {
   )
 }
 
-const DesktopNavbar: React.FC<{ links: ILink[]}> = ({ links }: { links: ILink[]}) => {
-    return <Box
-        h={24}
-        top={0}
-        w="full"
-        zIndex={10}
-        pos="relative"        p={0}
-        bg="base.yellow"
-        display={{ base: 'none', xl: 'flex' }}
-    >
-        <Flex
-            minW={'100%'}
-            px={{ base: 4, '2xl': 28 }}
-            justifyContent="space-between"
-        >
-            <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-                <Image src="/images/logo-2.png" h={16} alt="wibexly logo" mt={4}/>
-            </Link>
-
-            <Box ml={24}>
-                <Flex align="center" h={'100%'}>
-                    {links.map((item, idx) => (
-                    <Fragment key={item.name}>
-                        <NavbarLink item={item} />
-                        {links.length !== idx + 1 && <Box mx={4} />}
-                    </Fragment>
-                    ))}
-                </Flex>
-            </Box>
+const DesktopNavbar: React.FC<{ links: ILink[], topL:any[]}> = ({ links, topL }: { links: ILink[], topL: any[]}) => {
+    return  (
+      <Box>
+        <Flex bg={'white'} justify={"space-between"} py={4}  px={{ base: 4, '2xl': 28 }}>
+          <Flex color={'base.blue'} gap={4}>
+            {topL.map(item => (
+              <Flex align="center" gap={2} key={item.title}>
+                <Icon as={item.icon} boxSize={6} />
+                <Text>{item.title}</Text>
+              </Flex>
+            ))}
+          </Flex>
+          <Flex  color={'base.blue'} gap={3}>
+            <Box borderBottomWidth={2} borderColor={'base.blue'} px={1}>English</Box>
+            <Text>Portuguese</Text>
+            <Text>French</Text>
+            <Text>Spanish</Text>
+            <Text>Chinese</Text>
+          </Flex>
         </Flex>
-    </Box>
+        <Box
+            h={24}
+            top={0}
+            w="full"
+            zIndex={10}
+            pos="relative"        
+            p={0}
+            bg="base.blue"
+            color={"base.gold"}
+            display={{ base: 'none', xl: 'flex' }}
+            borderBottomWidth={1}
+            borderColor={'base.blue'}
+        >
+            <Flex
+                minW={'100%'}
+                px={{ base: 4, '2xl': 28 }}
+                justifyContent="space-between"
+                align={"center"}
+            >
+                <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
+                  <Box color={'base.gold'}>
+                    <Text fontSize={20}>G. W. Arthur</Text>
+                    <Text fontWeight={700} letterSpacing={5} fontSize={16}>Ministries</Text>
+                  </Box>
+                </Link>
+
+                <Box ml={24}>
+                    <Flex align="center" h={'100%'}>
+                        {links.map((item, idx) => (
+                        <Fragment key={item.name}>
+                            <NavbarLink item={item} />
+                            {links.length !== idx + 1 && <Box mx={4} />}
+                        </Fragment>
+                        ))}
+                    </Flex>
+                </Box>
+            </Flex>
+        </Box>
+      </Box>
+    )
 }
 export default DesktopNavbar
