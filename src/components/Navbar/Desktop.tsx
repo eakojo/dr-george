@@ -46,8 +46,8 @@ const NavbarLink: React.FC<{ item: ILink }> = ({ item }: { item: ILink }) => {
 const DesktopNavbar: React.FC<{ links: ILink[], topL:any[]}> = ({ links, topL }: { links: ILink[], topL: any[]}) => {
     return  (
       <Box>
-        <Flex bg={'white'} justify={"space-between"} py={4}  px={{ base: 4, '2xl': 28 }}>
-          <Flex color={'base.blue'} gap={4}>
+        <Flex bg={'base.blue-dark'} justify={"space-between"} py={4}  px={{ base: 4, '2xl': 28 }}>
+          <Flex color={'white '} gap={4}>
             {topL.map(item => (
               <Flex align="center" gap={2} key={item.title}>
                 <Icon as={item.icon} boxSize={6} />
@@ -55,7 +55,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[]}> = ({ links, topL }:
               </Flex>
             ))}
           </Flex>
-          <Flex  color={'base.blue'} gap={3}>
+          <Flex  color={'white'} gap={3}>
             <Box borderBottomWidth={2} borderColor={'base.blue'} px={1}>English</Box>
             <Text>Portuguese</Text>
             <Text>French</Text>
@@ -70,7 +70,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[]}> = ({ links, topL }:
             zIndex={10}
             pos="relative"        
             p={0}
-            bg="base.blue"
+            bg="white"
             color={"base.gold"}
             display={{ base: 'none', xl: 'flex' }}
             borderBottomWidth={1}
@@ -82,23 +82,27 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[]}> = ({ links, topL }:
                 justifyContent="space-between"
                 align={"center"}
             >
-                <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-                  <Box color={'base.gold'}>
-                    <Text fontSize={20}>G. W. Arthur</Text>
-                    <Text fontWeight={700} letterSpacing={5} fontSize={16}>Ministries</Text>
-                  </Box>
-                </Link>
+              <Box color={'base.gold'} w="250px">
+                <Text fontSize={20}>G. W. Arthur</Text>
+                <Text fontWeight={700} letterSpacing={5} fontSize={16}>Ministries</Text>
+              </Box>
 
-                <Box ml={24}>
-                    <Flex align="center" h={'100%'}>
-                        {links.map((item, idx) => (
-                        <Fragment key={item.name}>
-                            <NavbarLink item={item} />
-                            {links.length !== idx + 1 && <Box mx={4} />}
-                        </Fragment>
-                        ))}
-                    </Flex>
+              <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
+                <Box w={28} top={2} position={"relative"}>
+                  <Image w={"100%"} src='/images/G W Arthur Logo.png' />
                 </Box>
+              </Link>
+
+              <Box>
+                  <Flex align="center" h={'100%'}>
+                      {links.map((item, idx) => (
+                      <Fragment key={item.name}>
+                          <NavbarLink item={item} />
+                          {links.length !== idx + 1 && <Box mx={4} />}
+                      </Fragment>
+                      ))}
+                  </Flex>
+              </Box>
             </Flex>
         </Box>
       </Box>

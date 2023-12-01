@@ -1,7 +1,5 @@
 import { FC } from 'react'
-import { Box, Button, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
-import { BiArrowBack } from 'react-icons/bi'
-import Reveal from '../Animations/Reveal'
+import { Box, Image } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 interface IProp {
@@ -11,8 +9,6 @@ interface IProp {
 const HeroDesktop: FC<IProp> = ({
   bgStyle,
 }) => {
-  const router = useRouter()
-
   return (
     <Box
       w="full"
