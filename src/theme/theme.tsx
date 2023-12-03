@@ -5,7 +5,7 @@ export const theme = extendTheme({
   styles: {
     global: () => ({
       'html, body': {
-        fontFamily: 'Baguede, sans-serif',
+        fontFamily: 'Garamond, Baguede, sans-serif',
         fontWeight: 400
       },
       body: {
@@ -14,7 +14,7 @@ export const theme = extendTheme({
         fontSize: 'md',
         fontWeight: 400,
         bg: 'white',
-        fontFamily: 'Baguede, sans-serif'
+        fontFamily: 'Garamond, Baguede, sans-serif'
       }
     })
   },
@@ -29,8 +29,8 @@ export const theme = extendTheme({
     '5xl': '120em' // 1920
   },
   fonts: {
-    heading: 'Baguede, sans-serif',
-    body: 'Baguede, sans-serif'
+    heading: 'Garamond, Baguede, sans-serif',
+    body: 'Garamond, Baguede, sans-serif'
   },
   fontSizes: {
     xx: '.55rem',

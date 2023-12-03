@@ -14,3 +14,37 @@
   font-display: swap;
   src: url("../fonts/Baguede/Baguede-Italic.ttf") format("opentype");
 }
+
+
+
+@font-face {
+  font-family: "Garamond";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Garamond/EBGaramond-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Garamond";
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url("../fonts/Garamond/EBGaramond-Italic.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Garamond";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Garamond/EBGaramond-SemiBold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Garamond";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Garamond/EBGaramond-Bold.ttf") format("opentype");
+}
