@@ -27,7 +27,7 @@ const HeroDesktop: FC<IProp> = ({
           </Text>
         </Box>
       </Flex>
-      <Image src="/images/hero-section.jpg" />
+      <Image src="/images/hero-section.jpg" alt="hr monarch bg" />
     </Box>
   )
 }
