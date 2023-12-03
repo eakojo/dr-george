@@ -24,8 +24,8 @@ const About: FC<IProp> = ({
             </Box>
 
             <Box as={GridItem} colSpan={3}>
-                <Text fontFamily={"montserrat"} color={"base.blue-dark"} fontSize={24}>Bible Teacher and a Conference Speaker</Text>
-                <Text fontFamily={"montserrat"} color={"base.blue-dark"} fontSize={24}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos magnam delectus nesciunt quis quibusdam, nam autem, laborum, facere aliquid corporis voluptatem officiis id minus ipsum nihil optio est consequuntur? Ut, ipsa incidunt. Voluptate, officia qui? Earum dolorum dignissimos illo animi repellat repudiandae natus reprehenderit eaque quidem veniam, nobis labore ullam?</Text>
+                <Text fontFamily={"montserrat"} color={"base.blue"} fontSize={24}>Bible Teacher and a Conference Speaker</Text>
+                <Text fontFamily={"montserrat"} color={"base.blue"} fontSize={24}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos magnam delectus nesciunt quis quibusdam, nam autem, laborum, facere aliquid corporis voluptatem officiis id minus ipsum nihil optio est consequuntur? Ut, ipsa incidunt. Voluptate, officia qui? Earum dolorum dignissimos illo animi repellat repudiandae natus reprehenderit eaque quidem veniam, nobis labore ullam?</Text>
             </Box>
         </Grid>
     </Box>
