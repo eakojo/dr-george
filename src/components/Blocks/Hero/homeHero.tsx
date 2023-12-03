@@ -23,7 +23,7 @@ const HeroDesktop: FC<IProp> = ({
       <Flex align={"center"} justify={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%">
         <Box w="50%">
           <Text fontSize={48} textAlign={"center"} fontFamily={"Montserrat"} color={"base.gold"}>
-            Restoring the integrity of the word God in it full glory and life in the body of Christ
+            Restoring the integrity of the <br/><Text as="span" fontStyle={'italic'} fontWeight={600}>word of God</Text> in it&apos;s full glory and <br /> life in the body of Christ
           </Text>
         </Box>
       </Flex>
