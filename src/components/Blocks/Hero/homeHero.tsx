@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Box, Flex, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 interface IProp {
@@ -15,19 +15,27 @@ const HeroDesktop: FC<IProp> = ({
       bgSize="contain"
       alignItems={"center"}
       minH={'calc(100vh - 150px)'}
-      h={'calc(100vh - 150px)'}
+      h={'100vh'}
       bg="base.blue-dark"
       position={"relative"}
       overflow={'hidden'}
     >
-      <Flex align={"center"} justify={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%">
-        <Box w="50%">
-          <Text fontSize={48} textAlign={"center"} fontFamily={"Montserrat"} color={"base.gold"}>
-            Restoring the integrity of the <br/><Text as="span" fontStyle={'italic'} fontWeight={600}>word of God</Text> in it&apos;s full glory and <br /> life in the body of Christ
-          </Text>
+      <Flex align={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%">
+        <Grid templateColumns={'repeat(3, 1fr)'} gap={12}  px={{ base: 8, '2xl': 36 }}>
+          <GridItem>
+            <Text fontSize={72} w={110} fontWeight={600} color={"white"} lineHeight={1.2}>Restoring the integrity of <Text as="span" color={"base.gold"}>the Word</Text> Of God</Text>
+            <Text color={"whiteAlpha.700"} fontSize={16} fontFamily={"Montserrat"}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
+          </GridItem>
+          <GridItem>
+          </GridItem>
+          <GridItem>
+          </GridItem>
+        </Grid>
+        <Box pos={"absolute"} bottom={-28} right={5}>
+          <Image w="80%" src="images/Rev Geoege Official s.png" alt="Rev George"/>
         </Box>
       </Flex>
-      <Image src="/images/hero-section.jpg" alt="hr monarch bg" />
+      <Image src="/images/hero image.png" alt="hr monarch bg" />
     </Box>
   )
 }

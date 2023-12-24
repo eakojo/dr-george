@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   ColorProps,
-  Flex,
   Icon,
   Text,
   TypographyProps
@@ -13,7 +12,6 @@ import {
 
 interface IProp {
   title: string
-  textColor: ColorProps['color']
   bgColor: BackgroundProps['bg']
   textSize?: TypographyProps['fontSize']
   icon?: any
@@ -25,7 +23,6 @@ const CustomButton: FC<IProp> = ({
   title,
   bgColor,
   textSize,
-  textColor,
   ...rest
 }) => {
   return (
@@ -36,25 +33,25 @@ const CustomButton: FC<IProp> = ({
       _hover={{ bg: bgColor }}
       _active={{ bg: bgColor }}
       _focus={{ bg: bgColor }}
-      h={rest.h || 16}
+      h={rest.h || 14}
       minW={52}
       rounded={rest.rounded || 'full'}
       mt={rest.mt || 4}
       px={rest.px || 4}
       py={rest.py || 1}
       fontSize={textSize || 24}
-      fontWeight={700}
+      {...rest}
     >
       {icon && (
         <Icon
           mr={2}
-          color={textColor}
+          color={rest.color}
           as={icon}
           fontSize={textSize || 24}
           transform={rest.transform}
         />
       )}
-      <Text color={textColor}>{title}</Text>
+      <Text color={rest.color}>{title}</Text>
     </Box>
   )
 }

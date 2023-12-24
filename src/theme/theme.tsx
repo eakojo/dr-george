@@ -40,7 +40,7 @@ export const theme = extendTheme({
   },
   colors: {
     base: {
-      blue: '#00374d',
+      blue: '#09143C',
       'blue-dark': '#102033',
       gold: '#c99d50',
       gray: '#f5f5f5'

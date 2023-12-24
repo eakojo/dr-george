@@ -9,9 +9,9 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <HeroDesktop />
-      <About />
+      {/* <About />
       <Message />
-      <Ministry />
+      <Ministry /> */}
     </Layout>
   )
 }

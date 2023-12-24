@@ -26,14 +26,15 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
 
   const links = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Ask Dr George', path: '/services' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Biography', path: '/biography' },
+    { name: 'Podcast', path: '/podcast' },
+    { name: 'Contact Us', path: '/contact' },
+    { name: 'Partner with us', path: '/partner', type: 'button' }
   ]
 
   const topLeft = [
-    { title: 'info@wgarthur.org', icon: TbMail },
-    { title: '+233 245 268 415', icon: TbPhone }
+    { title: 'info@gwarthur.org'},
+    { title: '+233 245 268 415' }
   ]
 
   return (
@@ -56,7 +57,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
           <Box bgColor="white" pos="relative" overflow="hidden">
             {showNav && (
               <>
-                <DesktopNavbar links={links} topL={topLeft} />
+                <DesktopNavbar links={links} topL={topLeft} transparent={true} />
                 <MobileNavbar links={links} />
               </>
             )}
