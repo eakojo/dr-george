@@ -1,6 +1,7 @@
 import { FC } from 'react'
-import { Box, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 interface IProp {
   bgStyle?: any
@@ -25,6 +26,20 @@ const HeroDesktop: FC<IProp> = ({
           <GridItem>
             <Text fontSize={72} w={110} fontWeight={600} color={"white"} lineHeight={1.2}>Restoring the integrity of <Text as="span" color={"base.gold"}>the Word</Text> Of God</Text>
             <Text color={"whiteAlpha.700"} fontSize={16} fontFamily={"Montserrat"}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
+            
+            <Flex mt={6} color="white" gap={4} fontSize={20}>
+              <Icon as={FaFacebook} />
+              <Icon as={FaInstagram} />
+              <Icon as={FaTwitter} />
+            </Flex>
+
+            <Flex mt={12} align={"center"} gap={2}>
+              <Box width={2} h={2} rounded={"full"} bg={"whiteAlpha.500"}></Box>
+              <Box width={3} h={3} rounded={"full"} bg={"whiteAlpha.800"}></Box>
+              <Box width={2} h={2} rounded={"full"} bg={"whiteAlpha.500"}></Box>
+              <Box width={2} h={2} rounded={"full"} bg={"whiteAlpha.500"}></Box>
+
+            </Flex>
           </GridItem>
           <GridItem>
           </GridItem>
