@@ -24,7 +24,7 @@ const HeroDesktop: FC<IProp> = ({
       <Flex align={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%">
         <Grid templateColumns={'repeat(7, 1fr)'} gap={12}  px={{ base: 8, '2xl': 36 }}>
           <GridItem colSpan={3}>
-            <Text fontSize={84} fontWeight={600} color={"white"} lineHeight={1.1}>Restoring the integrity of <Text as="span" color={"base.gold"}>the Word</Text> Of God</Text>
+            <Text fontSize={80} fontWeight={600} color={"white"} lineHeight={1.1}>Restoring the integrity of <Text as="span" color={"base.gold"}>the Word</Text> Of God</Text>
             <Text color={"whiteAlpha.700"} fontSize={16} fontFamily={"Montserrat"}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
             
             <Flex mt={6} color="white" gap={4} fontSize={20}>

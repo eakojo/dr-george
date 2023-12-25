@@ -53,7 +53,7 @@ const Ministry: FC = () => {
             </GridItem>
         </Grid>
         <Box pos={"absolute"} bottom={-20} right={0} w={32}>
-            <Image src='images/pattern.png'/>
+            <Image src='images/pattern.png' alt='pattern'/>
         </Box>
     </Box>
   )

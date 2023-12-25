@@ -64,7 +64,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
 
             <Component {...pageProps} />
 
-            {showFooter && <Footer />}
+            {/* {showFooter && <Footer />} */}
           </Box>
         </motion.div>
       </AnimatePresence>
