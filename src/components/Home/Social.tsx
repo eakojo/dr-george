@@ -9,11 +9,24 @@ const Ministry: FC = () => {
         bg={'rgba(238, 167, 44, 0.22)'}
         py={4}
         px={{ base: 4, '2xl': 36 }}
+        pos={"relative"}
     >
         <Grid templateColumns={'repeat(7, 1fr)'} gap={12}>
             <GridItem colSpan={4}>
-                <Box w={"100%"} p={40}>
+                <Box w={"80%"} p={24} position={"relative"}>
                     <Image src="images/phone_mockup.png" alt="phone mockup" />
+                    <Box pos={"absolute"} w={24} top={14} left={0}>
+                        <Image src="images/Facebook.png" alt="twitter float" />
+                    </Box>
+                    <Box pos={"absolute"} w={24} top={36} right={16}>
+                        <Image src="images/Youtube.png" alt="youtube float" />
+                    </Box>
+                    <Box pos={"absolute"} w={24} bottom={36} left={0}>
+                        <Image src="images/Twitter.png" alt="twitter float" />
+                    </Box>
+                    <Box pos={"absolute"} w={32} bottom={12} right={6}>
+                        <Image src="images/Instagram.png" alt="instagram float" />
+                    </Box>
                 </Box>
             </GridItem>
             <GridItem colSpan={3}>
@@ -39,6 +52,9 @@ const Ministry: FC = () => {
                 </Flex>
             </GridItem>
         </Grid>
+        <Box pos={"absolute"} bottom={-20} right={0} w={32}>
+            <Image src='images/pattern.png'/>
+        </Box>
     </Box>
   )
 }
