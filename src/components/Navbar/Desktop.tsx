@@ -69,7 +69,7 @@ const NavbarLink: React.FC<{ item: ILink, transparent: boolean }> = ({ item, tra
 const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean}> = ({ links, topL, transparent }: { links: ILink[], topL: any[], transparent: boolean}) => {
     return  (
       <Box>
-        <Flex fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 4, '2xl': 28 }}>
+        <Flex fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 8, '2xl': 36 }}>
           <Flex color={'white '} gap={8}>
             <Flex align="center" gap={2} key={topL[0].title}>
               <Text textDecoration={"underline"}>{topL[0].title}</Text>
@@ -108,7 +108,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
         >
             <Flex
                 minW={'100%'}
-                px={{ base: 4, '2xl': 28 }}
+                px={{ base: 8, '2xl': 36 }}
                 justifyContent="space-between"
                 align={"center"}
             >
