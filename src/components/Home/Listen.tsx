@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Box, Flex, Grid, GridItem, Icon, Image, Input, Text, Textarea } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
 
 
@@ -12,7 +12,7 @@ const Listen: FC = () => {
         pos={"relative"}
     >
       <Grid templateColumns={'repeat(2, 1fr)'}>
-        <GridItem px={20} py={4}>
+        <GridItem pr={36} py={4}>
           <Text color={"white"} fontWeight={"bold"} fontSize={40} lineHeight={1.2}>Listen to Dr George on all platforms now</Text>
           <Flex align={"center"} gap={12} mt={12}>
             <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} />
