@@ -13,9 +13,9 @@ const About: FC<IProp> = ({
   bgStyle,
 }) => {
   return (
-    <Box py={20} px={{ base: 4, '2xl': 36 }} pos="relative">
-        <Grid templateColumns={'repeat(2, 1fr)'} gap={12}>
-            <GridItem px={20} py={20}>
+    <Box py={{base: 12, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
+        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}} gap={12}>
+            <GridItem px={{base: 4, md: 20}} py={20}>
                 <Text color={"base.blue"} fontWeight={600} fontSize={28}>I am Dr George Wilfred Arthur</Text>
                 <Flex gap={3} mt={3}>
                     <Icon fontSize={20} as={FaFacebook} color={"base.blue"}/>
@@ -29,7 +29,7 @@ const About: FC<IProp> = ({
                     <Text fontFamily={"Montserrat"} mb={8}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
                 </Box>
             </GridItem>
-            <GridItem px={20} py={20}>
+            <GridItem px={{base: 4, md: 20}} py={{base: 4, md: 20}}>
                 <Box>
                     <Image src="images/dr george 2.png" alt="home" />
                 </Box>
@@ -62,7 +62,7 @@ const About: FC<IProp> = ({
                 </Box>
             </GridItem>
         </Grid>
-        <Box pos={"absolute"} w={36} top={12} right={32}>
+        <Box pos={"absolute"} w={36} bottom={12} right={32} >
             <Image src="images/pattern-4.png" alt="image" />
         </Box>
     </Box>

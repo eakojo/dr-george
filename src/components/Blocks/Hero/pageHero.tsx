@@ -21,10 +21,12 @@ const PageHero: FC<IProp> = ({
       position={"relative"}
       overflow={'hidden'}
     >
-      <Flex align={"center"} justify={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%">
-        <Text color={"white"} textAlign={"center"} fontSize={64} fontWeight={600} letterSpacing={1.3}>{title}</Text>
+      <Flex align={"center"} justify={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%" zIndex={3}>
+        <Text color={"white"} textAlign={"center"} fontSize={{base: 36, md: 64}} fontWeight={600} letterSpacing={1.3}>{title}</Text>
       </Flex>
-      <Image src="/images/hero image 2.png" alt="bg" />
+      <Box pos={"absolute"} w="100%" h="100%" bgImage={"/images/hero image 2.png"} bgPos={"center"}>
+
+      </Box>
     </Box>
   )
 }
