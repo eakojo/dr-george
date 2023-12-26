@@ -63,7 +63,7 @@ const About: FC<IProp> = ({
             </GridItem>
         </Grid>
         <Box pos={"absolute"} w={36} top={12} right={32}>
-            <Image src="images/pattern-4.png" />
+            <Image src="images/pattern-4.png" alt="image" />
         </Box>
     </Box>
   )

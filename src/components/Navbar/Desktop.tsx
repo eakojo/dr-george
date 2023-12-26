@@ -20,21 +20,26 @@ const NavbarLink: React.FC<{ item: ILink, transparent: boolean }> = ({ item, tra
   return (
     <>
     {item.type && item.type === 'button' ? 
-      <CustomButton 
-        bgColor={transparent? "transparent" : "base.blue"} 
-        borderWidth={transparent? 1: 0}
-        title={item.name} 
-        textColor={"white"} 
-        textSize={16} 
-        mt={0} 
-        rounded="none" 
-        minW={"auto"} 
-        px={8} 
-        _hover={{
-          bgColor: transparent? "white" : "base.blue",
-          textColor:  transparent? "base.blue" : "white"
-        }}
-      />
+      <Link 
+          as={NextLink}
+          href={item.path} passHref
+        >
+        <CustomButton 
+          bgColor={transparent? "transparent" : "base.blue"} 
+          borderWidth={transparent? 1: 0}
+          title={item.name} 
+          textColor={"white"} 
+          textSize={16} 
+          mt={0} 
+          rounded="none" 
+          minW={"auto"} 
+          px={8} 
+          _hover={{
+            bgColor: transparent? "white" : "base.blue",
+            textColor:  transparent? "base.blue" : "white"
+          }}
+        />
+      </Link>
       :
       <Box
       display="flex"
