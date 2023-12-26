@@ -15,7 +15,7 @@ const About: FC<IProp> = ({
       <GridItem px={{base: 12, md: 20}} py={20} bg={"black"}>
         <Text color={"white"} fontWeight={"bold"} fontSize={24}>Subscribe to monthly newsletter</Text>
         <Text fontFamily={'Montserrat'} mt={4} color={"whiteAlpha.500"} fontSize={{base: 12, sm: 14, md: 16}}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
-        <Flex mt={4} gap={3} fontFamily={"Montserrat"} direction={"column"}>
+        <Flex mt={4} gap={3} fontFamily={"Montserrat"} direction={{base: "column", md: "row"}}>
           <Input h={14} fontSize={14} bg="white" rounded={"none"} placeholder='Name'/>
           <Input h={14} fontSize={14} bg="white" rounded={"none"} placeholder='Email'/>
           <CustomButton title='Submit' bgColor={"base.gold"} rounded="none" mt={{base: 2, md: 0}} fontSize={16} color="black" fontFamily="Garamond" />
