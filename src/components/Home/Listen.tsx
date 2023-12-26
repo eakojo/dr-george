@@ -11,11 +11,11 @@ const Listen: FC = () => {
         px={{ base: 4, '2xl': 36 }}
         pos={"relative"}
     >
-      <Grid templateColumns={'repeat(2, 1fr)'}>
-        <GridItem pr={36} py={4}>
-          <Text color={"white"} fontWeight={"bold"} fontSize={40} lineHeight={1.2}>Listen to Dr George on all platforms now</Text>
-          <Flex align={"center"} gap={12} mt={12}>
-            <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} />
+      <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}>
+        <GridItem pr={{base: 0, md: 36}} py={4}>
+          <Text color={"white"} fontWeight={"bold"} textAlign={"center"} fontSize={{base: 24, md: 40}} lineHeight={1.2}>Listen to Dr George on all platforms now</Text>
+          <Flex align={"center"} gap={12} mt={12} direction={{base: "column", md: "row"}}>
+            <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "none", md: "block"}}/>
             <Flex gap={8} align={"center"}>
               <Box w={12}>
                 <Image src="images/image 5.png" alt="spotify" />
@@ -30,9 +30,10 @@ const Listen: FC = () => {
                 <Image src="images/image 8.png" alt="youtube" />
               </Box>
             </Flex>
+            <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "block", md: "none"}}/>
           </Flex>
         </GridItem>
-        <GridItem px={20} py={4} bg={"base.blue"}>
+        <GridItem px={20} py={4} bg={"base.blue"} display={{base: "none", md: "block"}}>
           <Box pos={"relative"}>
             <Image src="images/Rev G 1.png"  pos={"absolute"} top={-64} right={-20}/>
           </Box>
