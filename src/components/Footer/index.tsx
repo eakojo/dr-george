@@ -12,7 +12,7 @@ const Footer: FC = () => {
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4} textAlign={{base: "center", md: "left"}}>About Dr. Arthur</Text>
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} textAlign={{base: "center", md: "left"}} fontFamily={"montserrat"}>George Wilfred Arthur Ministries (G. W. Arthur ministries) is an effective ministry with the vision of Restoring the integrity of the word God in its full glory and life in the body of Christ. </Text>
       </GridItem>
-      <GridItem colSpan={{base: 3, md: 2}}>
+      <GridItem colSpan={{base: 3, md: 1}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>Links</Text>
 
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Home</Text>
@@ -20,7 +20,7 @@ const Footer: FC = () => {
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Contact</Text>
 
       </GridItem>
-      <GridItem colSpan={{base: 3, md: 2}}>
+      <GridItem colSpan={{base: 3, md: 1}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>External Links</Text>
 
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Youtube</Text>
@@ -55,7 +55,7 @@ const Footer: FC = () => {
     </Grid>
     <Flex justify={{base: "center", md: "space-between"}} pos={"relative"} overflow={'hidden'} bgSize={'cover'} bg="black" py={4}  px={{ base: 4, '2xl': 36 }}>
       <Text color={"white"} fontSize={{base: 10, md: 14}} fontFamily={"montserrat"}>Copyright &copy; G W Arthur Minitries - 2023</Text>
-      <Flex gap={4} display={{base: "none", md: 'block'}}>
+      <Flex gap={4} display={{base: "none", md: 'flex'}}>
         <Icon as={FaFacebook} color={"white"}/>
         <Icon as={FaInstagram} color={"white"} />
         <Icon as={FaTwitter} color={"white"} />
