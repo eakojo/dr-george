@@ -33,7 +33,7 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box display={{ base: 'flex', xl: 'none' }} flexDirection="column">
+    <Box display={{ base: 'flex', md: 'none' }} flexDirection="column">
        <Flex fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 8, '2xl': 36 }} color={"white"}>
           <Box borderBottomWidth={2} borderColor={'base.blue'} px={1}>G. W. Arthur Ministries</Box>
 
