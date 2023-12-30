@@ -14,8 +14,8 @@ const About: FC<IProp> = ({
 }) => {
   return (
     <Box py={{base: 12, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
-        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}} gap={12}>
-            <GridItem px={{base: 4, md: 20}} py={20}>
+        <Grid templateColumns={{base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)'}} gap={{base: 4, xl: 12}}>
+            <GridItem px={{base: 4, lg: 20}} py={20}>
                 <Text color={"base.blue"} fontWeight={600} fontSize={28}>I am Dr George Wilfred Arthur</Text>
                 <Flex gap={3} mt={3}>
                     <Icon fontSize={20} as={FaFacebook} color={"base.blue"}/>

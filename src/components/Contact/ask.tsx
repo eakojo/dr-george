@@ -19,7 +19,7 @@ const Ask: FC<IProp> = ({
         px={{ base: 4, '2xl': 36 }}
         pos={"relative"}
     >
-       <Text color={"base.blue"} fontWeight={"bold"} fontSize={{base: 24, md: 40}} textAlign={"center"}>Get the latest Video Message</Text>
+       <Text color={"base.blue"} fontWeight={"bold"} fontSize={{base: 24, md: 40}} textAlign={"center"}>Ask Dr. George</Text>
        <Flex direction={"column"} justify={'center'} align={"center"}>
             <Text fontSize={{base: 12, md: 16}} textAlign={"center"} w={{base: 'auto', md: 124}} mt={{base: 4, md: 12}} color={"base.blue"} fontFamily={"Montserrat"}>
                 Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.

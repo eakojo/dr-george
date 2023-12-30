@@ -35,7 +35,7 @@ const Home: NextPage = () => {
                         <Input fontSize={{base: 12, md: 16}} fontFamily={'Montserrat'} placeholder="What's your email?" rounded={'none'}  h={14}/>
                         <Input fontSize={{base: 12, md: 16}} fontFamily={'Montserrat'} placeholder="What's your mobile number?" rounded={'none'}  h={14}/>
                         <Textarea fontSize={{base: 12, md: 16}} fontFamily={'Montserrat'} placeholder='Have any additional message?' rounded={'none'} h={28}></Textarea>
-                        <CustomButton w={36} mx="auto" bgColor={'base.blue'} color="white" title='Ask now' textSize={16} rounded="none" fontFamily="Montserrat"/>
+                        <CustomButton w={36} mx="auto" bgColor={'base.blue'} color="white" title='Partner now' textSize={16} rounded="none" fontFamily="Montserrat"/>
                     </Flex>
                 </GridItem>
             </Grid>

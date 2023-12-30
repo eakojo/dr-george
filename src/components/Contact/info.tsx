@@ -14,18 +14,14 @@ const Info: FC<IProp> = ({
 }) => {
   return (
     <Box py={{base: 2, md: 14}} px={{ base: 4, '2xl': 36 }} pos="relative">
-        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} gap={4} color={"base.blue"}>
+        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}} gap={4} color={"base.blue"}>
             <GridItem px={{base: 5, md: 20}} py={{base: 8, md: 20}}>
                 <Text mb={4} fontSize={24} fontWeight={600} color={"base.blue"} textAlign={"center"}>Call Me</Text>
-                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>+233 59 909 874 / +233 20 983 9038</Text>
+                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>024 565 9875/+233 557 669 447</Text>
             </GridItem>
             <GridItem  px={{base: 5, md: 20}} py={{base: 8, md: 20}}>
                 <Text mb={4} textAlign={"center"} fontSize={24} fontWeight={600} color={"base.blue"}>Email Me</Text>
-                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>engage@gwarthur.com /  info@gwarthur.com</Text>
-            </GridItem>
-            <GridItem  px={{base: 5, md: 20}} py={{base: 8, md: 20}}>
-                <Text mb={4} textAlign={"center"} fontSize={24} fontWeight={600} color={"base.blue"}>Find Me</Text>
-                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>Arch Square. 45 Lumumbu Ave, Cantonments, Accra, Ghana</Text>
+                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>wordlaundry@yahoo.com</Text>
             </GridItem>
         </Grid>
     </Box>
