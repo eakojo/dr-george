@@ -1,10 +1,11 @@
 import { FC, useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { HiArrowLongRight } from 'react-icons/hi2'
 import { createClient } from '@/helpers/prismicClient'
 import { AllDocumentTypes } from '../../../../prismicio-types'
 import { NextPage } from 'next'
+import Link from 'next/link'
 
 
 const HeroDesktop: NextPage = () => {
@@ -46,9 +47,15 @@ const HeroDesktop: NextPage = () => {
             
             <Flex justify={{base: "center", lg: "flex-start"}}>
               <Flex mt={6} color="white" gap={4} fontSize={20}>
-                <Icon as={FaFacebook} />
-                <Icon as={FaInstagram} />
-                <Icon as={FaTwitter} />
+                <Link href={'https://www.instagram.com/drgwarthur'} target='_'>
+                    <Icon fontSize={20} as={FaInstagram} color={"white"} />
+                </Link>
+                <Link href={'https://www.facebook.com/DrGWArthur?mibextid=LQQJ4d'} target='_'>
+                    <Icon fontSize={20} as={FaFacebook} color={"white"}/>
+                </Link>
+                <Link href={'https://youtube.com/@DrGWArthur'} target='_'>
+                    <Icon fontSize={20} as={FaYoutube} color={"white"} />
+                </Link>
               </Flex>
             </Flex>
 

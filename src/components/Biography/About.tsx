@@ -1,26 +1,26 @@
 import { FC } from 'react'
-import { Box, Flex, Grid, GridItem, Icon, Image, Input, Text } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
-import CustomButton from '../Atom/Button'
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
+import Link from 'next/link'
 
-interface IProp {
-  bgStyle?: any
-}
-
-const About: FC<IProp> = ({
-  bgStyle,
-}) => {
+const About: FC = () => {
   return (
     <Box py={{base: 12, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
         <Grid templateColumns={{base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)'}} gap={{base: 4, xl: 12}}>
             <GridItem px={{base: 4, lg: 0}} py={20}>
                 <Text color={"base.blue"} fontWeight={600} fontSize={28}>Meet Rev. George Wilfred Arthur</Text>
+                <Text color={"base.blue"} fontFamily={"Montserrat"} fontSize={14}>Teacher, Apostle, Evangelist, & Speaker</Text>
                 <Flex gap={3} mt={3}>
-                    <Icon fontSize={20} as={FaFacebook} color={"base.blue"}/>
-                    <Icon fontSize={20} as={FaInstagram} color={"base.blue"} />
-                    <Icon fontSize={20} as={FaTwitter} color={"base.blue"} />
+                    <Link href={'https://www.instagram.com/drgwarthur'} target='_'>
+                        <Icon fontSize={20} as={FaInstagram} color={"base.blue"} />
+                    </Link>
+                    <Link href={'https://www.facebook.com/DrGWArthur?mibextid=LQQJ4d'} target='_'>
+                        <Icon fontSize={20} as={FaFacebook} color={"base.blue"}/>
+                    </Link>
+                    <Link href={'https://youtube.com/@DrGWArthur'} target='_'>
+                        <Icon fontSize={20} as={FaYoutube} color={"base.blue"} />
+                    </Link>
                 </Flex>
 
                 <Box mt={12}>

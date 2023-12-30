@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
+import Link from 'next/link'
 
 
 const Ministry: FC = () => {
@@ -36,18 +37,24 @@ const Ministry: FC = () => {
                         Follow Rev. George on Facebook, Instagram, and Twitter. Together, we’ll build a community for growing into the consciousness of Christ and his finished work.
                     </Text>
                     <Flex justify={{base: "center", lg: 'flex-start'}}>
-                        <Flex mt={6} gap={{base: 4, md: 10}}>
-                            <Box boxSize={{base: 8, md: 12}}>
-                                <Image src={'images/fb.png'} alt='social button' />
+                        <Flex mt={6} gap={{base: 4, md: 8}}>
+                            <Box boxSize={{base: 8, md: 10}}>
+                                <Link href={'https://www.facebook.com/DrGWArthur?mibextid=LQQJ4d'}>
+                                    <Image src={'images/fb.png'} alt='social button' />
+                                </Link>
                             </Box>
-                            <Box boxSize={{base: 8, md: 12}}>
-                                <Image src={'images/ig.png'} alt='social button'/>
+                            <Box boxSize={{base: 8, md: 10}}>
+                                <Link href={'https://www.instagram.com/drgwarthur'}>
+                                    <Image src={'images/ig.png'} alt='social button'/>
+                                </Link>
                             </Box>
-                            <Box boxSize={{base: 8, md: 12}}>
+                            {/* <Box boxSize={{base: 8, md: 10}}>
                                 <Image src={'images/tw.png'}  alt='social button'/>
-                            </Box>
-                            <Box boxSize={{base: 8, md: 12}}>
-                                <Image src={'images/yt.png'}  alt='social button'/>
+                            </Box> */}
+                            <Box boxSize={{base: 8, md: 10}}>
+                                <Link href={'https://youtube.com/@DrGWArthur'}>
+                                    <Image src={'images/yt.png'}  alt='social button'/>
+                                </Link>
                             </Box>
                         </Flex>
                     </Flex>
