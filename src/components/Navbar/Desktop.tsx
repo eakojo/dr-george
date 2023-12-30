@@ -77,7 +77,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
         <Flex w="100%" fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 8, '2xl': 36 }}>
           <Flex color={'white '} gap={8}>
             <Flex align="center" gap={2} key={topL[0].title}>
-              <Text textDecoration={"underline"}>{topL[0].title}</Text>
+              <Text>{topL[0].title}</Text>
             </Flex>
             <Box>|</Box>
             <Flex align="center" gap={2} key={topL[1].title}>
