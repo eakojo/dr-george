@@ -11,7 +11,7 @@ const About: FC<IProp> = ({
   bgStyle,
 }) => {
   return (
-    <Grid templateColumns={{base: 'repeat(1, 1fr)' , md:'repeat(2, 1fr)'}}>
+    <Grid templateColumns={{base: 'repeat(1, 1fr)' ,  lg:'repeat(2, 1fr)'}}>
       <GridItem px={{base: 12, md: 20}} py={20} bg={"black"}>
         <Text color={"white"} fontWeight={"bold"} fontSize={24}>Subscribe to monthly newsletter</Text>
         <Text fontFamily={'Montserrat'} mt={4} color={"whiteAlpha.500"} fontSize={{base: 12, sm: 14, md: 16}}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>

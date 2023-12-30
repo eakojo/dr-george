@@ -28,11 +28,11 @@ const Ministry: FC = () => {
                 <Icon as={HiArrowLongLeft} color="white" fontSize={{base: 24, md: 40}}/>
             </Flex>
             <Flex gap={{base: 2, md: 8}} align={"center"}>
-                <Box w={{base: 36, md: 64}} h={{base: 36, md: 64}} bg="gray.500" flex={1}></Box>
-                <Box w={{base: 48, md: 80}} h={{base: 48, md: 80}} bg="gray.500"></Box>
-                <Box  w={{base: 36, md: 64}} h={{base: 36, md: 64}} bg="gray.500" flex={1}></Box>
-                <Box w={64} h={64} bg="gray.500" flex={1} display={{base: "none", md: "block"}}></Box>
-                <Box w={64} h={64} bg="gray.500" flex={1} display={{base: "none", md: "block"}}></Box>
+                <Box w={{base: 36, md: 52, lg: 64}} h={{base: 36, md: 52, lg: 64}} bg="gray.500" flex={1}></Box>
+                <Box w={{base: 48, md: 64, lg: 80}} h={{base: 48, md: 64, lg: 80}} bg="gray.500"></Box>
+                <Box  w={{base: 36,  md: 52, lg: 64}} h={{base: 36,  md: 52, lg: 64}} bg="gray.500" flex={1}></Box>
+                <Box w={64} h={64} bg="gray.500" flex={1} display={{base: "none", xl: "block"}}></Box>
+                <Box w={64} h={64} bg="gray.500" flex={1} display={{base: "none", lg: "block"}}></Box>
             </Flex>
             <Flex 
                 pos={"absolute"} 
