@@ -13,8 +13,8 @@ const About: FC<IProp> = ({
   return (
     <Grid templateColumns={{base: 'repeat(1, 1fr)' ,  lg:'repeat(2, 1fr)'}}>
       <GridItem px={{base: 12, md: 20}} py={20} bg={"black"}>
-        <Text color={"white"} fontWeight={"bold"} fontSize={24}>Subscribe to monthly newsletter</Text>
-        <Text fontFamily={'Montserrat'} mt={4} color={"whiteAlpha.500"} fontSize={{base: 12, sm: 14, md: 16}}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
+        <Text color={"white"} fontWeight={"bold"} fontSize={24}>Want to follow the ministry of Dr. George closely?</Text>
+        <Text fontFamily={'Montserrat'} mt={4} color={"whiteAlpha.500"} fontSize={{base: 12, sm: 14, md: 16}}>Subscribe to the newsletter for messages, audio, videos, and updates on his ministry right in your inbox. </Text>
         <Flex mt={4} gap={3} fontFamily={"Montserrat"} direction={{base: "column", md: "row"}}>
           <Input h={14} fontSize={14} bg="white" rounded={"none"} placeholder='Name'/>
           <Input h={14} fontSize={14} bg="white" rounded={"none"} placeholder='Email'/>
@@ -22,8 +22,8 @@ const About: FC<IProp> = ({
         </Flex>
       </GridItem>
       <GridItem px={{base: 12, md: 20}} py={20} bg={"base.blue"}>
-        <Text color={"white"} fontWeight={"bold"} fontSize={24}>Get the latest truth trend</Text>
-        <Text fontFamily={'Montserrat'} mt={4} color={"whiteAlpha.500"} fontSize={{base: 12, sm: 14, md: 16}}>Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.</Text>
+        <Text color={"white"} fontWeight={"bold"} fontSize={24}>See What God Has Been Up to in the Ministry</Text>
+        <Text fontFamily={'Montserrat'} mt={4} color={"whiteAlpha.500"} fontSize={{base: 12, sm: 14, md: 16}}>Discover stories of transformation, powerful testimonies, and awe-inspiring events that highlight the remarkable work of God. Get ready to be inspired by the incredible journey we&apos;re on!</Text>
         <Flex mt={4} gap={3} fontFamily={"Montserrat"}>
           <CustomButton title='Read more' bgColor={"white"} rounded="none" mt={0} fontSize={16} color="black" fontFamily="Garamond" />
         </Flex>

@@ -10,7 +10,6 @@ import Listen from '@/components/Home/Listen'
 
 
 const Home: NextPage = () => {
-  console.log('test')
   return (
     <Layout>
       <HeroDesktop />
