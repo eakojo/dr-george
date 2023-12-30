@@ -13,7 +13,7 @@ const Ministry: FC = () => {
         <Text color={"white"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>Listen to the latest Audio Messages</Text>
         <Flex direction={"column"} justify={'center'} align={"center"}>
             <Text textAlign={"center"} w={{base: "auto", md: 124}}  fontSize={{base: 12, sm: 14, md: 16}} mt={12} color={"white"} fontFamily={"Montserrat"}>
-                Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.
+                Get ready to hit play on audio messages from Rev. George Wilfred Arthur. It&apos;s not just a listen; it&apos;s a spiritual experience. Join the uplifting journey, and let the power of God&apos;s words change your soul.
             </Text>
         </Flex>
 
@@ -46,7 +46,7 @@ const Ministry: FC = () => {
             </Flex>
         </Box>
         <Flex justify={"center"}>
-            <CustomButton mt={{base: 8, md: 24}} w={48} title='View More' bgColor={"white"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+            <CustomButton mt={{base: 8, md: 24}} w={48} title='Start Listening' bgColor={"white"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
         </Flex>
     </Box>
   )

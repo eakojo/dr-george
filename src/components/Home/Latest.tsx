@@ -11,12 +11,12 @@ const Message: FC = () => {
         py={20}
         px={{ base: 4, '2xl': 36 }}
     >
-        <Text color={"base.blue"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>Get the latest Video Message</Text>
+        <Text color={"base.blue"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>Watch the latest Video Messages</Text>
         <Flex direction={"column"} justify={'center'} align={"center"}>
             <Text fontSize={{base: 12, sm: 14, md: 16}} textAlign={"center"} w={{base: "auto", md: 124}} mt={{base: 5, md: 12}} color={"base.blue"} fontFamily={"Montserrat"}>
-                Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.
+                Watch videos that will help you become more like Christ in every way. These messages are guides, showing you how to grow spiritually and attain the full measure and stature of Christ.
             </Text>
-            <CustomButton mt={8} w={48} title='View More' bgColor={"base.gold"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+            <CustomButton mt={8} w={48} title='Start listening' bgColor={"base.gold"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
         </Flex>
 
         <Flex justify={"center"} pos={"relative"}>
