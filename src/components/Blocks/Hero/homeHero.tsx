@@ -59,14 +59,14 @@ const HeroDesktop: NextPage = () => {
               </Flex>
             </Flex>
 
-            <Flex mt={24} justify={{base: "center", lg: "flex-start"}}>
+            {/* <Flex mt={24} justify={{base: "center", lg: "flex-start"}}>
               <Flex align={"center"} gap={2}>
                 <Box width={2} h={2} rounded={"full"} bg={"whiteAlpha.500"}></Box>
                 <Box width={3} h={3} rounded={"full"} bg={"whiteAlpha.800"}></Box>
                 <Box width={2} h={2} rounded={"full"} bg={"whiteAlpha.500"}></Box>
                 <Box width={2} h={2} rounded={"full"} bg={"whiteAlpha.500"}></Box>
               </Flex>
-            </Flex>
+            </Flex> */}
           </GridItem>
 
           <GridItem colSpan={{base: 0,  lg: 2, xl: 3}} display={{base: 'none', xl: 'block'}}>
@@ -74,7 +74,7 @@ const HeroDesktop: NextPage = () => {
 
           <GridItem colSpan={{base: 0, lg: 1}} display={{base: 'none', lg: 'block'}}>
             <Flex w="100%" justify={"flex-end"} align={"center"} h="50vh">
-              <Icon as={HiArrowLongRight} color="gray.300" fontSize={48}/>
+              {/* <Icon as={HiArrowLongRight} color="gray.300" fontSize={48}/> */}
             </Flex>
           </GridItem>
         </Grid>

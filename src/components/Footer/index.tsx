@@ -16,9 +16,15 @@ const Footer: FC = () => {
       <GridItem colSpan={{base: 3, md: 1}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>Links</Text>
 
-        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Home</Text>
-        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Biography</Text>
-        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Contact</Text>
+        <Link href="https://dr-george-gigman2.vercel.app/">
+          <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Home</Text>
+        </Link>
+        <Link href="https://dr-george-gigman2.vercel.app/biography">
+          <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Biography</Text>
+        </Link>
+        <Link href="https://dr-george-gigman2.vercel.app/contact">
+          <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Contact</Text>
+        </Link>
 
       </GridItem>
       <GridItem colSpan={{base: 3, md: 1}}>
