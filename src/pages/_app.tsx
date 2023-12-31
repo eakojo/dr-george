@@ -13,6 +13,7 @@ import { TbPhone, TbMail } from "react-icons/tb";
 import { theme } from '@/theme/theme'
 import { FC } from 'react'
 import "public/effects.css"
+import "public/about.css"
 
 
 function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: object}) {

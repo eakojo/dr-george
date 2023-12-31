@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react'
-import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Icon, Image, Skeleton, Text } from '@chakra-ui/react'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
 import Link from 'next/link'
@@ -8,6 +8,7 @@ import { createClient } from '@/helpers/prismicClient'
 const About: FC = () => {
     const client = createClient({})
     const [data, setData] = useState([])
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
     const currentIndex = 4
 
     useEffect(() => {
@@ -28,19 +29,24 @@ const About: FC = () => {
   }, []);
 
   const handlePrevious = () => {
+    setIsAnimating(true);
     const imageArr = [...data]
     imageArr.push(imageArr.shift());
     setData(imageArr)
   }
 
   const handleNext = () => {
+    setIsAnimating(true);
     const imageArr = [...data]
     let lastElement = imageArr.pop(); // Remove the last element
     imageArr.unshift(lastElement); 
     setData(imageArr)
   }
 
-  console.log(data)
+  const handleLoaded = () => {
+    setIsAnimating(false)
+  }
+
   return (
     <Box py={{base: 12, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
         <Grid templateColumns={{base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)'}} gap={{base: 4, xl: 12}}>
@@ -70,9 +76,12 @@ const About: FC = () => {
                 </Box>
             </GridItem>
             <GridItem px={{base: 4, md: 20}} py={{base: 4, md: 20}}  colSpan={1} overflow={"hidden"}>
-                <Box>
-                    <Image src={data?.[currentIndex]?.data?.image?.url} alt="home" />
-                </Box>
+                <Flex h={"500px"} align={"center"} bg="gray.200" overflow={"hidden"}>
+                    {isAnimating ? <Skeleton h={"500px"} w="100%" /> : null}
+                    <Box className={`fade-in-out ${isAnimating ? 'fade-out' : ''}`}  style={{ display: isAnimating ? 'none' : 'block' }} >
+                        <Image src={data?.[currentIndex]?.data?.image?.url} alt="home" onLoad={handleLoaded}/>
+                    </Box>
+                </Flex>
                 <Box pos={"relative"} overflow={"hidden"} w="100%">
                     
                     <Box h={24} w={(24*5)} bg="gray.100" mt={4}>
