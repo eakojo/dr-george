@@ -22,7 +22,7 @@ const Ask: FC<IProp> = ({
        <Text color={"base.blue"} fontWeight={"bold"} fontSize={{base: 24, md: 40}} textAlign={"center"}>Ask Dr. George</Text>
        <Flex direction={"column"} justify={'center'} align={"center"}>
             <Text fontSize={{base: 12, md: 16}} textAlign={"center"} w={{base: 'auto', md: 124}} mt={{base: 4, md: 12}} color={"base.blue"} fontFamily={"Montserrat"}>
-                Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.
+              We&apos;ve Got the Answers! Fire away using the form below. Whether it&apos;s a prayer request or just a friendly shout-out, we&apos;re here for you! Your connection is what makes the journey exciting.
             </Text>
         </Flex>
 
