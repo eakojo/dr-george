@@ -12,21 +12,21 @@ const About: FC = () => {
     const currentIndex = 4
 
     useEffect(() => {
-    // Your asynchronous logic here
-    const fetchData = async () => {
-      const componentData = await client.getAllByType('site_gallery', {
-        fetchOptions: {
-          cache: 'no-store',
-          next: { tags: ['prismic', 'home_hero'] },
-        }
-      })
+        // Your asynchronous logic here
+        const fetchData = async () => {
+        const componentData = await client.getAllByType('site_gallery', {
+            fetchOptions: {
+            cache: 'no-store',
+            next: { tags: ['prismic', 'home_hero'] },
+            }
+        })
 
-      setData(componentData)
-    };
+        setData(componentData)
+        };
 
-    fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+        fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
   const handlePrevious = () => {
     setIsAnimating(true);

@@ -1,11 +1,31 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import {BiArrowBack} from 'react-icons/bi'
 import { useRouter } from 'next/router'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
+import { createClient } from '@/helpers/prismicClient'
 const Footer: FC = () => {
-  const router = useRouter()
+  const client = createClient({})
+  const [data, setData] = useState([])
+
+    useEffect(() => {
+      // Your asynchronous logic here
+      const fetchData = async () => {
+      const componentData = await client.getAllByType('site_gallery', {
+          fetchOptions: {
+          cache: 'no-store',
+          next: { tags: ['prismic', 'home_hero'] },
+          }
+      })
+
+      setData(componentData)
+      };
+
+      fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Box pos={"relative"} zIndex={3}>
     <Grid templateColumns={{base: 'repeat(6, 1fr)' , md: 'repeat(8, 1fr)'}} gap={12} bg={"#262626"} py={20}  px={{ base: 4, '2xl': 36 }}>
