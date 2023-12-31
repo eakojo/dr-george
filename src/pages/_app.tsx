@@ -14,6 +14,7 @@ import { theme } from '@/theme/theme'
 import { FC } from 'react'
 import "public/effects.css"
 import "public/about.css"
+import useOnScroll from '@/hooks/useOnScroll'
 
 
 function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: object}) {
@@ -24,6 +25,8 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
 
   const showNav = !noNavPages.includes(router.pathname)
   const showFooter = !noFooterPages.includes(router.pathname)
+  const scrollPosition = useOnScroll();
+
 
   const links = [
     { name: 'Home', path: '/' },
@@ -58,7 +61,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
           <Box bgColor="white" pos="relative" overflow="hidden">
             {showNav && (
               <>
-                <DesktopNavbar links={links} topL={topLeft} transparent={true} />
+                <DesktopNavbar links={links} topL={topLeft} transparent={scrollPosition < 167 ? true: false} />
                 <MobileNavbar links={links} />
               </>
             )}

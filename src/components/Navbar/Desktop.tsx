@@ -4,6 +4,7 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { relative } from 'path'
 import CustomButton from '../Atom/Button'
+import useOnScroll from '@/hooks/useOnScroll'
 
 
 interface ILink {
@@ -17,6 +18,8 @@ interface ILink {
 }
 const NavbarLink: React.FC<{ item: ILink, transparent: boolean }> = ({ item, transparent }: { item: ILink, transparent: boolean }) => {
   const router = useRouter()
+
+  
   return (
     <>
     {item.type && item.type === 'button' ? 
@@ -103,7 +106,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
             top={transparent ? 12:  0}
             w="full"
             zIndex={10}
-            pos={transparent? "absolute": "relative" }       
+            pos={transparent? "absolute": "fixed" }       
             p={0}
             bg={transparent? 'transparent' :"white"}
             color={"base.gold"}
