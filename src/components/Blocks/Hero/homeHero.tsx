@@ -42,7 +42,7 @@ const HeroDesktop: NextPage = () => {
       <Flex align={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%" zIndex={3}>
         <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(7, 1fr)'}} gap={12}  px={{ base: 8, '2xl': 36 }}>
           <GridItem colSpan={{base: 2, md: 3,  lg: 5, xl: 3}}>
-            <Text fontSize={{base: 52, md: 64}} textAlign={{base:"left"}} fontWeight={600} color={"white"} lineHeight={1.1}> {data[0]?.data?.title[0]?.text}</Text>
+            <Text fontSize={{base: 44, md: 52, xl: 64}} textAlign={{base:"left"}} fontWeight={600} color={"white"} lineHeight={1.1}> {data[0]?.data?.title[0]?.text}</Text>
             <Text mt={6} color={"whiteAlpha.700"} textAlign={{base:"left"}} fontSize={{base: 12, sm: 14}} fontFamily={"Montserrat"}> {data[0]?.data?.description}</Text>
             
             <Flex justify={{base: "center", lg: "flex-start"}}>

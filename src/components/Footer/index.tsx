@@ -11,7 +11,7 @@ const Footer: FC = () => {
     <Grid templateColumns={{base: 'repeat(6, 1fr)' , md: 'repeat(8, 1fr)'}} gap={12} bg={"#262626"} py={20}  px={{ base: 4, '2xl': 36 }}>
       <GridItem colSpan={{base: 6, md: 3}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4} textAlign={{base: "center", md: "left"}}>About Dr. Arthur</Text>
-        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} textAlign={{base: "center", md: "left"}} fontFamily={"montserrat"}>George Wilfred Arthur Ministries (G. W. Arthur ministries) is an effective ministry with the vision of Restoring the integrity of the word God in its full glory and life in the body of Christ. </Text>
+        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} textAlign={{base: "center", md: "left"}} fontFamily={"montserrat"}>Rev. George Wilfred Arthur is the shepherd and driving force behind George Wilfred Arthur Ministries (G. W. Arthur Ministries). With a profound commitment to the restoration of God&apos;s Word, Rev. George brings a unique blend of passion, wisdom, and love to his ministry.</Text>
       </GridItem>
       <GridItem colSpan={{base: 3, md: 1}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>Links</Text>
