@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
+import Link from 'next/link'
 
 
 const Listen: FC = () => {
@@ -27,7 +28,9 @@ const Listen: FC = () => {
                 <Image src="images/image 7.png" alt="apple podcast" />
               </Box>
               <Box w={16}>
-                <Image src="images/image 8.png" alt="youtube" />
+                 <Link href={'https://youtube.com/@DrGWArthur'}>
+                    <Image src="images/image 8.png" alt="youtube" />
+                 </Link>
               </Box>
             </Flex>
             <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "block", md: "none"}}/>
