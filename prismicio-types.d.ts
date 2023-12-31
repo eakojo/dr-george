@@ -113,7 +113,94 @@ export type HomeHeroDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomeHeroDocument;
+type SiteGalleryDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Site Gallery documents
+ */
+interface SiteGalleryDocumentData {
+  /**
+   * image field in *Site Gallery*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_gallery.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * type field in *Site Gallery*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_gallery.type
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  type: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Site Gallery*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_gallery.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SiteGalleryDocumentDataSlicesSlice> /**
+   * Meta Description field in *Site Gallery*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: site_gallery.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Site Gallery*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: site_gallery.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Site Gallery*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: site_gallery.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Site Gallery document from Prismic
+ *
+ * - **API ID**: `site_gallery`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SiteGalleryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SiteGalleryDocumentData>,
+    "site_gallery",
+    Lang
+  >;
+
+export type AllDocumentTypes = HomeHeroDocument | SiteGalleryDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -128,6 +215,9 @@ declare module "@prismicio/client" {
       HomeHeroDocument,
       HomeHeroDocumentData,
       HomeHeroDocumentDataSlicesSlice,
+      SiteGalleryDocument,
+      SiteGalleryDocumentData,
+      SiteGalleryDocumentDataSlicesSlice,
       AllDocumentTypes,
     };
   }

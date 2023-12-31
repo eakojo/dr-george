@@ -1,10 +1,46 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
 import Link from 'next/link'
+import { createClient } from '@/helpers/prismicClient'
 
 const About: FC = () => {
+    const client = createClient({})
+    const [data, setData] = useState([])
+    const currentIndex = 4
+
+    useEffect(() => {
+    // Your asynchronous logic here
+    const fetchData = async () => {
+      const componentData = await client.getAllByType('site_gallery', {
+        fetchOptions: {
+          cache: 'no-store',
+          next: { tags: ['prismic', 'home_hero'] },
+        }
+      })
+
+      setData(componentData)
+    };
+
+    fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handlePrevious = () => {
+    const imageArr = [...data]
+    imageArr.push(imageArr.shift());
+    setData(imageArr)
+  }
+
+  const handleNext = () => {
+    const imageArr = [...data]
+    let lastElement = imageArr.pop(); // Remove the last element
+    imageArr.unshift(lastElement); 
+    setData(imageArr)
+  }
+
+  console.log(data)
   return (
     <Box py={{base: 12, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
         <Grid templateColumns={{base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)'}} gap={{base: 4, xl: 12}}>
@@ -33,35 +69,31 @@ const About: FC = () => {
 
                 </Box>
             </GridItem>
-            <GridItem px={{base: 4, md: 20}} py={{base: 4, md: 20}}>
+            <GridItem px={{base: 4, md: 20}} py={{base: 4, md: 20}}  colSpan={1} overflow={"hidden"}>
                 <Box>
-                    <Image src="images/dr george 2.png" alt="home" />
+                    <Image src={data?.[currentIndex]?.data?.image?.url} alt="home" />
                 </Box>
-                <Box pos={"relative"}>
-                    <Flex gap={4} mt={4}>
-                        <Box pos={'relative'}>
-                            <Box pos={"absolute"} w="100%" h={"100%"} top={0} left={0} bg={"rgba(0,0,0,0.5)"} zIndex={3}></Box>
-                            <Image src="images/dr george 2.png" alt="namely" />
+                <Box pos={"relative"} overflow={"hidden"} w="100%">
+                    
+                    <Box h={24} w={(24*5)} bg="gray.100" mt={4}>
+                        <Box display={"inline-block"} w={"2000px"} gap={6} h={"100%"}>
+                            {data.map(item => (
+                                <Box mr={5} display={"inline-block"} key={item.id} w={24} h={"100%"} bgImage={item.data.image.url} bgSize={"cover"}></Box>
+                            ))}
                         </Box>
-                        <Box>
-                            <Image src="images/dr george 2.png" alt="namely" />
-                        </Box>
-                        <Box pos={'relative'}>
-                            <Box pos={"absolute"} w="100%" h={"100%"} top={0} left={0} bg={"rgba(0,0,0,0.5)"} zIndex={3}></Box>
-                            <Image src="images/dr george 2.png" alt="namely" />
-                        </Box>
-                        <Box pos={'relative'}>
-                            <Box pos={"absolute"} w="100%" h={"100%"} top={0} left={0} bg={"rgba(0,0,0,0.5)"} zIndex={3}></Box>
-                            <Image src="images/dr george 2.png" alt="namely" />
-                        </Box>
-                    </Flex>
+                    </Box>
+                    
                     <Flex pos={"absolute"} top={0} left={0} h={"100%"} w={"100%"} align={"center"} justify={"space-between"} zIndex={3}>
-                        <Box pos={'relative'} ml={4}>
-                            <Icon as={HiArrowLongLeft}  color={"white"} fontSize={28}/>
-                        </Box>
-                        <Box mr={4}>
-                            <Icon as={HiArrowLongRight}  color={"white"} fontSize={28} />
-                        </Box>
+                        <Flex align={"center"} justify={"center"} width={24}  h={24} mt={4} bg={"rgba(0,0,0,0.5)"}>
+                            <Box pos={'relative'} ml={4} cursor={"pointer"} onClick={() => handlePrevious()}>
+                                <Icon as={HiArrowLongLeft}  color={"white"} fontSize={28}/>
+                            </Box>
+                        </Flex>
+                        <Flex align={"center"} justify={"center"} width={24}  h={24} mt={4} bg={"rgba(0,0,0,0.5)"}>
+                            <Box mr={4} cursor={"pointer"} onClick={() => handleNext()}>
+                                <Icon as={HiArrowLongRight}  color={"white"} fontSize={28} />
+                            </Box>
+                        </Flex>
                     </Flex>
                 </Box>
             </GridItem>
