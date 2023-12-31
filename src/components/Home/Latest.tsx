@@ -10,7 +10,7 @@ const Latest: FC = () => {
     const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
     const channelId = process.env.NEXT_PUBLIC_CHANNEL_ID;
 
-    const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=1&order=date&type=video&key=${apiKey}`;
+    const apiUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&maxResults=1&key=${apiKey}`;
 
     useEffect(() => {
         // Your asynchronous logic here
