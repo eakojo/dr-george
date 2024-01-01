@@ -21,7 +21,7 @@ const Info: FC<IProp> = ({
             </GridItem>
             <GridItem  px={{base: 5, md: 20}} py={{base: 8, md: 20}}>
                 <Text mb={4} textAlign={"center"} fontSize={24} fontWeight={600} color={"base.blue"}>Email Me</Text>
-                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>wordlaundry@yahoo.com</Text>
+                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>info@georgewilfredarthur.com</Text>
             </GridItem>
         </Grid>
     </Box>
