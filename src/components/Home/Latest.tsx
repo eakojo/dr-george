@@ -12,6 +12,7 @@ import {
 import CustomButton from '../Atom/Button'
 import { TbPlayerPlayFilled } from 'react-icons/tb'
 import { HiArrowLongRight } from 'react-icons/hi2'
+import Link from 'next/link'
 
 
 const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: string}> = ({isOpen, onClose, video, id}) => {
@@ -75,7 +76,9 @@ const Latest: FC = () => {
                 <Text fontSize={{base: 12, sm: 14, md: 16}} fontWeight={500} textAlign={"center"} w={{base: "auto", md: 124}} mt={{base: 5, md: 12}} color={"base.blue"} fontFamily={"Montserrat"}>
                     Watch videos that will help you become more like Christ in every way. These messages are guides, showing you how to grow spiritually and attain the full measure and stature of Christ.
                 </Text>
-                <CustomButton mt={8} w={48} title='Start watching' bgColor={"base.gold"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+                <Link href={"https://youtube.com/@DrGWArthur"} target="_">
+                    <CustomButton mt={8} w={48} title='Start watching' bgColor={"base.gold"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+                </Link>
             </Flex>
 
             <Flex justify={"center"} pos={"relative"}>

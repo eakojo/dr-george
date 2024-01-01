@@ -15,8 +15,9 @@ const Ministry: FC = () => {
         <Grid templateColumns={{base: 'repeat(1, 1fr)', lg: 'repeat(7, 1fr)'}} gap={12}>
             <GridItem colSpan={4} display={{base: "none", lg: "block"}}>
                 <Box w={"80%"} p={24} position={"relative"}>
-                    <Image src="images/phone_mockup.png" alt="phone mockup" />
-                    <Box pos={"absolute"} w={24} top={14} left={0}>
+                    {/* <Image src="images/phone_mockup.png" alt="phone mockup" /> */}
+                    <Box w={72} h={72}></Box>
+                    <Box pos={"absolute"} w={24} top={14} left={36}>
                         <Image src="images/Facebook.png" alt="twitter float" />
                     </Box>
                     <Box pos={"absolute"} w={24} top={36} right={16}>
