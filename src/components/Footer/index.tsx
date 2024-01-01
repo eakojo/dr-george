@@ -5,6 +5,8 @@ import { useRouter } from 'next/router'
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
 import { createClient } from '@/helpers/prismicClient'
+import Masonry from "react-responsive-masonry"
+
 const Footer: FC = () => {
   const client = createClient({})
   const [data, setData] = useState([])
@@ -47,7 +49,7 @@ const Footer: FC = () => {
         </Link>
 
       </GridItem>
-      <GridItem colSpan={{base: 3, md: 1}}>
+      <GridItem colSpan={{base: 3, md: 2}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>External Links</Text>
 
         <Link href={'https://youtube.com/@DrGWArthur'}>
@@ -57,29 +59,39 @@ const Footer: FC = () => {
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Apple Podcast</Text>
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Spotify</Text>
       </GridItem>
-      <GridItem colSpan={{base: 6, md: 3}}>
+      <GridItem colSpan={{base: 6, md: 2}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>From The Gallery</Text>
 
-        <Grid templateColumns={'repeat(3, 1fr)'} rowGap={6} >
-          <Box>
-             <Image src="images/gwarthur1.png" />
+        <Masonry columnsCount={3} gutter={"10px"}>
+          <Image src={data?.[0]?.data?.image?.url} alt="footer image" />
+          <Image src={data?.[1]?.data?.image?.url} alt="footer image" />
+          <Image src={data?.[2]?.data?.image?.url} alt="footer image" />
+          <Image src={data?.[4]?.data?.image?.url} alt="footer image" />
+          <Image src={data?.[5]?.data?.image?.url} alt="footer image" />
+          <Image src={data?.[3]?.data?.image?.url} alt="footer image" />
+
+        </Masonry>
+
+        {/* <Grid templateColumns={'repeat(3, 1fr)'} rowGap={6} >
+            <Box>
+              <Image src={data?.[0]?.data?.image?.url} alt="footer image" />
+            </Box>
+            <Box>
+              <Image src={data?.[1]?.data?.image?.url} alt="footer image" />
+            </Box>
+            <Box>
+              <Image src={data?.[2]?.data?.image?.url} alt="footer image" />
+            </Box>
+            <Box>
+              <Image src={data?.[3]?.data?.image?.url} alt="footer image" />
+            </Box>
+            <Box>
+              <Image src={data?.[4]?.data?.image?.url} alt="footer image" />
+            </Box>
+            <Box>
+              <Image src={data?.[5]?.data?.image?.url} alt="footer image" />
           </Box>
-           <Box>
-             <Image src="images/gwarthur1.png" />
-          </Box>
-           <Box>
-             <Image src="images/gwarthur1.png" />
-          </Box>
-           <Box>
-             <Image src="images/gwarthur1.png" />
-          </Box>
-           <Box>
-             <Image src="images/gwarthur1.png" />
-          </Box>
-           <Box>
-             <Image src="images/gwarthur1.png" />
-          </Box>
-        </Grid>
+        </Grid> */}
       </GridItem>
     </Grid>
     <Flex justify={{base: "center", md: "space-between"}} pos={"relative"} overflow={'hidden'} bgSize={'cover'} bg="black" py={4}  px={{ base: 4, '2xl': 36 }}>
