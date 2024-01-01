@@ -19,7 +19,9 @@ const Listen: FC = () => {
             <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "none", md: "block"}}/>
             <Flex gap={8} align={"center"}>
               <Box w={12}>
-                <Image src="images/image 5.png" alt="spotify" />
+                <Link href={'https://open.spotify.com/show/7s0HbOnbL7XD4xTDxu3peS?si=qJ589nXfQJa1VyMIGJXBZg'}>
+                  <Image src="images/image 5.png" alt="spotify" />
+                </Link>
               </Box>
               <Box w={12}>
                 <Image src="images/image 6.png" alt="podcast" />

@@ -57,7 +57,9 @@ const Footer: FC = () => {
         </Link>
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Google Podcast</Text>
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Apple Podcast</Text>
-        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Spotify</Text>
+        <Link href={'https://open.spotify.com/show/7s0HbOnbL7XD4xTDxu3peS?si=qJ589nXfQJa1VyMIGJXBZg'}>
+          <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Spotify</Text>
+        </Link>
       </GridItem>
       <GridItem colSpan={{base: 6, md: 2}}>
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>From The Gallery</Text>
@@ -71,27 +73,6 @@ const Footer: FC = () => {
           <Image src={data?.[3]?.data?.image?.url} alt="footer image" />
 
         </Masonry>
-
-        {/* <Grid templateColumns={'repeat(3, 1fr)'} rowGap={6} >
-            <Box>
-              <Image src={data?.[0]?.data?.image?.url} alt="footer image" />
-            </Box>
-            <Box>
-              <Image src={data?.[1]?.data?.image?.url} alt="footer image" />
-            </Box>
-            <Box>
-              <Image src={data?.[2]?.data?.image?.url} alt="footer image" />
-            </Box>
-            <Box>
-              <Image src={data?.[3]?.data?.image?.url} alt="footer image" />
-            </Box>
-            <Box>
-              <Image src={data?.[4]?.data?.image?.url} alt="footer image" />
-            </Box>
-            <Box>
-              <Image src={data?.[5]?.data?.image?.url} alt="footer image" />
-          </Box>
-        </Grid> */}
       </GridItem>
     </Grid>
     <Flex justify={{base: "center", md: "space-between"}} pos={"relative"} overflow={'hidden'} bgSize={'cover'} bg="black" py={4}  px={{ base: 4, '2xl': 36 }}>
