@@ -31,7 +31,8 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
   const links = [
     { name: 'Home', path: '/' },
     { name: 'Biography', path: '/biography' },
-    { name: 'Podcast', path: '/podcast' },
+    // { name: 'Ministry', path: '/ministry' },
+    { name: 'Podcast', path: '/' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'Partner with us', path: '/partner', type: 'button' }
   ]

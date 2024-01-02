@@ -27,12 +27,14 @@ const Listen: FC = () => {
                 <Image src="images/image 6.png" alt="podcast" />
               </Box>
               <Box w={12}>
-                <Image src="images/image 7.png" alt="apple podcast" />
+                <Link href={'https://podcasts.apple.com/us/podcast/g-w-arthur-ministries/id1723722303'}>
+                  <Image src="images/image 7.png" alt="apple podcast" />
+                </Link>
               </Box>
               <Box w={16}>
-                 <Link href={'https://youtube.com/@DrGWArthur'}>
-                    <Image src="images/image 8.png" alt="youtube" />
-                 </Link>
+                  <Link href={'https://youtube.com/@DrGWArthur'}>
+                      <Image src="images/image 8.png" alt="youtube" />
+                  </Link>
               </Box>
             </Flex>
             <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "block", md: "none"}}/>

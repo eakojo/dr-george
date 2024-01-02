@@ -10,7 +10,7 @@ import CustomButton from '@/components/Atom/Button'
 const Home: NextPage = () => {
   return (
     <Layout>
-        <PageHero title='Partner With Us' />
+        <PageHero title='Ministry' />
          <Box py={{base: 8, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
             <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}} gap={5}>
                 <GridItem px={{base: 6, md: 20}} py={20}>

@@ -34,7 +34,7 @@ const Ministry: FC = () => {
             <GridItem colSpan={{base: 1, md: 3}}>
                 <Flex direction={"column"} justify={"center"} lineHeight={1.2} h="100%" py={{base: 12, md: 20, lg: 0}} px={{base: 0, md: 24, lg: 0}}>
                     <Text textAlign={{base: "center", lg: "left"}} color={"base.blue"} fontWeight={"bold"} fontSize={{base: 24, md: 40}}>Connect to God&apos;s Work! </Text>
-                    <Text textAlign={{base: "center", lg: "left"}}  mt={8} color={"base.blue"} fontFamily={"Montserrat"} fontSize={{base: 12, sm: 14, md: 16}}>
+                    <Text lineHeight={1.6} textAlign={{base: "center", lg: "left"}}  mt={8} color={"base.blue"} fontFamily={"Montserrat"} fontSize={{base: 12, sm: 14, md: 16}} fontWeight={500}>
                         Follow Rev. George on Facebook, Instagram, and Twitter. Together, we’ll build a community for growing into the consciousness of Christ and his finished work.
                     </Text>
                     <Flex justify={{base: "center", lg: 'flex-start'}}>

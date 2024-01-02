@@ -56,7 +56,9 @@ const Footer: FC = () => {
           <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Youtube</Text>
         </Link>
         <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Google Podcast</Text>
-        <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Apple Podcast</Text>
+        <Link href={'https://podcasts.apple.com/us/podcast/g-w-arthur-ministries/id1723722303'}>
+          <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Apple Podcast</Text>
+        </Link>
         <Link href={'https://open.spotify.com/show/7s0HbOnbL7XD4xTDxu3peS?si=qJ589nXfQJa1VyMIGJXBZg'}>
           <Text color={"whiteAlpha.600"} fontSize={{base: 12, md: 14}} fontFamily={"montserrat"} mb={3}>Spotify</Text>
         </Link>
