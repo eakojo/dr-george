@@ -16,13 +16,12 @@ const About: FC<IProp> = ({
   const [email, setEmail] = useState<string>('')
   const toast = useToast()
   
-  console.log(baseUrl)
 
   const handleSubmit = async () => {
     try {
       setLoading(true)
       let res = await fetch(`${baseUrl}/api/newsletter`, {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({name, email, website: 'George Wilfred Arthur', host: baseUrl})
       })
 
