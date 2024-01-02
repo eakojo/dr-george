@@ -15,6 +15,8 @@ const About: FC<IProp> = ({
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const toast = useToast()
+  
+  console.log(baseUrl)
 
   const handleSubmit = async () => {
     try {
