@@ -39,7 +39,9 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
     if (typeof window !== 'undefined') {
       lang = localStorage.getItem('site_language')
     }    
-    setLanguage(lang)
+    if(lang){
+      setLanguage(lang)
+    } 
   }
 
   const changeLanguage = (lang) => {

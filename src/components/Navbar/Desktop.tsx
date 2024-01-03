@@ -80,8 +80,10 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
     let lang
     if (typeof window !== 'undefined') {
       lang = localStorage.getItem('site_language')
-    }    
-    setLanguage(lang)
+    }   
+    if(lang){
+      setLanguage(lang)
+    } 
   }
 
   const changeLanguage = (lang) => {
