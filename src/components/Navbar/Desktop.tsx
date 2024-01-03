@@ -109,7 +109,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
             <Box borderBottomWidth={2} borderColor={'base.blue'} px={1}>G. W. Arthur Ministries</Box>
             
             <Menu >
-              <MenuButton as={Box}>{language.toUpperCase()}</MenuButton>
+              <MenuButton as={Box}>{language?.toUpperCase()}</MenuButton>
               <MenuList w={'100%'} zIndex={100} color={"base.blue"} fontWeight={500}>
                 {language !== 'en' ? <MenuItem w={'100%'} onClick={() => changeLanguage('en')}>EN</MenuItem> : null}
                 {language !== 'fr' ? <MenuItem w={'100%'} onClick={() => changeLanguage('fr')}>FR</MenuItem> : null}
