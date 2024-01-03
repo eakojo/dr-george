@@ -38,6 +38,13 @@ const About: FC<IProp> = ({
        setEmail('')
       setLoading(false)
     } catch (error) {
+      toast({
+        title: "Sorry An Error Occurred",
+        status: "error",
+        position: 'bottom-right',
+        duration: 9000,
+        isClosable: true,
+      })
       setLoading(false)
     }
   }
