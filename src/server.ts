@@ -1,6 +1,11 @@
-import { createServer } from 'http'
-import { parse } from 'url'
-import next from 'next'
+
+const http = require('http');
+const createServer = http.createServer
+
+const url = require('url')
+const parse = url.parse
+
+const next = require('next')
 
 // eslint-disable-next-line no-undef
 const dev = process.env.NODE_ENV !== 'production'
@@ -17,12 +22,12 @@ app.prepare().then(() => {
       const { pathname, query } = parsedUrl
 
       await handle(req, res, parsedUrl)
-      
+
     } catch (err) {
       res.statusCode = 500
       res.end('internal server error')
     }
-  }).listen(port, err => {
+  }).listen(port, (err) => {
     if (err) throw err
   })
 })

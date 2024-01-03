@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build  && next export -o dist",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node src/server.ts",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"
   },

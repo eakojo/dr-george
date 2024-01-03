@@ -20,7 +20,7 @@ const About: FC<IProp> = ({
   const handleSubmit = async () => {
     try {
       setLoading(true)
-      let res = await fetch(`${baseUrl}/api/newsletter`, {
+      let res = await fetch(`https://workers-app.loveeconomychurch.org/api/website/newsletter`, {
         method: 'post',
         body: JSON.stringify({name, email, website: 'George Wilfred Arthur', host: baseUrl})
       })
