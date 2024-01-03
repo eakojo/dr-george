@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router'
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react'
 
 import { Box, ChakraProvider } from '@chakra-ui/react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -71,6 +73,8 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
 
             {showFooter && <Footer />}
           </Box>
+          <Analytics />
+          <SpeedInsights/>
         </motion.div>
       </AnimatePresence>
     </ChakraProvider>
