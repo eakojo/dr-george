@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import { Box, Flex, Icon, Image, Link, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -18,7 +18,6 @@ interface ILink {
 }
 const NavbarLink: React.FC<{ item: ILink, transparent: boolean }> = ({ item, transparent }: { item: ILink, transparent: boolean }) => {
   const router = useRouter()
-
   
   return (
     <>
@@ -75,7 +74,26 @@ const NavbarLink: React.FC<{ item: ILink, transparent: boolean }> = ({ item, tra
 }
 
 const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean}> = ({ links, topL, transparent }: { links: ILink[], topL: any[], transparent: boolean}) => {
-    return  (
+  const [language, setLanguage] = useState('en')
+
+  const getLanguage = () => {
+    let lang
+    if (typeof window !== 'undefined') {
+      lang = localStorage.getItem('site_language')
+    }    
+    setLanguage(lang)
+  }
+
+  const changeLanguage = (lang) => {
+    localStorage.setItem('site_language', lang)
+    setLanguage(lang)
+  }
+
+  useEffect(() => {
+    getLanguage()
+  },[])
+
+  return  (
       <Box display={{ base: 'none', md: 'flex' }}>
         <Flex w="100%" fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 8, '2xl': 36 }}>
           <Flex color={'white '} gap={8}>
@@ -91,12 +109,13 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
             <Box borderBottomWidth={2} borderColor={'base.blue'} px={1}>G. W. Arthur Ministries</Box>
             
             <Menu >
-              <MenuButton as={Box}>EN</MenuButton>
+              <MenuButton as={Box}>{language.toUpperCase()}</MenuButton>
               <MenuList w={'100%'} zIndex={100} color={"base.blue"} fontWeight={500}>
-                <MenuItem w={'100%'}>PT</MenuItem>
-                <MenuItem w={'100%'}>FR</MenuItem>
-                <MenuItem w={'100%'}>ES</MenuItem>
-                <MenuItem w={'100%'}>CN</MenuItem>
+                {language !== 'en' ? <MenuItem w={'100%'} onClick={() => changeLanguage('en')}>EN</MenuItem> : null}
+                {language !== 'fr' ? <MenuItem w={'100%'} onClick={() => changeLanguage('fr')}>FR</MenuItem> : null}
+                {language !== 'es' ? <MenuItem w={'100%'} onClick={() => changeLanguage('es')}>ES</MenuItem> : null}
+                {language !== 'pt' ? <MenuItem w={'100%'} onClick={() => changeLanguage('pt')}>PT</MenuItem> : null}
+                {language !== 'ch' ? <MenuItem w={'100%'} onClick={() => changeLanguage('ch')}>CH</MenuItem> : null}
               </MenuList>
             </Menu>
           </Flex>

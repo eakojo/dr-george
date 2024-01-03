@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import NextLink from 'next/link'
 import { FiMenu, FiX } from 'react-icons/fi'
 import {
@@ -32,19 +32,40 @@ interface IProps {
 const MobileNavbar: FC<IProps> = ({ links }) => {
   const { isOpen, onToggle } = useDisclosure()
 
+  const [language, setLanguage] = useState('en')
+
+  const getLanguage = () => {
+    let lang
+    if (typeof window !== 'undefined') {
+      lang = localStorage.getItem('site_language')
+    }    
+    setLanguage(lang)
+  }
+
+  const changeLanguage = (lang) => {
+    localStorage.setItem('site_language', lang)
+    setLanguage(lang)
+  }
+
+  useEffect(() => {
+    getLanguage()
+  },[])
+
+
   return (
     <Box display={{ base: 'flex', md: 'none' }} flexDirection="column">
        <Flex fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 8, '2xl': 36 }} color={"white"}>
           <Box borderBottomWidth={2} borderColor={'base.blue'} px={1}>G. W. Arthur Ministries</Box>
 
             
-            <Menu >
-              <MenuButton as={Box}>EN</MenuButton>
+             <Menu >
+              <MenuButton as={Box}>{language.toUpperCase()}</MenuButton>
               <MenuList w={'100%'} zIndex={100} color={"base.blue"} fontWeight={500}>
-                <MenuItem w={'100%'}>PT</MenuItem>
-                <MenuItem w={'100%'}>FR</MenuItem>
-                <MenuItem w={'100%'}>ES</MenuItem>
-                <MenuItem w={'100%'}>CN</MenuItem>
+                {language !== 'en' ? <MenuItem w={'100%'} onClick={() => changeLanguage('en')}>EN</MenuItem> : null}
+                {language !== 'fr' ? <MenuItem w={'100%'} onClick={() => changeLanguage('fr')}>FR</MenuItem> : null}
+                {language !== 'es' ? <MenuItem w={'100%'} onClick={() => changeLanguage('es')}>ES</MenuItem> : null}
+                {language !== 'pt' ? <MenuItem w={'100%'} onClick={() => changeLanguage('pt')}>PT</MenuItem> : null}
+                {language !== 'ch' ? <MenuItem w={'100%'} onClick={() => changeLanguage('ch')}>CH</MenuItem> : null}
               </MenuList>
             </Menu>
         </Flex>

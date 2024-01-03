@@ -7,12 +7,13 @@ import {
     ModalCloseButton, Text, 
     useDisclosure,
     ModalBody,
-    ModalFooter
 } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
 import { TbPlayerPlayFilled } from 'react-icons/tb'
 import { HiArrowLongRight } from 'react-icons/hi2'
 import Link from 'next/link'
+import { getLanguage } from '@/helpers/misc'
+import HomeLang from '@/internationalization/home'
 
 
 const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: string}> = ({isOpen, onClose, video, id}) => {
@@ -42,9 +43,16 @@ const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: stri
 const Latest: FC = () => {
     const [data, setData] = useState(null)
     const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-    const channelId = process.env.NEXT_PUBLIC_CHANNEL_ID;
     const currentVideo = process.env.NEXT_PUBLIC_CURRENT_VIDEO;
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const [lang,setLang] = useState('en')
+    const text = HomeLang[lang]
+    const defaultLang =  getLanguage()
+
+    useEffect(() => {
+        setLang(defaultLang)
+    },[defaultLang]) 
 
 
     const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${currentVideo}&key=${apiKey}`;
@@ -71,13 +79,13 @@ const Latest: FC = () => {
         >   
             <VideoModal isOpen={isOpen} onClose={onClose} video={data} id={currentVideo} />
 
-            <Text color={"base.blue"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>Watch the latest Video Messages</Text>
+            <Text color={"base.blue"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>{text?.latestTitle}</Text>
             <Flex direction={"column"} justify={'center'} align={"center"}>
                 <Text fontSize={{base: 12, sm: 14, md: 16}} fontWeight={500} textAlign={"center"} w={{base: "auto", md: 124}} mt={{base: 5, md: 12}} color={"base.blue"} fontFamily={"Montserrat"}>
-                    Watch videos that will help you become more like Christ in every way. These messages are guides, showing you how to grow spiritually and attain the full measure and stature of Christ.
+                    {text?.latestSubtext}
                 </Text>
                 <Link href={"https://youtube.com/@DrGWArthur"} target="_">
-                    <CustomButton mt={8} w={48} title='Start watching' bgColor={"base.gold"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+                    <CustomButton mt={8} w={48} title={text?.latestButton} bgColor={"base.gold"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
                 </Link>
             </Flex>
 

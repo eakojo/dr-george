@@ -1,10 +1,19 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
 import Link from 'next/link'
+import { getLanguage } from '@/helpers/misc'
+import HomeLang from '@/internationalization/home'
 
 
 const Ministry: FC = () => {
+    const [lang,setLang] = useState('en')
+    const text = HomeLang[lang]
+    const defaultLang =  getLanguage()
+
+    useEffect(() => {
+        setLang(defaultLang)
+    },[defaultLang])
   return (
     <Box
         bg={'rgba(238, 167, 44, 0.22)'}
@@ -33,9 +42,9 @@ const Ministry: FC = () => {
             </GridItem>
             <GridItem colSpan={{base: 1, md: 3}}>
                 <Flex direction={"column"} justify={"center"} lineHeight={1.2} h="100%" py={{base: 12, md: 20, lg: 0}} px={{base: 0, md: 24, lg: 0}}>
-                    <Text textAlign={{base: "center", lg: "left"}} color={"base.blue"} fontWeight={"bold"} fontSize={{base: 24, md: 40}}>Connect to God&apos;s Work! </Text>
+                    <Text textAlign={{base: "center", lg: "left"}} color={"base.blue"} fontWeight={"bold"} fontSize={{base: 24, md: 40}}>{text.socialsTitle}</Text>
                     <Text lineHeight={1.6} textAlign={{base: "center", lg: "left"}}  mt={8} color={"base.blue"} fontFamily={"Montserrat"} fontSize={{base: 12, sm: 14, md: 16}} fontWeight={500}>
-                        Follow Rev. George on Facebook, Instagram, and Twitter. Together, we’ll build a community for growing into the consciousness of Christ and his finished work.
+                         {text.socialsSubtext}
                     </Text>
                     <Flex justify={{base: "center", lg: 'flex-start'}}>
                         <Flex mt={6} gap={{base: 4, md: 8}}>

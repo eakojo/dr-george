@@ -1,19 +1,29 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
+import { getLanguage } from '@/helpers/misc'
+import HomeLang from '@/internationalization/home'
 
 
 const Ministry: FC = () => {
+    const [lang,setLang] = useState('en')
+    const text = HomeLang[lang]
+    const defaultLang =  getLanguage()
+
+    useEffect(() => {
+        setLang(defaultLang)
+    },[defaultLang]) 
+
   return (
     <Box
         bg={'#102033'}
         py={20}
     >
-        <Text color={"white"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>Listen to the latest Audio Messages</Text>
+        <Text color={"white"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>{text.listenTitle}</Text>
         <Flex direction={"column"} justify={'center'} align={"center"}>
             <Text textAlign={"center"} w={{base: "auto", md: 124}}  fontSize={{base: 12, sm: 14, md: 16}} mt={12} color={"white"} fontFamily={"Montserrat"}>
-                Get ready to hit play on audio messages from Rev. George Wilfred Arthur. It&apos;s not just a listen; it&apos;s a spiritual experience. Join the uplifting journey, and let the power of God&apos;s words change your soul.
+               {text.listenSubtext}
             </Text>
         </Flex>
 
@@ -46,7 +56,7 @@ const Ministry: FC = () => {
             </Flex>
         </Box>
         <Flex justify={"center"}>
-            <CustomButton mt={{base: 8, md: 24}} w={48} title='Start Listening' bgColor={"white"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+            <CustomButton mt={{base: 8, md: 24}} w={48} title={text.listenButton} bgColor={"white"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
         </Flex>
     </Box>
   )

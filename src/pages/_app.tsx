@@ -13,10 +13,12 @@ import MobileNavbar from '@/components/Navbar/Mobile'
 import { TbPhone, TbMail } from "react-icons/tb";
 
 import { theme } from '@/theme/theme'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import "public/effects.css"
 import "public/about.css"
 import useOnScroll from '@/hooks/useOnScroll'
+import { getLanguage } from '@/helpers/misc'
+import NavText from '@/internationalization/navs'
 
 
 function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: object}) {
@@ -29,14 +31,22 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
   const showFooter = !noFooterPages.includes(router.pathname)
   const scrollPosition = useOnScroll();
 
+  const [lang,setLang] = useState('en')
+  const text = NavText[lang]
+  const defaultLang =  getLanguage()
+
+  useEffect(() => {
+    setLang(defaultLang)
+  },[defaultLang]) 
+
 
   const links = [
-    { name: 'Home', path: '/' },
-    { name: 'Biography', path: '/biography' },
+    { name: `${text.navHome}`, path: '/' },
+    { name: `${text.navBiography}`, path: '/biography' },
     // { name: 'Ministry', path: '/ministry' },
-    { name: 'Podcast', path: '/' },
-    { name: 'Contact Us', path: '/contact' },
-    { name: 'Partner with us', path: '/partner', type: 'button' }
+    { name: `${text.navPodcast}`, path: '/' },
+    { name: `${text.navContact}`, path: '/contact' },
+    { name: `${text.navPartner}`, path: '/partner', type: 'button' }
   ]
 
   const topLeft = [

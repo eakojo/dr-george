@@ -1,10 +1,19 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Box, Flex, Grid, GridItem, Icon, Image, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
 import Link from 'next/link'
+import HomeLang from '@/internationalization/home'
+import { getLanguage } from '@/helpers/misc'
 
 
 const Listen: FC = () => {
+    const [lang,setLang] = useState('en')
+    const text = HomeLang[lang]
+    const defaultLang =  getLanguage()
+
+    useEffect(() => {
+        setLang(defaultLang)
+    },[defaultLang]) 
   return (
     <Box
         bg={'base.blue'}
@@ -14,9 +23,9 @@ const Listen: FC = () => {
     >
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}>
         <GridItem pr={{base: 0, md: 36}} py={4}>
-          <Text color={"white"} fontWeight={"bold"} textAlign={"center"} fontSize={{base: 24, md: 40}} lineHeight={1.2}>Listen to Dr George on all platforms now</Text>
+          <Text color={"white"} fontWeight={"bold"} textAlign={"center"} fontSize={{base: 24, md: 40}} lineHeight={1.2}>{text.platformsTitle}</Text>
           <Flex align={"center"} gap={12} mt={12} direction={{base: "column", md: "row"}}>
-            <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "none", md: "block"}}/>
+            <CustomButton bgColor={"base.gold"} title={text.platformsButton} color="base.blue" rounded="none" textSize={20} display={{base: "none", md: "block"}}/>
             <Flex gap={8} align={"center"}>
               <Box w={12}>
                 <Link href={'https://open.spotify.com/show/7s0HbOnbL7XD4xTDxu3peS?si=qJ589nXfQJa1VyMIGJXBZg'}>
@@ -37,7 +46,7 @@ const Listen: FC = () => {
                   </Link>
               </Box>
             </Flex>
-            <CustomButton bgColor={"base.gold"} title='Listen Now' color="base.blue" rounded="none" textSize={20} display={{base: "block", md: "none"}}/>
+            <CustomButton bgColor={"base.gold"} title={text.platformsButton} color="base.blue" rounded="none" textSize={20} display={{base: "block", md: "none"}}/>
           </Flex>
         </GridItem>
         <GridItem px={20} py={4} bg={"base.blue"} display={{base: "none", lg: "block"}}>

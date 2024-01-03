@@ -6,11 +6,19 @@ import { createClient } from '@/helpers/prismicClient'
 import { AllDocumentTypes } from '../../../../prismicio-types'
 import { NextPage } from 'next'
 import Link from 'next/link'
-
+import HomeHeroLangText from '@/internationalization/homeHero'
+import { getLanguage } from '@/helpers/misc'
 
 const HeroDesktop: NextPage = () => {
   const [data, setData] = useState([])
   const client = createClient({})
+  const [lang,setLang] = useState('en')
+  const text = HomeHeroLangText[lang]
+  const defaultLang =  getLanguage()
+
+  useEffect(() => {
+      setLang(defaultLang)
+  },[defaultLang])
 
   useEffect(() => {
     // Your asynchronous logic here
@@ -42,8 +50,8 @@ const HeroDesktop: NextPage = () => {
       <Flex align={"center"} pos={"absolute"} top={0} left={0} bg={"#021821d6"} w={'100%'} h="100%" zIndex={3}>
         <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(7, 1fr)'}} gap={12}  px={{ base: 8, '2xl': 36 }}>
           <GridItem colSpan={{base: 2, md: 3,  lg: 5, xl: 3}}>
-            <Text fontSize={{base: 44, md: 52, xl: 64}} textAlign={{base:"left"}} fontWeight={600} color={"white"} lineHeight={1.1}> {data[0]?.data?.title[0]?.text}</Text>
-            <Text mt={8} color={"white"} textAlign={{base:"left"}} fontSize={{base: 12, sm: 16}} fontFamily={"Montserrat"}> {data[0]?.data?.description}</Text>
+            <Text fontSize={{base: 44, md: 52, xl: 64}} textAlign={{base:"left"}} fontWeight={600} color={"white"} lineHeight={1.1}>{text.heroTitle}</Text>
+            <Text mt={8} color={"white"} textAlign={{base:"left"}} fontSize={{base: 12, sm: 16}} fontFamily={"Montserrat"}>{text.subTitle}</Text>
             
             <Flex justify={{base: "center", lg: "flex-start"}}>
               <Flex mt={16} color="white" gap={4} fontSize={20}>
