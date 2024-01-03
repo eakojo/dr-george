@@ -10,11 +10,11 @@ const handler: NextApiHandler = async function handler(
 ) {
     try {
         if (req.method === 'POST') {
-            await connectMongo();
-            let data = req.body
-            data = JSON.parse(data)
-            const record = await Newsletter.create(data)
-            return res.status(200).json({ message: 'created Successfully', data: record, })
+            // await connectMongo();
+            // let data = req.body
+            // data = JSON.parse(data)
+            // const record = await Newsletter.create(data)
+            return res.status(200).json({ message: 'created Successfully', data: 'success' })
         }
         return
     } catch (error) {
