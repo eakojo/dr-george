@@ -34,8 +34,8 @@ const About: FC<IProp> = ({
           isClosable: true,
         })
       }
-       setName('')
-       setEmail('')
+        setName('')
+        setEmail('')
       setLoading(false)
     } catch (error) {
       toast({
