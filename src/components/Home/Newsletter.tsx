@@ -21,7 +21,7 @@ const About: FC<IProp> = ({
     try {
       setLoading(true)
       let res = await fetch(`${baseUrl}/api/newsletter`, {
-        method: 'POST',
+        method: 'post',
         body: JSON.stringify({name, email, website: 'George Wilfred Arthur', host: baseUrl})
       })
 
