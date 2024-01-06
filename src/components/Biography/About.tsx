@@ -4,12 +4,23 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
 import Link from 'next/link'
 import { createClient } from '@/helpers/prismicClient'
+import { getLanguage } from '@/helpers/misc'
+import AboutText from '@/internationalization/about'
 
 const About: FC = () => {
     const client = createClient({})
     const [data, setData] = useState([])
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
     const currentIndex = 4
+
+    const [lang,setLang] = useState('en')
+    const text = AboutText[lang]
+    const defaultLang =  getLanguage()
+
+    useEffect(() => {
+        setLang(defaultLang)
+    },[defaultLang])
+
 
     useEffect(() => {
         // Your asynchronous logic here
@@ -51,8 +62,8 @@ const About: FC = () => {
     <Box py={{base: 12, md: 20}} px={{ base: 4, '2xl': 36 }} pos="relative">
         <Grid templateColumns={{base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)'}} gap={{base: 4, xl: 12}}>
             <GridItem px={{base: 4, lg: 0}} py={20}>
-                <Text color={"base.blue"} fontWeight={600} fontSize={28}>Meet Rev. George Wilfred Arthur</Text>
-                <Text color={"base.blue"} fontFamily={"Montserrat"} fontSize={14}>Teacher, Apostle, Evangelist, & Speaker</Text>
+                <Text color={"base.blue"} fontWeight={600} fontSize={28}>{text.aboutTitle}</Text>
+                <Text color={"base.blue"} fontFamily={"Montserrat"} fontSize={14}>{text.aboutSubtext}</Text>
                 <Flex gap={3} mt={3}>
                     <Link href={'https://www.instagram.com/drgwarthur'} target='_'>
                         <Icon fontSize={20} as={FaInstagram} color={"base.blue"} />
@@ -67,23 +78,23 @@ const About: FC = () => {
 
                 <Box mt={12}>
                     <Text fontFamily={"Montserrat"} mb={8}>
-                        G.W. Arthur is the shepherd and driving force behind George Wilfred Arthur Ministries (G. W. Arthur Ministries). With a profound commitment to the restoration of God&apos;s Word, G.W. Arthur brings a unique blend of passion, wisdom, and love to his ministry.
+                        {text.aboutPara1}
                     </Text>
                     <Text fontFamily={"Montserrat"} mb={8}>
-                        G.W. Arthur envisions a world where the integrity of God&apos;s Word is fully restored within the body of Christ. His leadership is marked by a deep desire for spiritual renewal and transformation, aiming to create a community where individuals can experience the life-changing power of the Gospel.
+                        {text.aboutPara2}
                     </Text>
                     <Text fontFamily={"Montserrat"} mb={8}>
-                        G.W. Arthur is not just a preacher; he is a messenger of love and power. His teachings reflect the virtues and excellences of Christ, and he tirelessly strives to showcase the marvelous deeds that define the love and power found in Christ&apos;s transformative message.
+                        {text.aboutPara3}
                     </Text>
                     <Text fontFamily={"Montserrat"} mb={8}>
-                        For Rev. George, the will of God is not just a guiding principle; it is the heartbeat of his life and ministry. His unwavering devotion to aligning every aspect of his work with God&apos;s will serves as an inspiration to those who follow his teachings.
+                        {text.aboutPara4}
                     </Text>
                     <Text fontFamily={"Montserrat"} mb={8}>
-                        G.W.  Arthur is a beacon of light for those seeking spiritual guidance, deeper connections with Christ, and a community that shares their values. His leadership is marked by authenticity, humility, and an unshakeable belief in the transformative power of the Gospel.
+                        {text.aboutPara5}
                     </Text>
                     <Text fontFamily={"Montserrat"} mb={8}>
-                        Whether you are a long-time follower or just discovering Rev. George Wilfred Arthur, we invite you to join him on this transformative journey. Explore the richness of God&apos;s Word, experience His love and power, and discover the fulfillment of your divine inheritance in Christ under the ministry of Rev. George Wilfred Arthur.</Text>
-
+                        {text.aboutPara6}
+                    </Text>
                 </Box>
             </GridItem>
             <GridItem px={{base: 4, md: 20}} py={{base: 4, md: 20}}  colSpan={1} overflow={"hidden"}>
