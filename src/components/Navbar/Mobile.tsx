@@ -62,7 +62,7 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
             
              <Menu >
               <MenuButton as={Box}>{language?.toUpperCase()}</MenuButton>
-              <MenuList w={'100%'} zIndex={100} color={"base.blue"} fontWeight={500}>
+              <MenuList w={'100%'} zIndex={300} color={"base.blue"} fontWeight={500}>
                 {language !== 'en' ? <MenuItem w={'100%'} onClick={() => changeLanguage('en')}>EN</MenuItem> : null}
                 {language !== 'fr' ? <MenuItem w={'100%'} onClick={() => changeLanguage('fr')}>FR</MenuItem> : null}
                 {language !== 'es' ? <MenuItem w={'100%'} onClick={() => changeLanguage('es')}>ES</MenuItem> : null}
