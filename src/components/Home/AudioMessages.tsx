@@ -12,19 +12,6 @@ const Ministry: FC = () => {
     const text = HomeLang[lang]
     const defaultLang =  getLanguage()
 
-
-
-    useEffect(() => {
-        setLang(defaultLang)
-        const  fetchData =async()=>{
-            const data = await fetchYoutube();
-
-            console.log(data,'YT videos');
-        }
-        fetchData();
-        
-    },[defaultLang]) 
-
   return (
     <Box
         bg={'#102033'}

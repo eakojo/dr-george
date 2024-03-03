@@ -20,30 +20,21 @@ import { useQuery } from 'react-query'
 
 const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: string}> = ({isOpen, onClose, video, id}) => {
 
-    const { data, isError, isLoading, error, isSuccess } = useQuery<any>(["youtubeData"], fetchYoutube,);
-    const [videoId,setVideoId ] = useState()
-
-    // if(data.items[0].id?.videoId){
-    //     console.log(data.items[0].id?.videoId)
-    //     setVideoId(data.items[0].id?.videoId)
-
-    // }
-
-    
-
     return (
         <Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
             <ModalOverlay />
             <ModalContent>
                 <ModalHeader>
-                    <Text color="base.blue" textTransform={"capitalize"}>{video?.title?.toLowerCase()}</Text>
+                    <Box w={"90%"}>
+                        <Text color="base.blue" textTransform={"capitalize"}>{video?.[0]?.snippet?.title?.toLowerCase()}</Text>
+                    </Box>
                 </ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
                     <iframe
                         width={"100%"}
                         title={video?.title?.toLowerCase()}
-                        src={`https://www.youtube.com/embed/${data?.items[1].id?.videoId}`}
+                        src={`https://www.youtube.com/embed/${video?.[0]?.id?.videoId}`}
                         allowFullScreen
                         height={"400px"}
                     />
@@ -54,8 +45,6 @@ const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: stri
 }
 
 const Latest: FC = () => {
-    const [data, setData] = useState(null)
-    const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
     const currentVideo = process.env.NEXT_PUBLIC_CURRENT_VIDEO;
     const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -68,29 +57,15 @@ const Latest: FC = () => {
     },[defaultLang]) 
 
 
-    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${currentVideo}&key=${apiKey}`;
-
-    useEffect(() => {
-        // Your asynchronous logic here
-        const fetchData = async () => {
-            const yData = await fetch(apiUrl)
-            if(yData){
-                const jsonData = await yData.json()
-                const video = jsonData?.items?.[0]?.snippet
-                setData(video)
-            }
-        };
-
-        fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const { data, isError, isLoading, error, isSuccess } = useQuery<any>(["youtubeData"], fetchYoutube,);
+    const video = data?.items
     
     return (
         <Box
             py={20}
             px={{ base: 4, '2xl': 36 }}
         >   
-            <VideoModal isOpen={isOpen} onClose={onClose} video={data} id={currentVideo} />
+            <VideoModal isOpen={isOpen} onClose={onClose} video={video || []} id={currentVideo} />
 
             <Text color={"base.blue"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>{text?.latestTitle}</Text>
             <Flex direction={"column"} justify={'center'} align={"center"}>
@@ -106,10 +81,10 @@ const Latest: FC = () => {
                 <Box pos={"absolute"} left={{base: 0, md: 48}} top={{base: 0, md: -20}} w={{base: 28, md: 32}}>
                     <Image src="images/pattern-1.png" alt="pattern group"  />
                 </Box>
-                <Box bg={"gray.300"} h={{base: 'auto', md: 110}} w={{base: 'auto', md: 128}} mt={12} pos={"relative"} overflow={'hidden'}>
-                    <Box bgImage={data?.thumbnails?.high?.url} bgSize={"contain"}  h={{base: 'auto', md: 110}} w={{base: 'auto', md: 128}}></Box>
+                <Box bg={"gray.300"} h={{base: 'auto', md: 108}} w={{base: 'auto', md: 128}} mt={12} pos={"relative"} overflow={'hidden'}>
+                    <Box bgImage={video?.[0]?.snippet?.thumbnails?.high?.url} bgSize={"cover"}  h={{base: 'auto', md: 108}} w={{base: 'auto', md: 128}} bgPos={"center"}></Box>
                     <Flex align="center" justify={"center"} overflow={"hidden"} pos={"absolute"} left={0} top={0} zIndex={2} w={"100%"} h={"100%"}>
-                        {!data || isOpen ? null : <Flex w={16} h={16} bg="whiteAlpha.800" rounded={"full"} align={"center"} 
+                        {!video?.length || isOpen ? null : <Flex w={16} h={16} bg="whiteAlpha.800" rounded={"full"} align={"center"} 
                             justify={"center"} cursor={"pointer"}
                             onClick={() => onOpen()}
                             >
