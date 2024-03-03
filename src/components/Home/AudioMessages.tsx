@@ -13,17 +13,14 @@ const Ministry: FC = () => {
     const [lang,setLang] = useState('en')
     const text = HomeLang[lang]
     const defaultLang =  getLanguage()
-    const [messages, setMessages] = useState([])
     const [active, setActive] = useState({})
 
-    const handleFetch = async () => {
-        const res = await getEpisodes()
-        setMessages(res?.episodes || [])
-    }
+    const { data, isLoading, error } = useQuery<any>(["captivateData"], getEpisodes,);
+    const messages = data?.episodes || []
 
-    useEffect(() => {
-        handleFetch()
-    },[])
+    const openLink = () => {
+        window.open('https://g-w-arthur-ministries.captivate.fm/listen', '_blank');
+    };
 
 
   return (
@@ -34,7 +31,7 @@ const Ministry: FC = () => {
         <Text color={"white"} fontWeight={"bold"} fontSize={24} textAlign={"center"}>{text.listenTitle}</Text>
         <Flex direction={"column"} justify={'center'} align={"center"}>
             <Text textAlign={"center"} w={{base: "auto", md: 124}}  fontSize={{base: 12, sm: 14, md: 16}} mt={12} color={"white"} fontFamily={"Montserrat"}>
-               {text.listenSubtext}
+                {text.listenSubtext}
             </Text>
         </Flex>
 
@@ -76,7 +73,16 @@ const Ministry: FC = () => {
             </Flex>
         </Box>
         <Flex justify={"center"}>
-            <CustomButton mt={{base: 8, md: 24}} w={48} title={text.listenButton} bgColor={"white"} rounded="none" fontSize={16} color="black" fontFamily="Garamond" />
+            <CustomButton 
+                mt={{base: 8, md: 24}} 
+                w={48} title={text.listenButton} 
+                bgColor={"white"} 
+                rounded="none" 
+                fontSize={16} 
+                color="black" 
+                fontFamily="Garamond" 
+                onClick={() => openLink()}
+            />
         </Flex>
     </Box>
   )
