@@ -92,9 +92,9 @@ const Latest: FC = () => {
                         </Flex>}
                     </Flex>
                 </Box>
-                <Box pos={"absolute"} right={12} top={-20} display={{base: "none", md: "block"}}>
+                {/* <Box pos={"absolute"} right={12} top={-20} display={{base: "none", md: "block"}}>
                     <Icon as={HiArrowLongRight} color="base.blue" fontSize={40}/>
-                </Box>
+                </Box> */}
             </Flex>
 
         </Box>
