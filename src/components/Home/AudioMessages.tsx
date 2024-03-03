@@ -4,6 +4,7 @@ import CustomButton from '../Atom/Button'
 import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
 import { getLanguage } from '@/helpers/misc'
 import HomeLang from '@/internationalization/home'
+import { fetchYoutube } from '@/service/videos'
 
 
 const Ministry: FC = () => {
@@ -11,8 +12,17 @@ const Ministry: FC = () => {
     const text = HomeLang[lang]
     const defaultLang =  getLanguage()
 
+
+
     useEffect(() => {
         setLang(defaultLang)
+        const  fetchData =async()=>{
+            const data = await fetchYoutube();
+
+            console.log(data,'YT videos');
+        }
+        fetchData();
+        
     },[defaultLang]) 
 
   return (
