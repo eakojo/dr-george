@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
   ]
 
   const topLeft = [
-    { title: 'info@georgewilfredarthur.com'},
+    { title: 'info@gwarthurministries.org'},
     { title: '+233 245 659 875' }
   ]
 
