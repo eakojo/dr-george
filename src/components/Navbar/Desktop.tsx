@@ -2,9 +2,9 @@ import React, {Fragment, useEffect, useState} from 'react'
 import { Box, Flex, Icon, Image, Link, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react"
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { relative } from 'path'
 import CustomButton from '../Atom/Button'
-import useOnScroll from '@/hooks/useOnScroll'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 
 interface ILink {
@@ -95,6 +95,25 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
     getLanguage()
   },[])
 
+  useGSAP(() => {
+    let animation = gsap.to('.logo-box', {
+      rotation: "+=360",
+      duration: 4,
+      repeat: -1,
+      ease: "none"
+    })
+
+    const logoBox = document.querySelector('.logo-box');
+
+    logoBox.addEventListener('mouseenter', () => {
+      animation.pause();
+    });
+
+    logoBox.addEventListener('mouseleave', () => {
+      animation.play();
+    });
+  })
+
   return  (
       <Box display={{ base: 'none', md: 'flex' }}>
         <Flex w="100%" fontFamily={"Garamond"} bg={'base.blue'} justify={"space-between"} py={3}  px={{ base: 8, '2xl': 36 }}>
@@ -142,14 +161,13 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
                 align={"center"}
             >
               <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-                <Box w={24}>
-                  
+                <Flex w={24}  justify={"center"} alignItems={"center"} mt={2}>
                   {transparent ? 
-                  <Image w={"120%"} src='/images/G W Arthur Logo-white.png' alt="gwarthur logo" />
+                  <Image className='logo-box' src='/images/G W Arthur Logo-white.png' alt="gwarthur logo" />
                   :
-                  <Image w={"90%"} src='/images/G W Arthur Logo.png' alt="gwarthur logo" />
+                  <Image className='logo-box' objectFit={"contain"} src='/images/G W Arthur Logo.png' alt="gwarthur logo" />
                   }
-                </Box>
+                </Flex>
               </Link>
 
               <Box>
