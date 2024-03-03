@@ -14,9 +14,22 @@ import { HiArrowLongRight } from 'react-icons/hi2'
 import Link from 'next/link'
 import { getLanguage } from '@/helpers/misc'
 import HomeLang from '@/internationalization/home'
+import { fetchYoutube } from '@/service/videos'
+import { useQuery } from 'react-query'
 
 
 const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: string}> = ({isOpen, onClose, video, id}) => {
+
+    const { data, isError, isLoading, error, isSuccess } = useQuery<any>(["youtubeData"], fetchYoutube,);
+    const [videoId,setVideoId ] = useState()
+
+    // if(data.items[0].id?.videoId){
+    //     console.log(data.items[0].id?.videoId)
+    //     setVideoId(data.items[0].id?.videoId)
+
+    // }
+
+    
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} size={"2xl"}>
@@ -30,7 +43,7 @@ const VideoModal: FC<{isOpen: boolean, onClose: () => void, video: any, id: stri
                     <iframe
                         width={"100%"}
                         title={video?.title?.toLowerCase()}
-                        src={`https://www.youtube.com/embed/${id}`}
+                        src={`https://www.youtube.com/embed/${data?.items[1].id?.videoId}`}
                         allowFullScreen
                         height={"400px"}
                     />

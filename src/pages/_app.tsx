@@ -19,10 +19,13 @@ import "public/about.css"
 import useOnScroll from '@/hooks/useOnScroll'
 import { getLanguage } from '@/helpers/misc'
 import NavText from '@/internationalization/navs'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 
 
 function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: object}) {
   const router = useRouter()
+  const queryClient = new QueryClient();
 
   const noNavPages: string[] = []
   const noFooterPages = ['/404']
@@ -55,6 +58,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
   ]
 
   return (
+    <QueryClientProvider client={queryClient}>
     <ChakraProvider theme={theme} resetCSS>
       <AnimatePresence mode='wait'>
         <motion.div
@@ -88,6 +92,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
         </motion.div>
       </AnimatePresence>
     </ChakraProvider>
+    </QueryClientProvider>
   )
 }
 
