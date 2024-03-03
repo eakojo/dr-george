@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
   const links = [
     { name: `${text.navHome}`, path: '/' },
     { name: `${text.navBiography}`, path: '/biography' },
-    { name: 'Ministry', path: '/ministry' },
+    { name: `${text.navMinistry}`, path: '/ministry' },
     // { name: `${text.navPodcast}`, path: '/' },
     { name: `${text.navContact}`, path: '/contact' },
     { name: `${text.navPartner}`, path: '/partner', type: 'button' }
