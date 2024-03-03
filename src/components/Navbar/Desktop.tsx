@@ -97,8 +97,8 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
 
   useGSAP(() => {
     let animation = gsap.to('.logo-box', {
-      rotation: "+=360",
-      duration: 4,
+      rotationY: 360,
+      duration: 2,
       repeat: -1,
       ease: "none"
     })
@@ -106,7 +106,8 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
     const logoBox = document.querySelector('.logo-box');
 
     logoBox.addEventListener('mouseenter', () => {
-      animation.pause();
+      animation.restart();
+      animation.pause()
     });
 
     logoBox.addEventListener('mouseleave', () => {
