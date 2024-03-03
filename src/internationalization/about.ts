@@ -1,7 +1,7 @@
 const aboutText = {
     en: {
         aboutHeroText: "Biography",
-        aboutTitle: "Meet Rev. George Wilfred Arthur",
+        aboutTitle: "Meet Dr. George Wilfred Arthur",
         aboutSubtext: "Teacher, Apostle, Evangelist, & Speaker",
         aboutPara1: "Dr. George Wilfred Arthur is the shepherd and driving force behind G. W. Arthur Ministries. With a profound commitment to restoring the integrity of the Word of God, Dr. G. W. Arthur brings a unique blend of passion, wisdom, and love to his ministry.",
         aboutPara2: "Dr. G. W. Arthur envisions a world where the integrity of God's Word is fully restored within the body of Christ. His leadership is marked by a deep desire for spiritual renewal and transformation, aiming to create a community where individuals can experience the life-changing power of the Gospel.",
@@ -13,19 +13,19 @@ const aboutText = {
     },
     fr: {
         aboutHeroText: "Biographie",
-        aboutTitle: "Rencontrez le Rév. George Wilfred Arthur",
+        aboutTitle: "Rencontrez le Dr. George Wilfred Arthur",
         aboutSubtext: "Enseignant, Apôtre, Évangéliste et Orateur",
-        aboutPara1: "Le Dr. George Wilfred Arthur est le berger et la force motrice derrière les Ministères G. W. Arthur. Avec un engagement profond envers la restauration de l'intégrité de la Parole de Dieu, le Dr G. W. Arthur apporte un mélange unique de passion, de sagesse et d'amour à son ministère.",
-        aboutPara2: "Le Dr G. W. Arthur envisage un monde où l'intégrité de la Parole de Dieu est pleinement restaurée au sein du corps du Christ. Son leadership est marqué par un profond désir de renouveau spirituel et de transformation, visant à créer une communauté où les individus peuvent vivre le pouvoir transformateur de l'Évangile.",
-        aboutPara3: "Le Dr G. W. Arthur n'est pas seulement un prédicateur ; il est un messager d'amour et de puissance. Ses enseignements au cours des deux dernières décennies reflètent les vertus et les excellences du Christ, et il s'efforce sans relâche de mettre en valeur les actes merveilleux qui définissent l'amour et la puissance trouvés dans le message transformateur du Christ.",
-        aboutPara4: "Pour le Dr G. W. Arthur, la volonté de Dieu n'est pas seulement un principe directeur ; c'est le battement de son cœur et de son ministère. Son dévouement inébranlable à aligner chaque aspect de son travail sur la volonté de Dieu sert d'inspiration à ceux qui suivent ses enseignements.",
-        aboutPara5: "Le Dr G. W. Arthur est un phare pour ceux qui recherchent un guide spirituel, des liens plus profonds avec le Christ et une communauté qui partage leurs valeurs. Son leadership est marqué par l'authenticité, l'humilité et une foi inébranlable dans le pouvoir transformateur de l'Évangile.",
-        aboutPara6: "De plus, le Dr G. W. Arthur est heureusement marié à Mme Philarette Wilfred Arthur et ils ont de merveilleux enfants.",
-        aboutPara7: "Que vous soyez un fidèle de longue date ou que vous découvriez tout juste le Dr G. W. Arthur, nous vous invitons à vous joindre à lui dans ce voyage transformateur. Explorez la richesse de la Parole de Dieu, vivez son amour et sa puissance, et découvrez l'accomplissement de votre héritage divin en Christ sous le ministère du Dr G. W. Arthur."
+        aboutPara1: "Le Dr. George Wilfred Arthur est le berger et la force motrice derrière les Ministères G. W. Arthur. Avec un engagement profond envers la restauration de l'intégrité de la Parole de Dieu, le Dr. G. W. Arthur apporte un mélange unique de passion, de sagesse et d'amour à son ministère.",
+        aboutPara2: "Le Dr. G. W. Arthur envisage un monde où l'intégrité de la Parole de Dieu est pleinement restaurée au sein du corps du Christ. Son leadership est marqué par un profond désir de renouveau spirituel et de transformation, visant à créer une communauté où les individus peuvent vivre le pouvoir transformateur de l'Évangile.",
+        aboutPara3: "Le Dr. G. W. Arthur n'est pas seulement un prédicateur ; il est un messager d'amour et de puissance. Ses enseignements au cours des deux dernières décennies reflètent les vertus et les excellences du Christ, et il s'efforce sans relâche de mettre en valeur les actes merveilleux qui définissent l'amour et la puissance trouvés dans le message transformateur du Christ.",
+        aboutPara4: "Pour le Dr. G. W. Arthur, la volonté de Dieu n'est pas seulement un principe directeur ; c'est le battement de son cœur et de son ministère. Son dévouement inébranlable à aligner chaque aspect de son travail sur la volonté de Dieu sert d'inspiration à ceux qui suivent ses enseignements.",
+        aboutPara5: "Le Dr. G. W. Arthur est un phare pour ceux qui recherchent un guide spirituel, des liens plus profonds avec le Christ et une communauté qui partage leurs valeurs. Son leadership est marqué par l'authenticité, l'humilité et une foi inébranlable dans le pouvoir transformateur de l'Évangile.",
+        aboutPara6: "De plus, le Dr. G. W. Arthur est heureusement marié à Mme Philarette Wilfred Arthur et ils ont de merveilleux enfants.",
+        aboutPara7: "Que vous soyez un fidèle de longue date ou que vous découvriez tout juste le Dr. G. W. Arthur, nous vous invitons à vous joindre à lui dans ce voyage transformateur. Explorez la richesse de la Parole de Dieu, vivez son amour et sa puissance, et découvrez l'accomplissement de votre héritage divin en Christ sous le ministère du Dr. G. W. Arthur."
     },
     es: {
         aboutHeroText: "Biografía",
-        aboutTitle: "Conozca al Rev. George Wilfred Arthur",
+        aboutTitle: "Conozca al Dr. George Wilfred Arthur",
         aboutSubtext: "Maestro, Apóstol, Evangelista y Orador",
         aboutPara1: "El Dr. George Wilfred Arthur es el pastor y la fuerza impulsora detrás de los Ministerios G. W. Arthur. Con un compromiso profundo con la restauración de la integridad de la Palabra de Dios, el Dr. G. W. Arthur aporta una mezcla única de pasión, sabiduría y amor a su ministerio.",
         aboutPara2: "El Dr. G. W. Arthur visualiza un mundo donde la integridad de la Palabra de Dios sea plenamente restaurada dentro del cuerpo de Cristo. Su liderazgo está marcado por un profundo deseo de renovación espiritual y transformación, con el objetivo de crear una comunidad donde los individuos puedan experimentar el poder transformador del Evangelio.",
@@ -37,7 +37,7 @@ const aboutText = {
     },
     pt: {
         "aboutHeroText": "Biografia",
-        "aboutTitle": "Conheça o Rev. George Wilfred Arthur",
+        "aboutTitle": "Conheça o Dr. George Wilfred Arthur",
         "aboutSubtext": "Professor, Apóstolo, Evangelista e Orador",
         "aboutPara1": "Dr. George Wilfred Arthur é o pastor e força motriz por trás dos Ministérios G. W. Arthur. Com um compromisso profundo em restaurar a integridade da Palavra de Deus, Dr. G. W. Arthur traz uma mistura única de paixão, sabedoria e amor ao seu ministério.",
         "aboutPara2": "Dr. G. W. Arthur envisions um mundo onde a integridade da Palavra de Deus seja completamente restaurada dentro do corpo de Cristo. Sua liderança é marcada por um profundo desejo de renovação espiritual e transformação, com o objetivo de criar uma comunidade onde indivíduos possam experimentar o poder transformador do Evangelho.",
@@ -49,7 +49,7 @@ const aboutText = {
     },
     ch: {
         aboutHeroText: "传记",
-        aboutTitle: "遇见乔治·威尔弗雷德·亚瑟牧师",
+        aboutTitle: "会见乔治·威尔弗雷德·阿瑟博士",
         aboutSubtext: "老师，使徒，传道者和演讲者",
         aboutPara1: "乔治·威尔弗雷德·亚瑟博士是 G. W. 亚瑟事工的牧者和推动力量。亚瑟博士对恢复上帝话语的完整性有着深刻的承诺，他为自己的事工带来了独特的热情、智慧和爱。",
         aboutPara2: "亚瑟博士设想一个世界，在基督的身体内上帝话语的完整性得到充分恢复。他的领导以对属灵更新和转化的深切渴望为标志，旨在创造一个个体可以在其中经历福音改变力量的社区。",

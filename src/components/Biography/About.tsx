@@ -95,6 +95,9 @@ const About: FC = () => {
                     <Text fontFamily={"Montserrat"} mb={8}>
                         {text.aboutPara6}
                     </Text>
+                    <Text fontFamily={"Montserrat"} mb={8}>
+                        {text.aboutPara7}
+                    </Text>
                 </Box>
             </GridItem>
             <GridItem px={{base: 4, md: 20}} py={{base: 4, md: 20}}  colSpan={1} overflow={"hidden"}>
