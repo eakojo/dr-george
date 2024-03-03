@@ -5,12 +5,26 @@ import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
 import { getLanguage } from '@/helpers/misc'
 import HomeLang from '@/internationalization/home'
 import { fetchYoutube } from '@/service/videos'
+import { getEpisodes } from '@/service/captivate'
+import { useQuery } from 'react-query'
 
 
 const Ministry: FC = () => {
     const [lang,setLang] = useState('en')
     const text = HomeLang[lang]
     const defaultLang =  getLanguage()
+    const [messages, setMessages] = useState([])
+    const [active, setActive] = useState({})
+
+    const handleFetch = async () => {
+        const res = await getEpisodes()
+        setMessages(res?.episodes || [])
+    }
+
+    useEffect(() => {
+        handleFetch()
+    },[])
+
 
   return (
     <Box
@@ -32,14 +46,24 @@ const Ministry: FC = () => {
                 align={"center"}
                 pl={16}
                 bg={"linear-gradient(90deg, rgba(16,32,51,1) 46%, rgba(16,32,51,0.8576680672268908) 58%, rgba(16,32,51,0.5663515406162465) 77%, rgba(16,32,51,0.08735994397759106) 93%, rgba(16,32,51,0) 100%)"}>
-                <Icon as={HiArrowLongLeft} color="white" fontSize={{base: 24, md: 40}}/>
+                {/* <Icon as={HiArrowLongLeft} color="white" fontSize={{base: 24, md: 40}}/> */}
             </Flex>
             <Flex gap={{base: 2, md: 8}} align={"center"}>
-                <Box w={{base: 36, md: 52, lg: 64}} h={{base: 36, md: 52, lg: 64}} bg="gray.500" flex={1}></Box>
-                <Box w={{base: 48, md: 64, lg: 80}} h={{base: 48, md: 64, lg: 80}} bg="gray.500"></Box>
-                <Box  w={{base: 36,  md: 52, lg: 64}} h={{base: 36,  md: 52, lg: 64}} bg="gray.500" flex={1}></Box>
-                <Box w={64} h={64} bg="gray.500" flex={1} display={{base: "none", xl: "block"}}></Box>
-                <Box w={64} h={64} bg="gray.500" flex={1} display={{base: "none", lg: "block"}}></Box>
+                <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box>
+                {messages?.map(item => (<Box 
+                    key={item.id} 
+                    w={((active as {id: string})?.id) === item.id ? {base: 48, md: 64, lg: 80} : {base: 36, md: 52, lg: 64}} 
+                    h={((active as {id: string})?.id) === item.id ? {base: 48, md: 64, lg: 80} : {base: 36, md: 52, lg: 64}} 
+                    bg="gray.500"
+                    bgImage={item.episode_art}
+                    bgSize={"cover"}
+                    bgPos={"center"}
+                    onClick={() => setActive(item)}
+                    cursor={"pointer"}
+                    {...(active as {id: string})?.id === item.id ? { flex:1 } : {}}
+                />))}
+                <Box bg="transparent" w={{base: 36,  md: 52, lg: 64}} h={{base: 36,  md: 52, lg: 64}}></Box>
+                <Box bg="transparent" w={{base: 36,  md: 52, lg: 64}} h={{base: 36,  md: 52, lg: 64}}></Box>
             </Flex>
             <Flex 
                 pos={"absolute"} 
@@ -49,7 +73,6 @@ const Ministry: FC = () => {
                 justify={"center"}
                 pl={0}
                 bg={"linear-gradient(270deg, rgba(16,32,51,1) 46%, rgba(16,32,51,0.8576680672268908) 58%, rgba(16,32,51,0.5663515406162465) 77%, rgba(16,32,51,0.08735994397759106) 93%, rgba(16,32,51,0) 100%)"}>
-                <Icon as={HiArrowLongRight} color="white" fontSize={{base: 24, md: 40}}/>
             </Flex>
         </Box>
         <Flex justify={"center"}>

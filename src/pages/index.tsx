@@ -7,9 +7,15 @@ import AudioMessages from '@/components/Home/AudioMessages'
 import Social from '@/components/Home/Social'
 import AskDrGeorge from '@/components/Home/AskDrGeorge'
 import Listen from '@/components/Home/Listen'
+import { useEffect } from 'react'
+import { getCaptivateToken } from '@/service/captivate'
 
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    getCaptivateToken()
+  },[])
+
   return (
     <Layout>
       <HeroDesktop />
