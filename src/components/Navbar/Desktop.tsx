@@ -162,7 +162,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
                 align={"center"}
             >
               <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
-                <Flex w={24}  justify={"center"} alignItems={"center"} mt={2}>
+                <Flex w={24}  justify={"center"} alignItems={"center"} p={1}>
                   {transparent ? 
                   <Image className='logo-box' src='/images/G W Arthur Logo-white.png' alt="gwarthur logo" />
                   :

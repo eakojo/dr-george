@@ -23,7 +23,7 @@ const Listen: FC = () => {
     >
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)'}}>
         <GridItem pr={{base: 0, md: 36}} py={4}>
-          <Text color={"white"} fontWeight={"bold"} textAlign={"center"} fontSize={{base: 24, md: 40}} lineHeight={1.2}>{text.platformsTitle}</Text>
+          <Text color={"white"} fontWeight={"bold"} textAlign={"left"} fontSize={{base: 24, md: 40}} lineHeight={1.2}>{text.platformsTitle}</Text>
           <Flex align={"center"} gap={12} mt={12} direction={{base: "column", md: "row"}}>
             <CustomButton bgColor={"base.gold"} title={text.platformsButton} color="base.blue" rounded="none" textSize={20} display={{base: "none", md: "block"}}/>
             <Flex gap={8} align={"center"}>
