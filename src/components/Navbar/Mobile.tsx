@@ -15,6 +15,8 @@ import {
   MenuList,
   MenuItem
 } from '@chakra-ui/react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 interface ILink {
   name: string
@@ -102,7 +104,7 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
         justify="space-between"
         color={'white'}
       >
-        <Box>
+        <Box className='logo-box'>
           <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
             <Image src="/images/G W Arthur Logo.png" h={16} alt="company logo" />
           </Link>
