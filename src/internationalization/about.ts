@@ -2,7 +2,7 @@ const aboutText = {
     en: {
         aboutHeroText: "Biography",
         aboutTitle: "Meet Rev. George Wilfred Arthur",
-        aboutSubtext: "Teacher, Apostle, Evangelist, & Speaker",
+        aboutSubtext: "Bible Teacher & Conference Speaker",
         aboutPara1: "Dr. George Wilfred Arthur is the shepherd and driving force behind G. W. Arthur Ministries. With a profound commitment to restoring the integrity of the Word of God, Dr. G. W. Arthur brings a unique blend of passion, wisdom, and love to his ministry.",
         aboutPara2: "Dr. G. W. Arthur envisions a world where the integrity of God's Word is fully restored within the body of Christ. His leadership is marked by a deep desire for spiritual renewal and transformation, aiming to create a community where individuals can experience the life-changing power of the Gospel.",
         aboutPara3: "Dr. G. W. Arthur is not just a preacher; he is a messenger of love and power. His teachings over the past two decades reflect the virtues and excellences of Christ, and he tirelessly strives to showcase the marvelous deeds that define the love and power found in Christ's transformative message.",
@@ -14,7 +14,7 @@ const aboutText = {
     fr: {
         aboutHeroText: "Biographie",
         aboutTitle: "Rencontrez le Rév. George Wilfred Arthur",
-        aboutSubtext: "Enseignant, Apôtre, Évangéliste et Orateur",
+        aboutSubtext: "Enseignante biblique et conférencière",
         aboutPara1: "Le Dr. George Wilfred Arthur est le berger et la force motrice derrière les Ministères G. W. Arthur. Avec un engagement profond envers la restauration de l'intégrité de la Parole de Dieu, le Dr G. W. Arthur apporte un mélange unique de passion, de sagesse et d'amour à son ministère.",
         aboutPara2: "Le Dr G. W. Arthur envisage un monde où l'intégrité de la Parole de Dieu est pleinement restaurée au sein du corps du Christ. Son leadership est marqué par un profond désir de renouveau spirituel et de transformation, visant à créer une communauté où les individus peuvent vivre le pouvoir transformateur de l'Évangile.",
         aboutPara3: "Le Dr G. W. Arthur n'est pas seulement un prédicateur ; il est un messager d'amour et de puissance. Ses enseignements au cours des deux dernières décennies reflètent les vertus et les excellences du Christ, et il s'efforce sans relâche de mettre en valeur les actes merveilleux qui définissent l'amour et la puissance trouvés dans le message transformateur du Christ.",
@@ -26,7 +26,7 @@ const aboutText = {
     es: {
         aboutHeroText: "Biografía",
         aboutTitle: "Conozca al Rev. George Wilfred Arthur",
-        aboutSubtext: "Maestro, Apóstol, Evangelista y Orador",
+        aboutSubtext: "Profesora de la Biblia y Conferencista",
         aboutPara1: "El Dr. George Wilfred Arthur es el pastor y la fuerza impulsora detrás de los Ministerios G. W. Arthur. Con un compromiso profundo con la restauración de la integridad de la Palabra de Dios, el Dr. G. W. Arthur aporta una mezcla única de pasión, sabiduría y amor a su ministerio.",
         aboutPara2: "El Dr. G. W. Arthur visualiza un mundo donde la integridad de la Palabra de Dios sea plenamente restaurada dentro del cuerpo de Cristo. Su liderazgo está marcado por un profundo deseo de renovación espiritual y transformación, con el objetivo de crear una comunidad donde los individuos puedan experimentar el poder transformador del Evangelio.",
         aboutPara3: "El Dr. G. W. Arthur no es solo un predicador; es un mensajero de amor y poder. Sus enseñanzas durante las últimas dos décadas reflejan las virtudes y excelencias de Cristo, y se esfuerza incansablemente por mostrar los actos maravillosos que definen el amor y el poder que se encuentran en el mensaje transformador de Cristo.",
@@ -38,7 +38,7 @@ const aboutText = {
     pt: {
         "aboutHeroText": "Biografia",
         "aboutTitle": "Conheça o Rev. George Wilfred Arthur",
-        "aboutSubtext": "Professor, Apóstolo, Evangelista e Orador",
+        aboutSubtext: "Professora de Bíblia e Palestrante de Conferências",
         "aboutPara1": "Dr. George Wilfred Arthur é o pastor e força motriz por trás dos Ministérios G. W. Arthur. Com um compromisso profundo em restaurar a integridade da Palavra de Deus, Dr. G. W. Arthur traz uma mistura única de paixão, sabedoria e amor ao seu ministério.",
         "aboutPara2": "Dr. G. W. Arthur envisions um mundo onde a integridade da Palavra de Deus seja completamente restaurada dentro do corpo de Cristo. Sua liderança é marcada por um profundo desejo de renovação espiritual e transformação, com o objetivo de criar uma comunidade onde indivíduos possam experimentar o poder transformador do Evangelho.",
         "aboutPara3": "Dr. G. W. Arthur não é apenas um pregador; ele é um mensageiro de amor e poder. Seus ensinamentos ao longo das últimas duas décadas refletem as virtudes e excelências de Cristo, e ele se esforça incansavelmente para mostrar as maravilhosas obras que definem o amor e o poder encontrados na mensagem transformadora de Cristo.",
@@ -50,7 +50,7 @@ const aboutText = {
     ch: {
         aboutHeroText: "传记",
         aboutTitle: "遇见乔治·威尔弗雷德·亚瑟牧师",
-        aboutSubtext: "老师，使徒，传道者和演讲者",
+        aboutSubtext: "圣经教师和会议演讲者",
         aboutPara1: "乔治·威尔弗雷德·亚瑟博士是 G. W. 亚瑟事工的牧者和推动力量。亚瑟博士对恢复上帝话语的完整性有着深刻的承诺，他为自己的事工带来了独特的热情、智慧和爱。",
         aboutPara2: "亚瑟博士设想一个世界，在基督的身体内上帝话语的完整性得到充分恢复。他的领导以对属灵更新和转化的深切渴望为标志，旨在创造一个个体可以在其中经历福音改变力量的社区。",
         aboutPara3: "亚瑟博士不仅仅是一位传道者；他是爱和力量的使者。在过去的二十年中，他的教导反映了基督的美德和卓越，并不知疲倦地努力展示定义基督变革信息的奇妙行为。",
@@ -59,7 +59,7 @@ const aboutText = {
         aboutPara6: "此外，乔治·威尔弗雷德·亚瑟博士与菲拉莱特·威尔弗雷德·亚瑟女士幸福地结为夫妻，他们有着美好的孩子。",
         aboutPara7: "无论您是长期的追随者还是刚刚发现乔治·威尔弗雷德·亚瑟博士，我们邀请您加入他这段变革之旅。探索上帝话语的丰富性，体验祂的爱和力量，并在乔治·威尔弗雷德·亚瑟博士的事工下发现您在基督里的神圣遗产的成就。"
     }
-       
+
 };
 
 export default aboutText

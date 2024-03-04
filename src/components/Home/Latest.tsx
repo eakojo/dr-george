@@ -7,6 +7,7 @@ import {
     ModalCloseButton, Text, 
     useDisclosure,
     ModalBody,
+    Skeleton,
 } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
 import { TbPlayerPlayFilled } from 'react-icons/tb'
@@ -81,7 +82,7 @@ const Latest: FC = () => {
                 <Box pos={"absolute"} left={{base: 0, md: 48}} top={{base: 0, md: -20}} w={{base: 28, md: 32}}>
                     <Image src="images/pattern-1.png" alt="pattern group"  />
                 </Box>
-                <Box bg={"gray.300"} h={{base: 'auto', md: 108}} w={{base: 'auto', md: 128}} mt={12} pos={"relative"} overflow={'hidden'}>
+                {isLoading ? <Skeleton  h={{base: 'auto', md: 108}} w={{base: 'auto', md: 128}}  mt={12}  /> : <Box bg={"gray.300"} h={{base: 'auto', md: 108}} w={{base: 'auto', md: 128}} mt={12} pos={"relative"} overflow={'hidden'}>
                     <Box bgImage={video?.[0]?.snippet?.thumbnails?.high?.url} bgSize={"cover"}  h={{base: 'auto', md: 108}} w={{base: 'auto', md: 128}} bgPos={"center"}></Box>
                     <Flex align="center" justify={"center"} overflow={"hidden"} pos={"absolute"} left={0} top={0} zIndex={2} w={"100%"} h={"100%"}>
                         {!video?.length || isOpen ? null : <Flex w={16} h={16} bg="whiteAlpha.800" rounded={"full"} align={"center"} 
@@ -91,7 +92,7 @@ const Latest: FC = () => {
                             <Icon as={TbPlayerPlayFilled} boxSize={8} />
                         </Flex>}
                     </Flex>
-                </Box>
+                </Box>}
                 {/* <Box pos={"absolute"} right={12} top={-20} display={{base: "none", md: "block"}}>
                     <Icon as={HiArrowLongRight} color="base.blue" fontSize={40}/>
                 </Box> */}
