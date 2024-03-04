@@ -53,6 +53,26 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
     getLanguage()
   },[])
 
+  useGSAP(() => {
+    let animation = gsap.to('.logo-box', {
+      rotationY: 360,
+      duration: 2,
+      repeat: -1,
+      ease: "none"
+    })
+
+    const logoBox = document.querySelector('.logo-box');
+
+    logoBox.addEventListener('mouseenter', () => {
+      animation.restart();
+      animation.pause()
+    });
+
+    logoBox.addEventListener('mouseleave', () => {
+      animation.play();
+    });
+  })
+
 
   return (
     <Box display={{ base: 'flex', md: 'none' }} flexDirection="column">
