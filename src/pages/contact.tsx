@@ -8,6 +8,7 @@ import Ask from '@/components/Contact/ask'
 import { useEffect, useState } from 'react'
 import { getLanguage } from '@/helpers/misc'
 import contactText from '@/internationalization/contact'
+import Appointment from '@/components/Contact/appointment'
 
 
 const Home: NextPage = () => {
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         <PageHero title={text.contactHeroText} />
         <Info />
         <Ask />
+        <Appointment />
         <Listen />
     </Layout>
   )

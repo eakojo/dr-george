@@ -22,6 +22,7 @@ const Info: FC = () => {
             <GridItem  px={{base: 5, md: 20}} py={{base: 8, md: 20}}>
                 <Text mb={4} textAlign={"center"} fontSize={24} fontWeight={600} color={"base.blue"}>{text.contactEmail}</Text>
                 <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>info@gwarthurministries.org</Text>
+                <Text textAlign={"center"} fontFamily={"Montserrat"} fontSize={{base: 14, md: 16}}>info@gwarthurministries.org</Text>
             </GridItem>
         </Grid>
     </Box>

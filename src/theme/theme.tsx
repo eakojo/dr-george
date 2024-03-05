@@ -6,13 +6,13 @@ export const theme = extendTheme({
     global: () => ({
       'html, body': {
         fontFamily: 'Garamond, Baguede, sans-serif',
-        fontWeight: 400
+        fontWeight: 500,
       },
       body: {
         lineHeight: 'tall',
         color: 'gray.700',
         fontSize: 'md',
-        fontWeight: 400,
+        fontWeight: 500,
         bg: 'white',
         fontFamily: 'Garamond, Baguede, sans-serif'
       }
