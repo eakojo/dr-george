@@ -103,8 +103,8 @@ const Ministry: FC = () => {
                 {messages.length < 3 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
                 {messages?.map(item => (<Box 
                     key={item.id} 
-                    w={((active as {id: string})?.id) === item.id ? {base: 48, md: 64, lg: 80} : {base: 36, md: 52, lg: 64}} 
-                    h={((active as {id: string})?.id) === item.id ? {base: 48, md: 64, lg: 80} : {base: 36, md: 52, lg: 64}} 
+                    w={((active as {id: string})?.id) === item.id ? {base: 44, md: 60, lg: 72} : {base: 36, md: 52, lg: 64}} 
+                    h={((active as {id: string})?.id) === item.id ? {base: 44, md: 60, lg: 72} : {base: 36, md: 52, lg: 64}} 
                     bg="gray.500"
                     bgImage={item.episode_art}
                     bgSize={"cover"}
@@ -120,7 +120,7 @@ const Ministry: FC = () => {
                     className={`${((active as {id: string})?.id) === item.id ? `active-box` : ""}`}
                 >
                     {((active as {id: string})?.id) === item.id ? <Flex p={3} h={12} w="100" bg="base.gold" justify={"space-between"}>
-                        <Text color={"base.blue"} fontFamily={"Montserrat"} fontWeight={600}>{(active as {title: string}).title}</Text>
+                        <Text color={"base.blue"} fontFamily={"Montserrat"} fontWeight={600} fontSize={15}>{(active as {title: string}).title}</Text>
 
                         <Flex onClick={() => setIsPlaying(!isPlaying)} align={"center"} justify={"center"} w={6} h={6}>
                             {!isReady ? <Spinner /> : <Icon as={isPlaying ? TbPlayerPause :TbPlayerPlayFilled }  color={"base.blue"} boxSize={6} />}
@@ -128,7 +128,6 @@ const Ministry: FC = () => {
                     </Flex> : null}
                 </Box>))}
                 {messages.length < 4 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
-                {messages.length < 5 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
             </Flex>
             <Flex 
                 pos={"absolute"} 
