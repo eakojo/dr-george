@@ -23,6 +23,7 @@ const PlaybackAudio = ({source, playing, setPlaying, setReady, isReady}) => {
 
     useEffect(() => {
       setPlaying(false)
+      setReady(false)
       if(source && newAudio){
         newAudio.src = source
         if (newAudio.readyState > 0) {
@@ -110,8 +111,6 @@ const Ministry: FC = () => {
                     bgSize={"cover"}
                     bgPos={"center"}
                     onClick={() => {
-                        setReady(false)
-                        setIsPlaying(false)
                         setActive(item)
                     }}
                     cursor={"pointer"}
