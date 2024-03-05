@@ -1,10 +1,8 @@
 import { FC, useEffect, useRef, useState } from 'react'
-import { Box, Flex, Grid, GridItem, Icon, Spinner, Text } from '@chakra-ui/react'
+import { Box, Flex, Icon, Spinner, Text } from '@chakra-ui/react'
 import CustomButton from '../Atom/Button'
-import { HiArrowLongLeft, HiArrowLongRight } from 'react-icons/hi2'
 import { getLanguage } from '@/helpers/misc'
 import HomeLang from '@/internationalization/home'
-import { fetchYoutube } from '@/service/videos'
 import { getEpisodes } from '@/service/captivate'
 import { useQuery } from 'react-query'
 import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb'
@@ -12,52 +10,52 @@ import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb'
 
 const PlaybackAudio = ({source, playing, setPlaying, setReady, isReady}) => {
     const audioRef = useRef(null);
+    const [newAudio, setNewAudio] = useState(null)
 
-    // useEffect(() => {
-    //     if(ref?.current?.readyStart > 0){
-    //         setReady(true)
-    //     }
-    // // eslint-disable-next-line react-hooks/exhaustive-deps
-    // },[ref?.current?.readyStart])
+    useEffect(
+      () => {
+        const node = audioRef.current;
+        setNewAudio(node)
+      },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [audioRef.current]
+    )
 
     useEffect(() => {
-        if (audioRef.current) {
-            if(playing){
-                if(isReady && audioRef.current)
-                audioRef.current.play();
-            } else {
-                audioRef.current.pause();
-            }
+      setPlaying(false)
+      if(source && newAudio){
+        newAudio.src = source
+        if (newAudio.readyState > 0) {
+            setPlaying(true)
+            setReady(true)
+        } else {
+            newAudio.addEventListener('loadedmetadata', () => {
+                setPlaying(true)
+                setReady(true)
+            });
         }
+        // audio.addEventListener("ended", () => {
+        //   setTimeout(() => {
+        //     playNext()
+        //   }, 5000)
+        // })
+        // setTotalPlays(prev => prev + 1)
+      }
+  
+    }, [source])
+
+     useEffect(() => {
+      if(newAudio !== null){
+        if(playing){
+          newAudio.play()
+        }else {
+          newAudio.pause()
+        }
+      }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[playing])
+    }, [playing])
 
-    useEffect(() => {
-        console.log('Loading ')
-        const handleLoadedData = () => {
-            console.log('Loaded ', true)
-            setReady(true);
-        };
-
-        if (audioRef.current) {
-
-            audioRef.current.addEventListener('canplaythrough', handleLoadedData);
-        }
-
-        return () => {
-            if (audioRef.current) {
-                // eslint-disable-next-line react-hooks/exhaustive-deps
-                audioRef.current.removeEventListener('canplaythrough', handleLoadedData);
-            }
-        };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [source, audioRef.current]);
-
-
-    return <audio ref={audioRef} autoPlay controls style={{visibility: 'hidden'}}>
-          <source src={source} type="audio/mp3" />
-          Your browser does not support the audio element.
-        </audio>
+    return  <audio ref={audioRef}/>
 }
 
 
@@ -72,7 +70,7 @@ const Ministry: FC = () => {
 
 
     const { data, isLoading, error } = useQuery<any>(["captivateData"], getEpisodes,);
-    const messages = data?.episodes || []
+    const messages = data?.episodes.slice(0, 5).reverse() || []
 
     const openLink = () => {
         window.open('https://g-w-arthur-ministries.captivate.fm/listen', '_blank');
@@ -102,7 +100,7 @@ const Ministry: FC = () => {
                 {/* <Icon as={HiArrowLongLeft} color="white" fontSize={{base: 24, md: 40}}/> */}
             </Flex>
             <Flex gap={{base: 2, md: 8}} align={"center"}>
-                <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box>
+                {messages.length < 3 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
                 {messages?.map(item => (<Box 
                     key={item.id} 
                     w={((active as {id: string})?.id) === item.id ? {base: 48, md: 64, lg: 80} : {base: 36, md: 52, lg: 64}} 
@@ -111,10 +109,15 @@ const Ministry: FC = () => {
                     bgImage={item.episode_art}
                     bgSize={"cover"}
                     bgPos={"center"}
-                    onClick={() => setActive(item)}
+                    onClick={() => {
+                        setReady(false)
+                        setIsPlaying(false)
+                        setActive(item)
+                    }}
                     cursor={"pointer"}
                     {...(active as {id: string})?.id === item.id ? { flex:1 } : {}}
                     position={"relative"}
+                    className={`${((active as {id: string})?.id) === item.id ? `active-box` : ""}`}
                 >
                     {((active as {id: string})?.id) === item.id ? <Flex p={3} h={12} w="100" bg="base.gold" justify={"space-between"}>
                         <Text color={"base.blue"} fontFamily={"Montserrat"} fontWeight={600}>{(active as {title: string}).title}</Text>
@@ -124,8 +127,8 @@ const Ministry: FC = () => {
                         </Flex>
                     </Flex> : null}
                 </Box>))}
-                <Box bg="transparent" w={{base: 36,  md: 52, lg: 64}} h={{base: 36,  md: 52, lg: 64}}></Box>
-                <Box bg="transparent" w={{base: 36,  md: 52, lg: 64}} h={{base: 36,  md: 52, lg: 64}}></Box>
+                {messages.length < 4 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
+                {messages.length < 5 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
             </Flex>
             <Flex 
                 pos={"absolute"} 
