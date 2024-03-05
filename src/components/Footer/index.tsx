@@ -24,7 +24,7 @@ const Footer: FC = () => {
     useEffect(() => {
       // Your asynchronous logic here
       const fetchData = async () => {
-      const componentData = await client.getAllByType('site_gallery', {
+      const componentData = await client?.getAllByType('site_gallery', {
           fetchOptions: {
           cache: 'no-store',
           next: { tags: ['prismic', 'home_hero'] },

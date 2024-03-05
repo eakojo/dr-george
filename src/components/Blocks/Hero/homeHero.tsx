@@ -107,12 +107,12 @@ const handleSlide = (index) => {
       overflow={'hidden'}
     >
       <Flex align={"center"} pos={"absolute"} top={0} left={0} bg={"rgba(2, 24, 33,.7)"} w={'100%'} h="100%" zIndex={3}>
-        <Box px={36} mt={40}>
+        <Box px={{base: 4, md: 36}} mt={40}>
             <Box w="100%">
               <Flex ref={heroTextList} flexDirection={"row"}>
                   {
                   HeroSlider.map(item => (
-                    <Box key={item.key} w={600}>
+                    <Box key={item.key} w={{base: "100%", md: 600}}>
                       <Text fontSize={{base: 44, md: 52, xl: 64}} textAlign={{base:"left"}} fontWeight={600} color={"white"} lineHeight={1.1}>{item.title}</Text>
                       <Text mt={8} color={"white"} textAlign={{base:"left"}} fontSize={{base: 12, sm: 16}} fontFamily={"Montserrat"}>{item.subText}</Text>
                     </Box>
