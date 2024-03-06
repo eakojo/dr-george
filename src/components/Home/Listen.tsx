@@ -51,7 +51,7 @@ const Listen: FC = () => {
         </GridItem>
         <GridItem px={20} py={4} bg={"base.blue"} display={{base: "none", lg: "block"}}>
           <Box pos={"relative"}>
-            <Image src="images/dr-george-cutout-1.png"  pos={"absolute"} top={{base: 0, xl: -24}} right={-20} alt="dr-george-cutout-1" />
+            <Image src="images/dr-george-cutout-1.png"  pos={"absolute"} top={{base: 0, xl: 0}} right={-20} alt="dr-george-cutout-1" />
           </Box>
         </GridItem>
       </Grid>

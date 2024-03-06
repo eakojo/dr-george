@@ -9,6 +9,7 @@ import AskDrGeorge from '@/components/Home/AskDrGeorge'
 import Listen from '@/components/Home/Listen'
 import { useEffect } from 'react'
 import { getCaptivateToken } from '@/service/captivate'
+import Testimony from '@/components/Home/Testimony'
 
 
 const Home: NextPage = () => {
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
       <Latest />
       <AudioMessages />
       <Social />
+      <Testimony />
       <AskDrGeorge />
       <Listen />
     </Layout>
