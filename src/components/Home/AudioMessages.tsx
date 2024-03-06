@@ -6,6 +6,7 @@ import HomeLang from '@/internationalization/home'
 import { getEpisodes } from '@/service/captivate'
 import { useQuery } from 'react-query'
 import { TbPlayerPause, TbPlayerPlayFilled } from 'react-icons/tb'
+import { useMediaQuery } from 'react-responsive'
 
 
 const PlaybackAudio = ({source, playing, setPlaying, setReady, isReady}) => {
@@ -67,6 +68,8 @@ const Ministry: FC = () => {
     const [active, setActive] = useState({})
     const [isReady, setReady] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
+    const isMobile = useMediaQuery({ maxWidth: 750 });
+
 
 
 
@@ -119,12 +122,16 @@ const Ministry: FC = () => {
                     className={`${((active as {id: string})?.id) === item.id ? `active-box` : ""}`}
                 >
                     {((active as {id: string})?.id) === item.id ? <Flex p={3} h={12} w="100" bg="base.gold" justify={"space-between"}>
-                        <Text color={"base.blue"} fontFamily={"Montserrat"} fontWeight={600} fontSize={15}>{(active as {title: string}).title}</Text>
+                        <Text textAlign={{base: "center", md: "left"}} color={"base.blue"} fontFamily={"Montserrat"} fontWeight={600} fontSize={{base: 12, md: 15}}>{(active as {title: string}).title}</Text>
 
-                        <Flex onClick={() => setIsPlaying(!isPlaying)} align={"center"} justify={"center"} w={6} h={6}>
+                        {!isMobile &&<Flex onClick={() => setIsPlaying(!isPlaying)} align={"center"} justify={"center"} w={6} h={6}>
                             {!isReady ? <Spinner /> : <Icon as={isPlaying ? TbPlayerPause :TbPlayerPlayFilled }  color={"base.blue"} boxSize={6} />}
-                        </Flex>
+                        </Flex>}
                     </Flex> : null}
+
+                    {((active as {id: string})?.id) === item.id  && isMobile ? <Flex onClick={() => setIsPlaying(!isPlaying)} rounded={"md"} align={"center"} justify="center" w={6} h={6} position={"absolute"} bottom={2} right={2} bg={"base.gold"}>
+                             {!isReady ? <Spinner w={4} h={4} /> : <Icon as={isPlaying ? TbPlayerPause :TbPlayerPlayFilled }  color={"base.blue"} boxSize={4} />}
+                        </Flex> : null}
                 </Box>))}
                 {messages.length < 4 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
             </Flex>

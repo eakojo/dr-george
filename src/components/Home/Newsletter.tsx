@@ -57,7 +57,7 @@ const About: FC<IProp> = () => {
 
   return (
     <Grid templateColumns={{base: 'repeat(1, 1fr)' ,  lg:'repeat(2, 1fr)'}}>
-      <GridItem px={{base: 12, md: 20}} py={20} bg={"black"}>
+      <GridItem px={{base: 5, md: 20}} py={20} bg={"black"}>
         <Text color={"white"} fontWeight={"bold"} fontSize={24}>{text?.newsletterTitle}</Text>
         <Text fontFamily={'Montserrat'} mt={4} color={"white"} fontSize={{base: 12, sm: 14, md: 16}}>{text?.newsletterSubtext}</Text>
         <Flex mt={4} gap={3} fontFamily={"Montserrat"} direction={{base: "column", md: "row"}}>
@@ -66,7 +66,7 @@ const About: FC<IProp> = () => {
           <CustomButton isLoading={loading} title={text?.newsletterSubmit} bgColor={"base.gold"} rounded="none" mt={{base: 2, md: 0}} fontSize={16} color="black" fontFamily="Garamond" onClick={() => handleSubmit() }/>
         </Flex>
       </GridItem>
-      <GridItem px={{base: 12, md: 20}} py={20} bg={"base.blue"}>
+      <GridItem px={{base: 5, md: 20}} py={20} bg={"base.blue"}>
         <Text color={"white"} fontWeight={"bold"} fontSize={24}>{text?.readMoreTitle}</Text>
         <Text fontFamily={'Montserrat'} mt={4} color={"white"} fontSize={{base: 12, sm: 14, md: 16}}>{text?.readMoreSubtext}</Text>
         <Flex mt={4} gap={3} fontFamily={"Montserrat"}>

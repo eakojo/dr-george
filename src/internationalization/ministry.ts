@@ -1,11 +1,11 @@
 const ministryText = {
     en: {
         ministryHeroText: "Ministry",
-        myMission: "My Mission",
+        myMission: "The Mission",
         missionText: "To preach to the nations the unsearchable riches of Christ and to make known the glorious wealth of God’s inheritance in the saints. We do this by raising, equipping, and guiding individuals into a profound awareness and revelation of Christ and His completed work through the powerful mediums of preaching and teaching the Gospel. Through these efforts, we are dedicated to leading people to the realization of their allotted inheritance in Christ.",
-        myVision: "My Vision",
+        myVision: "The Vision",
         visionText: "We exist to share the unadulterated gospel, love people, and make disciples of Jesus Christ. At George Wilfred Arthur Ministries (G. W. Arthur Ministries), our vision is to restore the integrity of God’s Word in its full glory and life within the body of Christ. We are a dynamic and effective ministry that serves as a catalyst for spiritual renewal and transformation.",
-        myValues: "My Core Values",
+        myValues: "Our Core Values",
         valuesText: "Dr. George Wilfred Arthur is the shepherd and driving force behind G. W. Arthur Ministries. With a profound commitment to restoring the integrity of the Word of God, Dr. G. W. Arthur brings a unique blend of passion, wisdom, and love to his ministry.",
         values: [
             {
@@ -23,12 +23,12 @@ const ministryText = {
         ]
     },
     fr: {
+        myMission: "La Mission",
+        myVision: "La Vision",
+        myValues: "Nos Valeurs Fondamentales",
         ministryHeroText: "Ministère",
-        myMission: "Ma Mission",
         missionText: "Prêcher aux nations les richesses insondables du Christ et faire connaître la glorieuse richesse de l'héritage de Dieu dans les saints. Nous le faisons en élevant, en équipant et en guidant les individus vers une conscience profonde et une révélation de Christ et de son œuvre accomplie par les moyens puissants de la prédication et de l'enseignement de l'Évangile. À travers ces efforts, nous sommes dédiés à conduire les gens à la réalisation de leur héritage attribué en Christ.",
-        myVision: "Ma Vision",
         visionText: "Nous existons pour partager l'Évangile non falsifié, aimer les gens et faire des disciples de Jésus-Christ. Chez les Ministères George Wilfred Arthur (G. W. Arthur Ministries), notre vision est de restaurer l'intégrité de la Parole de Dieu dans toute sa gloire et sa vie au sein du corps du Christ. Nous sommes un ministère dynamique et efficace qui sert de catalyseur pour le renouveau spirituel et la transformation.",
-        myValues: "Mes Valeurs Fondamentales",
         valuesText: "Le Dr. George Wilfred Arthur est le berger et la force motrice derrière les Ministères G. W. Arthur. Avec un engagement profond envers la restauration de l'intégrité de la Parole de Dieu, le Dr. G. W. Arthur apporte un mélange unique de passion, de sagesse et d'amour à son ministère.",
         values: [
             {
@@ -46,12 +46,12 @@ const ministryText = {
         ]
     },
     es: {
+        myMission: "La Misión",
+        myVision: "La Visión",
+        myValues: "Nuestros Valores Principales",
         ministryHeroText: "Ministerio",
-        myMission: "Mi Misión",
         missionText: "Predicar a las naciones las riquezas insondables de Cristo y dar a conocer la gloriosa riqueza de la herencia de Dios en los santos. Lo hacemos elevando, equipando y guiando a las personas hacia una profunda conciencia y revelación de Cristo y su obra completada a través de los poderosos medios de la predicación y enseñanza del Evangelio. A través de estos esfuerzos, estamos dedicados a llevar a las personas a la realización de su herencia asignada en Cristo.",
-        myVision: "Mi Visión",
         visionText: "Existimos para compartir el Evangelio sin adulterar, amar a las personas y hacer discípulos de Jesucristo. En los Ministerios George Wilfred Arthur (G. W. Arthur Ministries), nuestra visión es restaurar la integridad de la Palabra de Dios en toda su gloria y vida dentro del cuerpo de Cristo. Somos un ministerio dinámico y efectivo que sirve como catalizador para la renovación espiritual y la transformación.",
-        myValues: "Mis Valores Fundamentales",
         valuesText: "El Dr. George Wilfred Arthur es el pastor y la fuerza impulsora detrás de los Ministerios G. W. Arthur. Con un compromiso profundo con la restauración de la integridad de la Palabra de Dios, el Dr. G. W. Arthur aporta una mezcla única de pasión, sabiduría y amor a su ministerio.",
         values: [
             {
@@ -69,12 +69,12 @@ const ministryText = {
         ]
     },
     pt: {
+        myMission: "A Missão",
+        myVision: "A Visão",
+        myValues: "Nossos Valores Essenciais",
         ministryHeroText: "Ministério",
-        myMission: "Minha Missão",
         missionText: "Pregar às nações as riquezas inexauríveis de Cristo e dar a conhecer a gloriosa riqueza da herança de Deus nos santos. Fazemos isso elevando, equipando e guiando as pessoas para uma profunda consciência e revelação de Cristo e sua obra concluída por meio dos poderosos meios de pregação e ensino do Evangelho. Através desses esforços, estamos dedicados a levar as pessoas à realização de sua herança designada em Cristo.",
-        myVision: "Minha Visão",
         visionText: "Existimos para compartilhar o Evangelho não adulterado, amar as pessoas e fazer discípulos de Jesus Cristo. Nos Ministérios George Wilfred Arthur (G. W. Arthur Ministries), nossa visão é restaurar a integridade da Palavra de Deus em toda a sua glória e vida dentro do corpo de Cristo. Somos um ministério dinâmico e eficaz que serve como catalisador para a renovação espiritual e a transformação.",
-        myValues: "Meus Valores Fundamentais",
         valuesText: "Dr. George Wilfred Arthur é o pastor e força motriz por trás dos Ministérios G. W. Arthur. Com um compromisso profundo em restaurar a integridade da Palavra de Deus, Dr. G. W. Arthur traz uma mistura única de paixão, sabedoria e amor ao seu ministério.",
         values: [
             {
@@ -92,12 +92,12 @@ const ministryText = {
         ]
     },
     ch: {
+        myMission: "使命",
+        myVision: "愿景",
+        myValues: "我们的核心价值",
         ministryHeroText: "事工",
-        myMission: "我的使命",
         missionText: "向万民传讲基督无法测度的丰富和使众圣徒知道神荣耀的产业的丰富。我们通过扬升、装备和引导个人，使他们深刻认识基督及祂通过强有力的传教和教导福音所完成的工作。通过这些努力，我们致力于带领人们认识自己在基督里所分配的产业。",
-        myVision: "我的愿景",
         visionText: "我们的存在是为了分享纯正的福音，爱人，并使人成为耶稣基督的门徒。在乔治·威尔弗雷德·阿瑟事工（G. W. Arthur Ministries）中，我们的愿景是恢复神话语的完整荣耀和生命，让基督的身体内部充满生机。我们是一个具有活力和有效力的事工，作为精神焕新和转变的催化剂。",
-        myValues: "我的核心价值观",
         valuesText: "乔治·威尔弗雷德·亚瑟博士是 G. W. 亚瑟事工的牧者和推动力量。亚瑟博士对恢复上帝话语的完整性有着深刻的承诺，他为自己的事工带来了独特的热情、智慧和爱。",
         values: [
             {
@@ -113,7 +113,7 @@ const ministryText = {
                 text: "神的旨意不仅是一个指导原则；它是我们的信条。我们坚定地致力于将我们的思想、行动和决定与神圣的旨意一致，寻求在我们所做的一切中实现神的目的。"
             }
         ]
-    }    
+    }
 }
 
 export default ministryText;
