@@ -150,7 +150,7 @@ const DesktopNavbar: React.FC<{ links: ILink[], topL:any[], transparent: boolean
             pos={transparent? "absolute": "fixed" }       
             p={0}
             bg={transparent? 'transparent' :"rgba(255, 255, 255, 0.29)"}
-            boxShadow={"0 4px 30px rgba(0, 0, 0, 0.1)"}
+            boxShadow={transparent ? "none" : "0 4px 30px rgba(0, 0, 0, 0.1)"}
             backdropFilter={transparent ? "blur(0)" : "blur(12.6px)"}
             color={"base.gold"}
             borderColor={'base.blue'}

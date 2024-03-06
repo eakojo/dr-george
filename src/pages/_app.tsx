@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
             {showNav && (
               <>
                 <DesktopNavbar links={links} topL={topLeft} transparent={scrollPosition < 167 ? true: false} />
-                <MobileNavbar links={links} />
+                <MobileNavbar links={links} transparent={scrollPosition < 167 ? true: false} />
               </>
             )}
 

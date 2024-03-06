@@ -28,10 +28,11 @@ interface ILink {
 }
 
 interface IProps {
-  links: ILink[]
+  links: ILink[],
+  transparent: boolean
 }
 
-const MobileNavbar: FC<IProps> = ({ links }) => {
+const MobileNavbar: FC<IProps> = ({ links, transparent }) => {
   const { isOpen, onToggle } = useDisclosure()
 
   const [language, setLanguage] = useState('en')
@@ -103,6 +104,11 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
         align="center"
         justify="space-between"
         color={'white'}
+        top={transparent ? 12:  0}
+        pos={transparent? "absolute": "fixed" }  
+        bg={transparent? 'transparent' :"rgba(255, 255, 255, 0.29)"}
+        boxShadow={transparent ? "none" : "0 4px 30px rgba(0, 0, 0, 0.1)"}
+        backdropFilter={transparent ? "blur(0)" : "blur(12.6px)"}
       >
         <Box className='logo-box'>
           <Link as={NextLink} href="/" passHref _focus={{ outline: 'none' }} _hover={{ outline: 'none' }}>
@@ -117,7 +123,7 @@ const MobileNavbar: FC<IProps> = ({ links }) => {
             icon={isOpen ? <FiX size={30} /> : <FiMenu size={30} />}
             bg="transparent"
             role="button"
-            color={"base.blue"}
+            color={transparent? "white": "base.blue"}
           />
           <Box pos="relative">
             <Fade in={isOpen}>

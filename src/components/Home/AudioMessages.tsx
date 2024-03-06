@@ -129,9 +129,13 @@ const Ministry: FC = () => {
                         </Flex>}
                     </Flex> : null}
 
-                    {((active as {id: string})?.id) === item.id  && isMobile ? <Flex onClick={() => setIsPlaying(!isPlaying)} rounded={"md"} align={"center"} justify="center" w={6} h={6} position={"absolute"} bottom={2} right={2} bg={"base.gold"}>
-                             {!isReady ? <Spinner w={4} h={4} /> : <Icon as={isPlaying ? TbPlayerPause :TbPlayerPlayFilled }  color={"base.blue"} boxSize={4} />}
-                        </Flex> : null}
+                    {
+                        ((active as {id: string})?.id) === item.id  && isMobile ? (
+                            <Flex onClick={() => setIsPlaying(!isPlaying)} rounded={"md"} align={"center"} justify="center" w={6} h={6} position={"absolute"} bottom={2} right={2} bg={"base.gold"}>
+                                {!isReady ? <Spinner w={4} h={4} /> : <Icon as={isPlaying ? TbPlayerPause :TbPlayerPlayFilled }  color={"base.blue"} boxSize={4} />}
+                            </Flex>
+                        ) : null
+                    }
                 </Box>))}
                 {messages.length < 4 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
             </Flex>
