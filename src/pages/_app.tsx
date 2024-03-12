@@ -6,6 +6,8 @@ import { Box, ChakraProvider } from '@chakra-ui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import '../../public/fonts/fonts.css'
+import "../components/Blocks/Hero/slider.css"
+
 
 import Footer from '@/components/Footer'
 import DesktopNavbar from '@/components/Navbar/Desktop'
