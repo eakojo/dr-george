@@ -90,6 +90,7 @@ const HeroDesktop: NextPage = () => {
           <Box className="slide-item" key={item.key}
             bgImage={item.cover}
           >
+            <Box className="slide-item-overlay"></Box>
             <Box className="slide-content">
                 <Text className='name'>{item.title}</Text>
                 <Text className='subtext'>{item.subText}</Text>
