@@ -65,7 +65,7 @@
     font-weight: 700;
     font-family: "Garamond";
     opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
+    animation: animate 1s ease-in-out  0.3s 1 forwards;
     line-height: 50px;
 }
 
@@ -74,6 +74,11 @@
     margin-top: 20px;
     opacity: 0; 
     animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.slide-content .socials{
+    opacity: 0; 
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
 }
 
 

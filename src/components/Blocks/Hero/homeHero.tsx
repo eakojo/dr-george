@@ -94,7 +94,7 @@ const HeroDesktop: NextPage = () => {
             <Box className="slide-content">
                 <Text className='name'>{item.title}</Text>
                 <Text className='subtext'>{item.subText}</Text>
-                <Flex mt={16} color="white" gap={4} fontSize={20}>
+                <Flex className='socials' mt={16} color="white" gap={4} fontSize={20}>
                     <Link href={'https://www.instagram.com/drgwarthur'} target='_'>
                         <Icon fontSize={20} as={FaInstagram} color={"white"} />
                     </Link>
