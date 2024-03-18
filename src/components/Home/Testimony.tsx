@@ -37,7 +37,7 @@ const Testimony: FC = () => {
                     color={"white"} 
                     fontFamily={"Montserrat"}
                   >
-                    Under the teachings of Dr. G. W. Arthur, I&apos;ve found profound wisdom and inspiration. His teachings have ignited a deeper understanding of Scripture, leading me on a transformative spiritual journey. Grateful for their impactful ministry. 
+                    Under the teachings of Dr. G. W. Arthur, I&apos;ve found profound wisdom and inspiration. His teachings have ignited a deeper understanding of Scripture, leading me on a transformative spiritual journey. Grateful for his impactful ministry. 
                 </Text>
                 <Text mt={4} color={"base.gold"} fontSize={20} textAlign={"right"} fontWeight={700} >Theophilus Odoi Mensah</Text>
               </Box>
