@@ -26,20 +26,20 @@ const HeroDesktop: NextPage = () => {
       key: 'isActive1'
     },
     {
-      title: text.heroTitle,
-      subText: text.subTitle,
+      title: text.heroTitle2,
+      subText: '',
       cover: '/images/covers/cover-2.jpg',
       key: "isActive2"
     },
     {
-      title: text.heroTitle,
-      subText: text.subTitle,
+      title: text.heroTitle3,
+      subText: '',
       cover: '/images/covers/cover-3.jpg',
       key: "isActive3"
     },
     {
-    title: text.heroTitle,
-    subText: text.subTitle,
+    title: text.heroTitle4,
+    subText: '',
     cover: '/images/covers/cover-4.jpg',
     key: "isActive4"
   }

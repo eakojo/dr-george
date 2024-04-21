@@ -2,6 +2,9 @@ const homeHeroText = {
     en: {
         heroTitle: "Bible Teacher and Conference Speaker",
         subTitle: "Raising and equipping people who will come into the consciousness and the revelation of Christ and his finished work through the preaching and teaching of the gospel.",
+        heroTitle2: "Revelation preceeds confessions. The best time to speak the Word is right after meditating on the Word of God",
+        heroTitle3: "When you speak the Word, you weaponise the word. What you say out of Revelation becomes a sword - double edged.",
+        heroTitle4: "The church is the fulness of Christ that fills all and is in all.",
     },
     fr: {
         heroTitle: "Enseignant de la Bible et Conférencier",
