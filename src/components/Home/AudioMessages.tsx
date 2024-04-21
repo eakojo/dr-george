@@ -78,6 +78,7 @@ const Ministry: FC = () => {
 
     const openLink = () => {
         window.open('https://g-w-arthur-ministries.captivate.fm/listen', '_blank');
+        // console.log(messages);
     };
 
 

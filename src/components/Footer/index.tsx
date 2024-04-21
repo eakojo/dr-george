@@ -38,6 +38,15 @@ const Footer: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const images = [
+    '/images/gallery/_BXA5465.jpg',
+    '/images/gallery/_MG_35ascd.jpg', 
+    '/images/gallery/_BXA5200.jpg',
+    '/images/gallery/_MG_3569.jpg',
+    '/images/gallery/_MG_3731.jpg',
+    '/images/gallery/_MG_6393.jpg',
+  ]
+
   return (
     <Box pos={"relative"} zIndex={3}>
     <Grid templateColumns={{base: 'repeat(6, 1fr)' , md: 'repeat(8, 1fr)'}} gap={12} bg={"#262626"} py={20}  px={{ base: 4, '2xl': 36 }}>
@@ -77,13 +86,9 @@ const Footer: FC = () => {
         <Text color={"white"} fontSize={24} fontWeight={600} mb={4}>{text.footerGallery}</Text>
 
         <Masonry columnsCount={3} gutter={"10px"}>
-          <Image src={data?.[0]?.data?.image?.url} alt="footer image" />
-          <Image src={data?.[1]?.data?.image?.url} alt="footer image" />
-          <Image src={data?.[2]?.data?.image?.url} alt="footer image" />
-          <Image src={data?.[4]?.data?.image?.url} alt="footer image" />
-          <Image src={data?.[5]?.data?.image?.url} alt="footer image" />
-          <Image src={data?.[3]?.data?.image?.url} alt="footer image" />
-
+        {images.map(item => (
+          <Image key={item} src={item} alt="footer image" />
+        ))}
         </Masonry>
       </GridItem>
     </Grid>
