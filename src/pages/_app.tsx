@@ -49,6 +49,7 @@ function MyApp({ Component, pageProps }: {Component: FC<object>, pageProps: obje
     { name: `${text.navHome}`, path: '/' },
     { name: `${text.navBiography}`, path: '/biography' },
     { name: `${text.navMinistry}`, path: '/ministry' },
+    { name: `${text.navGallery}`, path: '/gallery' },
     // { name: `${text.navPodcast}`, path: '/' },
     { name: `${text.navContact}`, path: '/contact' },
     { name: `${text.navPartner}`, path: '/partner', type: 'button' }

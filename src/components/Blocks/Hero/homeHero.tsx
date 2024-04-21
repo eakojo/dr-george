@@ -75,9 +75,9 @@ const HeroDesktop: NextPage = () => {
 
     return () => {
       nextRef?.current?.removeEventListener('click', () => null);
-      prevRef?.current.removeEventListener('click', () => null);
-      document.querySelector('.slide').removeEventListener('mouseenter',  () => null);
-      document.querySelector('.slide').removeEventListener('mouseleave',  () => null);
+      prevRef?.current?.removeEventListener('click', () => null);
+      document.querySelector('.slide')?.removeEventListener('mouseenter',  () => null);
+      document.querySelector('.slide')?.removeEventListener('mouseleave',  () => null);
     };
   },[])
 

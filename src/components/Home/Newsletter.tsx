@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import CustomButton from '../Atom/Button'
 import HomeLang from '@/internationalization/home'
 import { getLanguage } from '@/helpers/misc'
+import Link from 'next/link'
 
 interface IProp {
   bgStyle?: any
@@ -70,7 +71,9 @@ const About: FC<IProp> = () => {
         <Text color={"white"} fontWeight={"bold"} fontSize={24}>{text?.readMoreTitle}</Text>
         <Text fontFamily={'Montserrat'} mt={4} color={"white"} fontSize={{base: 12, sm: 14, md: 16}}>{text?.readMoreSubtext}</Text>
         <Flex mt={4} gap={3} fontFamily={"Montserrat"}>
-          <CustomButton title={text?.readMoreButton} bgColor={"white"} rounded="none" mt={0} fontSize={16} color="black" fontFamily="Garamond" />
+          <Link href={"/ministry"}>
+            <CustomButton title={text?.readMoreButton} bgColor={"white"} rounded="none" mt={0} fontSize={16} color="black" fontFamily="Garamond"  />
+          </Link>
         </Flex>
       </GridItem>
     </Grid>
