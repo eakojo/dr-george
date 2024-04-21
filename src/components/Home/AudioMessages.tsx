@@ -102,7 +102,6 @@ const Ministry: FC = () => {
                 align={"center"}
                 pl={16}
                 bg={"linear-gradient(90deg, rgba(16,32,51,1) 46%, rgba(16,32,51,0.8576680672268908) 58%, rgba(16,32,51,0.5663515406162465) 77%, rgba(16,32,51,0.08735994397759106) 93%, rgba(16,32,51,0) 100%)"}>
-                {/* <Icon as={HiArrowLongLeft} color="white" fontSize={{base: 24, md: 40}}/> */}
             </Flex>
             <Flex gap={{base: 2, md: 8}} align={"center"}>
                 {messages.length < 3 ? <Box w={64} h={64} bg="transparent" flex={1} display={{base: "none", xl: "block"}}></Box> : null}
@@ -128,7 +127,9 @@ const Ministry: FC = () => {
                         {!isMobile &&<Flex onClick={() => setIsPlaying(!isPlaying)} align={"center"} justify={"center"} w={6} h={6}>
                             {!isReady ? <Spinner /> : <Icon as={isPlaying ? TbPlayerPause :TbPlayerPlayFilled }  color={"base.blue"} boxSize={6} />}
                         </Flex>}
-                    </Flex> : null}
+                    </Flex> : <Flex p={3} h={12} w="100" justify={"space-between"}>
+                        <Text textAlign={{base: "center", md: "left"}} color={"#ffffff"} fontFamily={"Montserrat"} fontWeight={500} fontSize={{base: 12, md: 15}}>{item.title}</Text>
+                    </Flex>}
 
                     {
                         ((active as {id: string})?.id) === item.id  && isMobile ? (
