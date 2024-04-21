@@ -5,6 +5,9 @@ const nextConfig = {
     loader: 'akamai',
     path: '',
   },
+  experimental: {
+    caseSensitiveRoutes: false,
+  },
 }
 
 module.exports = nextConfig
